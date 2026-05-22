@@ -1,0 +1,66 @@
+@model IEnumerable<BookCatalog.Web.Models.Book>
+
+@{
+    ViewBag.Title = "Books";
+}
+
+<h2>Book Catalog</h2>
+
+<p>
+    @Html.ActionLink("Add New Book", "Create", null, new { @class = "btn btn-primary" })
+</p>
+
+@if (Model != null && Model.Any())
+{
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>ISBN</th>
+                <th>Published Year</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var book in Model)
+            {
+                <tr>
+                    <td>@book.Title</td>
+                    <td>@book.Author</td>
+                    <td>@book.ISBN</td>
+                    <td>@book.PublishedYear</td>
+                    <td>
+                        @if (book.IsActive)
+                        {
+                            <span class="label label-success">Active</span>
+                        }
+                        else
+                        {
+                            <span class="label label-default">Inactive</span>
+                        }
+                    </td>
+                    <td>
+                        @Html.ActionLink("Details", "Details", new { id = book.Id }, new { @class = "btn btn-sm btn-info" })
+                        @Html.ActionLink("Edit", "Edit", new { id = book.Id }, new { @class = "btn btn-sm btn-warning" })
+                        @Html.ActionLink("Delete", "Delete", new { id = book.Id }, new { @class = "btn btn-sm btn-danger" })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <div class="alert alert-info">
+        <strong>No books found.</strong> Click "Add New Book" to get started.
+    </div>
+}
+
+@if (ViewBag.UserAgent != null)
+{
+    <div class="alert alert-warning" style="margin-top: 20px;">
+        <small><strong>User Agent:</strong> @ViewBag.UserAgent</small>
+    </div>
+}

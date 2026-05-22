@@ -1,0 +1,364 @@
+{
+  "settings": {
+    "components": {
+      "code": true,
+      "binaries": false
+    },
+    "targetId": "net10.0",
+    "targetDisplayName": ".NETCoreApp,Version=v10.0"
+  },
+  "analysisStartTime": "2026-05-22T13:28:40.4298568Z",
+  "analysisEndTime": "2026-05-22T13:28:41.1229431Z",
+  "privacyModeHelpUrl": "https://go.microsoft.com/fwlink/?linkid=2270980",
+  "stats": {
+    "summary": {
+      "projects": 1,
+      "issues": 5,
+      "incidents": 8,
+      "effort": 8
+    },
+    "charts": {
+      "severity": {
+        "Mandatory": 1,
+        "Optional": 0,
+        "Potential": 7,
+        "Information": 0
+      },
+      "category": {
+        "Project": 1,
+        "Api": 7
+      }
+    }
+  },
+  "projects": [
+    {
+      "path": "SimpleLegacyApp\\SimpleLegacyApp.csproj",
+      "startingProject": true,
+      "issues": 2,
+      "storyPoints": 8,
+      "properties": {
+        "appName": "SimpleLegacyApp",
+        "projectKind": "DotNetCoreApp",
+        "frameworks": [
+          "net48"
+        ],
+        "languages": [
+          "C#"
+        ],
+        "tools": [
+          "MSBuild"
+        ],
+        "isSdkStyle": true,
+        "numberOfFiles": 2,
+        "numberOfCodeFiles": 2,
+        "linesTotal": 81,
+        "linesOfCode": 81,
+        "totalApiScanned": 51,
+        "minLinesOfCodeToChange": 7,
+        "maxLinesOfCodeToChange": 7
+      },
+      "ruleInstances": [
+        {
+          "incidentId": "723d1ae1-b0cd-4421-affb-71553dec21e0",
+          "ruleId": "Project.0002",
+          "projectPath": "SimpleLegacyApp\\SimpleLegacyApp.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Current target framework: net48\nRecommended target framework: net10.0",
+              "protected": "Current target framework: net48\nRecommended target framework: net10.0"
+            },
+            "kind": "File",
+            "path": "SimpleLegacyApp\\SimpleLegacyApp.csproj",
+            "snippet": "Current target framework: net48\nRecommended target framework: net10.0",
+            "protectedSnippet": "Current target framework: net48\nRecommended target framework: net10.0",
+            "properties": {
+              "CurrentTargetFramework": "net48",
+              "RecommendedTargetFramework": "net10.0"
+            }
+          }
+        },
+        {
+          "incidentId": "e77578c6-3896-4d4a-8df2-b098f2e831f4",
+          "ruleId": "Api.0002",
+          "description": "API is available in package Microsoft.AspNetCore.SystemWebAdapters, 1.4.0. Add package reference to Microsoft.AspNetCore.SystemWebAdapters, 1.4.0",
+          "projectPath": "SimpleLegacyApp\\SimpleLegacyApp.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "var context = HttpContext.Current;",
+              "protected": "T:System.Web.HttpContext"
+            },
+            "kind": "File",
+            "path": "SimpleLegacyApp\\Program.cs",
+            "snippet": "var context = HttpContext.Current;",
+            "protectedSnippet": "T:System.Web.HttpContext",
+            "label": "T:System.Web.HttpContext",
+            "properties": {
+              "PackageId": "Microsoft.AspNetCore.SystemWebAdapters",
+              "PackageNewVersion": "1.4.0"
+            },
+            "line": 14,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "e736a7db-63a8-4cb8-9d9e-0582cc2dc4d2",
+          "ruleId": "Api.0002",
+          "description": "API is available in package Microsoft.AspNetCore.SystemWebAdapters, 1.4.0. Add package reference to Microsoft.AspNetCore.SystemWebAdapters, 1.4.0",
+          "projectPath": "SimpleLegacyApp\\SimpleLegacyApp.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "var context = HttpContext.Current;",
+              "protected": "T:System.Web.HttpContext"
+            },
+            "kind": "File",
+            "path": "SimpleLegacyApp\\Program.cs",
+            "snippet": "var context = HttpContext.Current;",
+            "protectedSnippet": "T:System.Web.HttpContext",
+            "label": "T:System.Web.HttpContext",
+            "properties": {
+              "PackageId": "Microsoft.AspNetCore.SystemWebAdapters",
+              "PackageNewVersion": "1.4.0"
+            },
+            "line": 14,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "51e61c7b-95b7-4bdc-9520-2be1bffb652c",
+          "ruleId": "Api.0002",
+          "description": "API is available in package Microsoft.AspNetCore.SystemWebAdapters, 1.4.0. Add package reference to Microsoft.AspNetCore.SystemWebAdapters, 1.4.0",
+          "projectPath": "SimpleLegacyApp\\SimpleLegacyApp.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "var context = HttpContext.Current;",
+              "protected": "P:System.Web.HttpContext.Current"
+            },
+            "kind": "File",
+            "path": "SimpleLegacyApp\\Program.cs",
+            "snippet": "var context = HttpContext.Current;",
+            "protectedSnippet": "P:System.Web.HttpContext.Current",
+            "label": "P:System.Web.HttpContext.Current",
+            "properties": {
+              "PackageId": "Microsoft.AspNetCore.SystemWebAdapters",
+              "PackageNewVersion": "1.4.0"
+            },
+            "line": 14,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "cb155484-d004-470f-814d-0a18f09630ac",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Configuration.ConfigurationManager, 9.0.0-preview.6.24302.3. Add package reference to System.Configuration.ConfigurationManager, 9.0.0-preview.6.24302.3",
+          "projectPath": "SimpleLegacyApp\\SimpleLegacyApp.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "var appName = ConfigurationManager.AppSettings[\u0022AppName\u0022] ?? \u0022SimpleLegacyApp\u0022;",
+              "protected": "T:System.Configuration.ConfigurationManager"
+            },
+            "kind": "File",
+            "path": "SimpleLegacyApp\\Program.cs",
+            "snippet": "var appName = ConfigurationManager.AppSettings[\u0022AppName\u0022] ?? \u0022SimpleLegacyApp\u0022;",
+            "protectedSnippet": "T:System.Configuration.ConfigurationManager",
+            "label": "T:System.Configuration.ConfigurationManager",
+            "properties": {
+              "PackageId": "System.Configuration.ConfigurationManager",
+              "PackageNewVersion": "9.0.0-preview.6.24302.3"
+            },
+            "line": 12,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "fbbd5269-7604-4757-b391-96d511764902",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Configuration.ConfigurationManager, 9.0.0-preview.6.24302.3. Add package reference to System.Configuration.ConfigurationManager, 9.0.0-preview.6.24302.3",
+          "projectPath": "SimpleLegacyApp\\SimpleLegacyApp.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "var appName = ConfigurationManager.AppSettings[\u0022AppName\u0022] ?? \u0022SimpleLegacyApp\u0022;",
+              "protected": "P:System.Configuration.ConfigurationManager.AppSettings"
+            },
+            "kind": "File",
+            "path": "SimpleLegacyApp\\Program.cs",
+            "snippet": "var appName = ConfigurationManager.AppSettings[\u0022AppName\u0022] ?? \u0022SimpleLegacyApp\u0022;",
+            "protectedSnippet": "P:System.Configuration.ConfigurationManager.AppSettings",
+            "label": "P:System.Configuration.ConfigurationManager.AppSettings",
+            "properties": {
+              "PackageId": "System.Configuration.ConfigurationManager",
+              "PackageNewVersion": "9.0.0-preview.6.24302.3"
+            },
+            "line": 12,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "9f69ba2c-7327-454b-a358-ce93fd46bd22",
+          "ruleId": "Api.0002",
+          "description": "BinaryFormatter serialization is obsolete and should not be used. See https://aka.ms/binaryformatter for more information. ",
+          "projectPath": "SimpleLegacyApp\\SimpleLegacyApp.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "var formatter = new BinaryFormatter();",
+              "protected": "T:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter"
+            },
+            "kind": "File",
+            "path": "SimpleLegacyApp\\Serialization.cs",
+            "snippet": "var formatter = new BinaryFormatter();",
+            "protectedSnippet": "T:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter",
+            "label": "T:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter",
+            "links": [
+              {
+                "title": "API documentation",
+                "url": "https://aka.ms/dotnet-warnings/SYSLIB0011",
+                "isCustom": false
+              }
+            ],
+            "line": 41,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "9ce57ef2-5a1c-4003-bb03-16d372ea40ce",
+          "ruleId": "Api.0002",
+          "description": "BinaryFormatter serialization is obsolete and should not be used. See https://aka.ms/binaryformatter for more information. ",
+          "projectPath": "SimpleLegacyApp\\SimpleLegacyApp.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "var formatter = new BinaryFormatter();",
+              "protected": "T:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter"
+            },
+            "kind": "File",
+            "path": "SimpleLegacyApp\\Serialization.cs",
+            "snippet": "var formatter = new BinaryFormatter();",
+            "protectedSnippet": "T:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter",
+            "label": "T:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter",
+            "links": [
+              {
+                "title": "API documentation",
+                "url": "https://aka.ms/dotnet-warnings/SYSLIB0011",
+                "isCustom": false
+              }
+            ],
+            "line": 23,
+            "column": 16
+          }
+        }
+      ],
+      "features": [
+        {
+          "featureId": "SystemWeb",
+          "incidents": [
+            "51e61c7b-95b7-4bdc-9520-2be1bffb652c",
+            "e736a7db-63a8-4cb8-9d9e-0582cc2dc4d2",
+            "e77578c6-3896-4d4a-8df2-b098f2e831f4"
+          ]
+        },
+        {
+          "featureId": "LegacyConfiguration",
+          "incidents": [
+            "fbbd5269-7604-4757-b391-96d511764902",
+            "cb155484-d004-470f-814d-0a18f09630ac"
+          ]
+        },
+        {
+          "featureId": "Remoting",
+          "incidents": [
+            "9ce57ef2-5a1c-4003-bb03-16d372ea40ce",
+            "9f69ba2c-7327-454b-a358-ce93fd46bd22"
+          ]
+        }
+      ]
+    }
+  ],
+  "rules": {
+    "Project.0002": {
+      "id": "Project.0002",
+      "isFeature": false,
+      "description": "Project\u0027s target framework(s) needs to be changed to the new target framework that you selected for this upgrade.\n\nDuring upgrade target framework will be adjusted to corresponding platform when applicable. In some cases project would result in multiple target frameworks after the upgrade if it was using features that now have their own platforms in modern .NET frameworks (windows, iOS, Android etc).",
+      "label": "Project\u0027s target framework(s) needs to be changed",
+      "severity": "Mandatory",
+      "effort": 1,
+      "links": [
+        {
+          "title": "Overview of porting from .NET Framework to .NET",
+          "url": "https://go.microsoft.com/fwlink/?linkid=2265227",
+          "isCustom": false
+        },
+        {
+          "title": ".NET project SDKs",
+          "url": "https://go.microsoft.com/fwlink/?linkid=2265226",
+          "isCustom": false
+        }
+      ]
+    },
+    "Api.0002": {
+      "id": "Api.0002",
+      "isFeature": false,
+      "description": "API is source incompatible for selected .NET version: requires code changes to compile successfully when targeting a new version, such as removing obsolete APIs or changing method signatures.",
+      "label": "Source incompatible for selected .NET version",
+      "severity": "Potential",
+      "effort": 1,
+      "links": [
+        {
+          "title": "Breaking changes in .NET",
+          "url": "https://go.microsoft.com/fwlink/?linkid=2262679",
+          "isCustom": false
+        }
+      ]
+    },
+    "SystemWeb": {
+      "id": "SystemWeb",
+      "isFeature": false,
+      "description": "Legacy ASP.NET Framework APIs for web applications (System.Web.*) that don\u0027t exist in ASP.NET Core due to architectural differences. ASP.NET Core represents a complete redesign of the web framework. Migrate to ASP.NET Core equivalents or consider System.Web.Adapters package for compatibility.",
+      "label": "ASP.NET Framework (System.Web)",
+      "severity": "Mandatory",
+      "effort": 4,
+      "links": [
+        {
+          "title": "Migrate from ASP.NET to ASP.NET Core",
+          "url": "https://go.microsoft.com/fwlink/?linkid=2341905",
+          "isCustom": false
+        }
+      ]
+    },
+    "LegacyConfiguration": {
+      "id": "LegacyConfiguration",
+      "isFeature": false,
+      "description": "Legacy XML-based configuration system (app.config/web.config) that has been replaced by a more flexible configuration model in .NET Core. The old system was rigid and XML-based. Migrate to Microsoft.Extensions.Configuration with JSON/environment variables; use System.Configuration.ConfigurationManager NuGet package as interim bridge if needed.",
+      "label": "Legacy Configuration System",
+      "severity": "Mandatory",
+      "effort": 2,
+      "links": [
+        {
+          "title": "Configuration in .NET",
+          "url": "https://go.microsoft.com/fwlink/?linkid=2341702",
+          "isCustom": false
+        }
+      ]
+    },
+    "Remoting": {
+      "id": "Remoting",
+      "isFeature": false,
+      "description": "Legacy .NET Remoting, BinaryFormatter, and related serialization APIs that are deprecated and removed for security reasons. Remoting provided distributed object communication but had significant security vulnerabilities. Migrate to gRPC, HTTP APIs, or modern serialization (System.Text.Json, protobuf).",
+      "label": "Deprecated Remoting \u0026 Serialization",
+      "severity": "Mandatory",
+      "effort": 4,
+      "links": [
+        {
+          "title": "gRPC on .NET",
+          "url": "https://go.microsoft.com/fwlink/?linkid=2341901",
+          "isCustom": false
+        }
+      ]
+    }
+  }
+}

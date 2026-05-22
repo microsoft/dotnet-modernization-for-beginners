@@ -1,0 +1,45 @@
+@model BookCatalog.Web.Models.Book
+
+@{
+    ViewBag.Title = "Book Details";
+}
+
+<h2>Book Details</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>Title</dt>
+        <dd>@Model.Title</dd>
+
+        <dt>Author</dt>
+        <dd>@Model.Author</dd>
+
+        <dt>ISBN</dt>
+        <dd>@Model.ISBN</dd>
+
+        <dt>Published Year</dt>
+        <dd>@Model.PublishedYear</dd>
+
+        <dt>Status</dt>
+        <dd>
+            @if (Model.IsActive)
+            {
+                <span class="label label-success">Active</span>
+            }
+            else
+            {
+                <span class="label label-default">Inactive</span>
+            }
+        </dd>
+
+        <dt>Created Date</dt>
+        <dd>@Model.CreatedDate.ToString("MMMM dd, yyyy")</dd>
+    </dl>
+</div>
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new { @class = "btn btn-warning" })
+    @Html.ActionLink("Delete", "Delete", new { id = Model.Id }, new { @class = "btn btn-danger" })
+    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-default" })
+</p>

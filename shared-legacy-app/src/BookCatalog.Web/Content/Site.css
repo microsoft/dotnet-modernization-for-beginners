@@ -1,0 +1,23 @@
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.dl-horizontal dt {
+    width: 160px;
+}
+
+.dl-horizontal dd {
+    margin-left: 180px;
+}

@@ -1,0 +1,26 @@
+{
+  "universe_usage_history": [
+    {
+      "universe": "The Matrix",
+      "assigned_at": "2026-05-21T12:58:53Z",
+      "assignment_id": "asgn-2026-05-21-initial"
+    }
+  ],
+  "assignment_cast_snapshots": {
+    "asgn-2026-05-21-initial": {
+      "assigned_at": "2026-05-21T12:58:53Z",
+      "universe": "The Matrix",
+      "team_size": 5,
+      "shape": "educational-content/dotnet-modernization",
+      "resonance_signals": ["legacy-to-modern transformation", "agentic AI tooling", "specialists collaborating on multi-step transformation"],
+      "members": {
+        "morpheus": "Morpheus",
+        "trinity": "Trinity",
+        "switch": "Switch",
+        "niobe": "Niobe",
+        "tank": "Tank"
+      },
+      "exempt": ["scribe", "ralph"]
+    }
+  }
+}
