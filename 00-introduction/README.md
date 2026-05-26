@@ -65,7 +65,7 @@ The GitHub Copilot app modernization extension walks your project through three 
 You're still the one driving. The extension proposes, you decide.
 
 ```mermaid
-flowchart TD
+flowchart LR
     START([Legacy .NET App])
 
     START --> ASSESS
