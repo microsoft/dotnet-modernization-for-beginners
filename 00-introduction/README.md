@@ -66,34 +66,34 @@ You're still the one driving. The extension proposes, you decide.
 
 ```mermaid
 flowchart TD
-    START([🏁 Legacy .NET App\nnet48 / netcoreapp3.x / net5-7])
+    START([Legacy .NET App])
 
     START --> ASSESS
 
-    subgraph PHASE1 [Phase 1 — Assess]
-        ASSESS[🔍 Scan codebase\nDeprecated APIs · Breaking changes\nNuGet incompatibilities]
-        REPORT([📋 Compatibility Report\n🔴 Binary Incompatible\n🟡 Source Incompatible\n🔵 Behavioral Changes])
+    subgraph PHASE1 ["Phase 1 — Assess"]
+        ASSESS["Scan codebase<br/>APIs, packages, breaking changes"]
+        REPORT["Compatibility Report<br/>Binary incompatible / Source incompatible / Behavioral"]
         ASSESS --> REPORT
     end
 
-    REPORT --> PHASE2
+    REPORT --> PLAN
 
-    subgraph PHASE2 [Phase 2 — Plan]
-        PLAN[📝 Prioritize findings\nBlockers first · Warnings second\nInfo last]
-        MIGRATION([🗺️ Migration Plan\nOrdered to-do list\nEffort estimates])
+    subgraph PHASE2 ["Phase 2 — Plan"]
+        PLAN["Prioritize findings<br/>Blockers first, then warnings, then informational"]
+        MIGRATION["Migration Plan<br/>Ordered tasks with effort estimates"]
         PLAN --> MIGRATION
     end
 
-    MIGRATION --> PHASE3
+    MIGRATION --> ACT
 
-    subgraph PHASE3 [Phase 3 — Act]
-        ACT[⚡ AI generates code changes\nProject files · API swaps\nRefactor proposals]
-        REVIEW{👀 Developer Review\nAccept or Reject\neach diff}
+    subgraph PHASE3 ["Phase 3 — Act"]
+        ACT["AI proposes code changes<br/>Project files, API swaps, refactors"]
+        REVIEW{Developer Review}
         ACT --> REVIEW
     end
 
-    REVIEW -->|Issues remain| PHASE1
-    REVIEW -->|All changes accepted| DONE([✅ Modernized App\nRunning on modern .NET])
+    REVIEW -->|Issues remain| ASSESS
+    REVIEW -->|All accepted| DONE([Modernized App])
 ```
 
 ---
