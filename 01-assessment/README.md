@@ -10,8 +10,6 @@ By the end of this chapter, you'll have:
 - Understood the difference between binary incompatible (won't compile), source incompatible (needs code edits), and behavioral changes (runtime surprises)
 - Generated a prioritized upgrade plan ordered by impact
 
-> ⏱️ **Estimated Time**: ~30 minutes
-
 ---
 
 ## ✅ Prerequisites
