@@ -92,7 +92,7 @@ flowchart TD
         ACT --> REVIEW
     end
 
-    REVIEW -->|Issues remain| ASSESS
+    REVIEW -->|Reject diff| ACT
     REVIEW -->|All accepted| DONE([Modernized App])
 ```
 
