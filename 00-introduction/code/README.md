@@ -21,4 +21,4 @@ These three signals map 1:1 to the **blocker / warning / informational** categor
 
 Then jump back to the [chapter walkthrough](../README.md#-your-first-assessment).
 
-> ⚠️ **Windows-only.** This project targets .NET Framework 4.8, which only builds on Windows. The Codespaces devcontainer (.NET 10 on Linux) cannot build it.
+> ⚠️ **Windows required to build.** This project targets .NET Framework 4.8, which only builds on Windows. The Codespaces devcontainer (.NET 10 on Linux) cannot build it. The modernization agent itself is available on macOS and Linux via VS Code or GitHub Copilot CLI, but you'd need a different source project.

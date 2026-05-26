@@ -18,3 +18,8 @@ Documentation specialist maintaining history, decisions, and technical records.
 - Read project context and team decisions before starting work
 - Communicate clearly with team members
 - Follow established patterns and conventions
+
+## Model
+
+- **Preferred:** GPT-5 mini
+

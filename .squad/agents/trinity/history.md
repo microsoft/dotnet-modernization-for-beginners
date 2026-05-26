@@ -59,4 +59,22 @@
 
 9. **Project structure is real-world-ish**: Not a "Hello World" toy. Has Models, Controllers, Views, proper MVC 5 startup, Web.config with connection strings, proper .csproj with references. A reader with enterprise MVC 5 experience will recognize it.
 
+### 2026-05-21: Chapter 01 Code Accuracy Review Complete
+
+10. **Assessment findings map precisely to code reality**: Deep review confirms BookCatalog.Web will produce 3-4 blockers (System.Web.Mvc, EF6, System.Web.Optimization, System.Web.Routing), 2-3 warnings (HttpContext.Current, direct DbContext instantiation, sync DB operations), and 1-2 informational findings (Web.config, packages.config). This matches Chapter 01's instructional goals perfectly.
+
+11. **Blocker count sweet spot**: 4 major API incompatibilities is the right amount — enough to demonstrate meaningful assessment output without overwhelming a learner in their first 30-minute session. Each blocker has a clear, industry-standard fix path.
+
+12. **Intentional anti-patterns are pedagogically valuable**: The code includes `HttpContext.Current` (static context smell), `new ApplicationDbContext()` (demonstrates DI benefits), and synchronous database calls (shows async migration need). These aren't bugs — they're **teaching artifacts** that real legacy apps contain.
+
+13. **BundleConfig reference issue discovered**: `Global.asax.cs` references `System.Web.Optimization` and presumably calls `BundleConfig.RegisterBundles()`, but the file doesn't exist in App_Start/. This prevents the "before" app from compiling. Two fix options: (A) Remove the reference entirely, (B) Add a minimal BundleConfig.cs. Documented in `trinity-ch01-code-accuracy.md` for Pablo's decision.
+
+14. **README findings predictions are 95% accurate**: Chapter 01 README (lines 114-229) correctly predicts System.Web.Mvc blocker on line 9, EF6 blocker in ApplicationDbContext.cs, HttpContext.Current warning on line 17, and config migration paths. Minor adjustment needed: "3 blockers" should be "3-4 blockers" to account for how the extension groups System.Web.* findings.
+
+15. **Version pins are complete and explicit**: All NuGet packages have exact versions in packages.config, LangVersion is set to 7.3, TargetFramework is v4.8. No ranges, no wildcards. Tank's testing matrix will thank us.
+
+16. **Solution file structure is correct**: BookCatalog.sln references exactly one project (BookCatalog.Web) with matching GUID {A1B2C3D4-E5F6-4789-A012-3456789ABCDE}. Path is `src\BookCatalog.Web\BookCatalog.Web.csproj`. Opens cleanly in Visual Studio 2022.
+
+17. **Assessment-ready validation checklist created**: 14-point checklist in the accuracy report covers solution structure, compilation status, version pins, realistic patterns, blocker/warning/info categorization, and README alignment. This becomes the validation template for Chapters 02-03 as well.
+
 <!-- Append new learnings below. Each entry is something lasting about the project. -->

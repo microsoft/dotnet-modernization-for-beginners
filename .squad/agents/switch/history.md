@@ -88,3 +88,35 @@ Applied the copilot-cli-for-beginners reference format pattern to all 5 READMEs 
 - All chapters follow identical structure: header image → objectives → time estimate → prerequisites → content sections → nav → key takeaways → troubleshooting
 - Consistent table formatting for decision frameworks, resource configs, error types
 - Unified callout style across all chapters
+
+## 2026-05-23 — Chapter 01 README Rewrite
+
+**Rewrote Chapter 01 (Assessment & Planning) to match Chapter 00 gold standard.**
+
+Key fixes:
+1. **Fixed extension invocation path:** Changed from wrong "GitHub Copilot → Assess for Modernization" to correct "Right-click project → Modernize → Upgrade to a newer version of .NET → send → '.NET 10, Guided Mode and No Source Control'". This matches Chapter 00 exactly—they use the same extension invocation. The difference in Ch01 is that the reader goes through full Assess + Plan in Guided Mode, not just the preview.
+
+2. **Updated numbers to be realistic:** BookCatalog has 1 controller (BooksController), 2 models (Book, likely a context), ~5 views. Analyzed the actual codebase and found: System.Web.Mvc blocker, Entity Framework 6 blocker/warning, HttpContext.Current warning, System.Web.Optimization (BundleConfig) blocker, System.Configuration warning. Changed fake numbers from "12 blockers, 18 warnings, 5 informational" to realistic "3 blockers, 2 warnings, 1 informational" for a small MVC app this size.
+
+3. **Added Mermaid diagram:** Inserted flowchart showing how to *read* the compatibility report—the three categories (Blockers, Warnings, Informational) and how they flow to priority fixing. This is Ch01's unique contribution (Ch00 shows the overall Assess → Plan → Act loop; Ch01 dives into how to interpret findings).
+
+4. **Tightened structure to match Ch00:**
+   - One-paragraph intro that chains to reader's journey
+   - Learning Objectives with second-person action verbs
+   - 30-minute time estimate (realistic for Assess → Plan on small app)
+   - Prerequisites table with exact versions
+   - Content sections with emoji headings (📂, 🔍, 📊, 🗺️, ✅)
+   - "Expected output:" labels with realistic screenshots  
+   - Key Takeaways (5 takeaways, action-focused not theoretical)
+   - Troubleshooting (3 real problems)
+   - Learn More (4 links, targeted to next chapter's needs)
+
+5. **Voice fixes:** Removed passive voice, unnecessary hedging ("note that," "it's important to"). Tightened "You've run a preview assessment on a simple sample. Now it's time to run the full Assess → Plan workflow on BookCatalog" to make the progression crystal clear.
+
+6. **Navigation:** Fixed link to Chapter 02 (was correct, kept consistent). Added back-reference to Chapter 00 in Prerequisites.
+
+**Images needed (Tank to capture):**
+- `01-assessment/images/assessment-progress.png` — screenshot of "Scanning files… Analyzing NuGet packages…" dialog
+- `01-assessment/images/assessment-report.png` — Compatibility Report tab with realistic "3 blockers, 2 warnings, 1 informational"
+
+**Why this matters:** Chapter 01 is where readers first learn to *interpret* assessment output (not just run it). The realistic numbers + Mermaid diagram + clearer invocation path make it obvious that Ch00 → Ch01 is a progression (sample → real app) using the exact same tool, not a tool switch.

@@ -16,7 +16,7 @@ By the end of this chapter, you'll have:
 
 | Requirement | Version / Notes |
 |-------------|-----------------|
-| **Windows** | Windows 11 (22H2 or later) |
+| **Windows** | Windows 11 (22H2 or later) — Visual Studio 2022 is Windows-only. On macOS or Linux, use the same modernization agent via VS Code or GitHub Copilot CLI. |
 | **Visual Studio** | 2022 (17.12 or later) with .NET desktop development workload |
 | **.NET 10 SDK** | Preview or latest release |
 | **GitHub Copilot subscription** | Active subscription required |
@@ -63,6 +63,38 @@ The GitHub Copilot app modernization extension walks your project through three 
 | **Act** | Actually makes the changes: edits project files, swaps deprecated APIs, proposes refactors. The AI generates suggestions; you review each one. | Modified files with diffs you accept or reject. |
 
 You're still the one driving. The extension proposes, you decide.
+
+```mermaid
+flowchart TD
+    START([🏁 Legacy .NET App\nnet48 / netcoreapp3.x / net5-7])
+
+    START --> ASSESS
+
+    subgraph PHASE1 [Phase 1 — Assess]
+        ASSESS[🔍 Scan codebase\nDeprecated APIs · Breaking changes\nNuGet incompatibilities]
+        REPORT([📋 Compatibility Report\n🔴 Binary Incompatible\n🟡 Source Incompatible\n🔵 Behavioral Changes])
+        ASSESS --> REPORT
+    end
+
+    REPORT --> PHASE2
+
+    subgraph PHASE2 [Phase 2 — Plan]
+        PLAN[📝 Prioritize findings\nBlockers first · Warnings second\nInfo last]
+        MIGRATION([🗺️ Migration Plan\nOrdered to-do list\nEffort estimates])
+        PLAN --> MIGRATION
+    end
+
+    MIGRATION --> PHASE3
+
+    subgraph PHASE3 [Phase 3 — Act]
+        ACT[⚡ AI generates code changes\nProject files · API swaps\nRefactor proposals]
+        REVIEW{👀 Developer Review\nAccept or Reject\neach diff}
+        ACT --> REVIEW
+    end
+
+    REVIEW -->|Issues remain| PHASE1
+    REVIEW -->|All changes accepted| DONE([✅ Modernized App\nRunning on modern .NET])
+```
 
 ---
 
