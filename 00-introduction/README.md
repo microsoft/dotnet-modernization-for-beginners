@@ -65,10 +65,10 @@ The GitHub Copilot app modernization extension walks your project through three 
 You're still the one driving. The extension proposes, you decide.
 
 ```mermaid
-flowchart LR
+flowchart TD
     START([Legacy .NET App])
 
-    START --> ASSESS
+    START --> PHASE1
 
     subgraph PHASE1 ["Phase 1 — Assess"]
         ASSESS["Scan codebase<br/>APIs, packages, breaking changes"]
@@ -76,7 +76,7 @@ flowchart LR
         ASSESS --> REPORT
     end
 
-    REPORT --> PLAN
+    PHASE1 --> PHASE2
 
     subgraph PHASE2 ["Phase 2 — Plan"]
         PLAN["Prioritize findings<br/>Blockers first, then warnings, then informational"]
@@ -84,7 +84,7 @@ flowchart LR
         PLAN --> MIGRATION
     end
 
-    MIGRATION --> ACT
+    PHASE2 --> PHASE3
 
     subgraph PHASE3 ["Phase 3 — Act"]
         ACT["AI proposes code changes<br/>Project files, API swaps, refactors"]
