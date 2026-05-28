@@ -18,7 +18,7 @@ By the end of this chapter, you'll have:
 
 **From Previous Chapters:**
 - Completed assessment and upgrade plan (Chapter 01)
-- BookCatalog solution open in Visual Studio 2022
+- BookCatalog solution open in Visual Studio 2022 or 2026
 - Upgrade plan file saved (`UpgradePlan.md` or `UpgradePlan.json`)
 
 **For This Chapter:**

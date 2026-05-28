@@ -120,3 +120,16 @@ Key fixes:
 - `01-assessment/images/assessment-report.png` — Compatibility Report tab with realistic "3 blockers, 2 warnings, 1 informational"
 
 **Why this matters:** Chapter 01 is where readers first learn to *interpret* assessment output (not just run it). The realistic numbers + Mermaid diagram + clearer invocation path make it obvious that Ch00 → Ch01 is a progression (sample → real app) using the exact same tool, not a tool switch.
+
+## 2026-05-28: Visual Studio 2026 Support Added
+
+**Decision:** Pablo Lopes confirmed that Visual Studio 2026 is now a supported IDE alongside VS 2022. All chapter READMEs and squad memory files updated to reflect this.
+
+**Updates made:**
+- Updated all 6 chapter/code READMEs to say "Visual Studio 2022 (17.12 or later) or 2026"
+- Updated prerequisite tables and opening instructions across 00-introduction, 01-assessment, 02-modernizing, 03-cloud, and code README
+- Updated troubleshooting and tip sections to reference both versions
+- Updated squad memory files (trinity history, decisions) to reflect support for both IDE versions
+- Screenshots going forward will be captured from Visual Studio 2026
+
+**Rationale:** The extension now works on both VS 2022 (min 17.12) and VS 2026 (any version). No rewrite needed; concise pattern keeps prose tight and clear.

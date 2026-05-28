@@ -18,12 +18,12 @@ By the end of this chapter, you'll have:
 
 **From Previous Chapters:**
 - Completed the Act workflow and have a working .NET 10 app (Chapter 02)
-- BookCatalog solution open in Visual Studio 2022
+- BookCatalog solution open in Visual Studio 2022 or 2026
 - The app builds and runs locally without errors
 
 **For This Chapter:**
 - Active Azure subscription (free trial or paid) — [Sign up here](https://azure.microsoft.com/free/)
-- Visual Studio 2022 signed in to your Azure account (**Tools** → **Options** → **Azure Service Authentication**)
+- Visual Studio 2022 or 2026 signed in to your Azure account (**Tools** → **Options** → **Azure Service Authentication**)
 - Contributor or Owner role on the target Azure subscription
 
 > ⚠️ **Cost:** The default configuration uses Azure free tier resources where available. Estimated cost: **$0** during the free trial period. **Delete the resource group when done** to avoid ongoing charges. If you're past the free tier, expect ~$10–20/month for a basic App Service + SQL Database.

@@ -13,7 +13,7 @@ A tiny .NET Framework 4.8 console app used by [Chapter 00](../README.md) to run 
 
 These three signals map 1:1 to the **blocker / warning / informational** categories you'll learn to read in the assessment report.
 
-## Open in Visual Studio 2022
+## Open in Visual Studio 2022 or 2026
 
 1. Open `SimpleLegacyApp.sln`.
 2. Right-click the project → **GitHub Copilot → Assess for Modernization**.

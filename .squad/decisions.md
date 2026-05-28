@@ -107,7 +107,7 @@ dotnet-modernization-for-beginners/
 2. Pedagogical clarity: Readers see largest conceptual gaps (ViewBag → VMs, ConfigurationManager → IConfiguration, HttpContext.Current → DI)
 3. Time-to-first-success: Small enough (~8–12 files) to run assessment within 15 minutes
 4. Real-world weight: Every enterprise .NET shop has a MVC 5 + EF6 web app gathering dust
-5. Reproducibility: Windows + Visual Studio 2022 is standard; extension handles the flow
+5. Reproducibility: Windows + Visual Studio 2022 or 2026 is standard; extension handles the flow
 
 **Sample shape:**
 - One MVC project targeting .NET Framework 4.8

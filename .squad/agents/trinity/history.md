@@ -73,7 +73,7 @@
 
 15. **Version pins are complete and explicit**: All NuGet packages have exact versions in packages.config, LangVersion is set to 7.3, TargetFramework is v4.8. No ranges, no wildcards. Tank's testing matrix will thank us.
 
-16. **Solution file structure is correct**: BookCatalog.sln references exactly one project (BookCatalog.Web) with matching GUID {A1B2C3D4-E5F6-4789-A012-3456789ABCDE}. Path is `src\BookCatalog.Web\BookCatalog.Web.csproj`. Opens cleanly in Visual Studio 2022.
+16. **Solution file structure is correct**: BookCatalog.sln references exactly one project (BookCatalog.Web) with matching GUID {A1B2C3D4-E5F6-4789-A012-3456789ABCDE}. Path is `src\BookCatalog.Web\BookCatalog.Web.csproj`. Opens cleanly in Visual Studio 2022 or 2026.
 
 17. **Assessment-ready validation checklist created**: 14-point checklist in the accuracy report covers solution structure, compilation status, version pins, realistic patterns, blocker/warning/info categorization, and README alignment. This becomes the validation template for Chapters 02-03 as well.
 

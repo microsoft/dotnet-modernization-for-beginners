@@ -33,7 +33,7 @@ You'll walk through the full modernization lifecycle: assess a legacy ASP.NET MV
 | **Git** | Any recent version |
 | **Prior experience** | C#, ASP.NET, Git, NuGet fundamentals |
 
-> ⚠️ **Note:** This course targets Windows-only at launch. The GitHub Copilot app modernization extension for Visual Studio 2022 requires Windows. Linux and macOS support is not yet available.
+> ⚠️ **Note:** This course targets Windows-only at launch. The GitHub Copilot app modernization extension for Visual Studio 2022 and 2026 requires Windows. Linux and macOS support is not yet available.
 
 ## 🔧 GitHub Copilot Modernization
 
