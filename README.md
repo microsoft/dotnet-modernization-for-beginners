@@ -33,11 +33,11 @@ You'll walk through the full modernization lifecycle: assess a legacy ASP.NET MV
 | **Git** | Any recent version |
 | **Prior experience** | C#, ASP.NET, Git, NuGet fundamentals |
 
-> ⚠️ **Note:** This course targets Windows-only at launch. The GitHub Copilot app modernization extension for Visual Studio 2022 and 2026 requires Windows. Linux and macOS support is not yet available.
+> ⚠️ **Note:** This course covers the Visual Studio workflow, which requires Windows. The extension also runs in VS Code and GitHub.com for cross-platform use — but those paths are not covered here.
 
 ## 🔧 GitHub Copilot Modernization
 
- GitHub Copilot modernization is a Visual Studio tool that automates .NET migration analysis and code updates. Here's where it fits in the Copilot ecosystem:
+The GitHub Copilot app modernization extension is available in Visual Studio, VS Code, and GitHub.com. It automates .NET migration analysis and code updates. Here's where it fits in the Copilot ecosystem:
 
 | Tool | Purpose | When to Use It |
 |------|---------|----------------|
@@ -45,7 +45,7 @@ You'll walk through the full modernization lifecycle: assess a legacy ASP.NET MV
 | **GitHub Copilot Chat** | Answer questions, generate snippets | When you need explanations or quick code samples |
 | **GitHub Copilot app modernization extension** | Assess, plan, and modernize .NET apps | When upgrading legacy .NET codebases to modern frameworks |
 
-This course focuses on the third tool: the extension that runs inside Visual Studio and specializes in .NET migrations.
+This course focuses on the third tool: the extension that specializes in .NET migrations. It runs in Visual Studio, VS Code, and GitHub.com — this course covers the Visual Studio workflow.
 
 ## 📚 Course Structure
 

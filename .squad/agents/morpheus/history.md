@@ -52,6 +52,10 @@
 - **Continuity update:** Ch 2-3-4 now share the same evolving app (`shared-legacy-app/`). Only Ch 0 is standalone. This replaces the old "Ch 4 uses separate pre-modernized copy" plan.
 - **Windows-only at launch:** Prerequisites explicitly state Win 11 + VS 2022 (no macOS/Linux/VS Code variants yet)
 
+### 2026-05-28 — Platform Scope Corrected
+
+**Update:** The GitHub Copilot app modernization extension runs in Visual Studio, VS Code, and GitHub.com — not VS-exclusive as initial docs implied. This course covers the Visual Studio workflow (Windows only). Cross-platform paths (VS Code and GitHub.com) are documented as available but not covered by this course. All references updated.
+
 **Shared legacy app strategy:**
 - Created `shared-legacy-app/` at repo root (ASP.NET MVC 5 + EF6 + .NET Framework 4.8)
 - Ch 1 assesses it, Ch 2 modernizes it, Ch 3 deploys the modernized output

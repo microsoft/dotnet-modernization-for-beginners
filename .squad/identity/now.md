@@ -10,6 +10,6 @@ Initial planning is complete. The team produced a 5-part plan (Morpheus / Trinit
 
 - **Target:** .NET 10 directly (using preview SDKs as needed)
 - **Continuity:** Chapter 4 deploys the modernized output of Chapter 3 (Ch 2-3-4 now share one evolving app; only Ch 1 is standalone)
-- **Platform:** Windows-only at launch (Win 11 + VS 2022)
+- **Platform:** Course covers Visual Studio workflow (Windows only). Extension also available in VS Code and GitHub.com (cross-platform).
 
 **Next likely work:** Scaffold the repo (top-level README + chapter folders + shared legacy app skeleton). Switch + Trinity + Tank can fan out on this in parallel.

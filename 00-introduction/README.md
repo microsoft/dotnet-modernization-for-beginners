@@ -16,7 +16,7 @@ By the end of this chapter, you'll have:
 
 | Requirement | Version / Notes |
 |-------------|-----------------|
-| **Windows** | Windows 11 (22H2 or later) — Visual Studio 2022 and 2026 are Windows-only. On macOS or Linux, use the same modernization agent via VS Code or GitHub Copilot CLI. |
+| **Windows** | Windows 11 (22H2 or later) — Visual Studio requires Windows. On macOS or Linux, use the extension via VS Code or GitHub.com instead. |
 | **Visual Studio** | 2022 (17.12 or later) or 2026, with .NET desktop development workload |
 | **.NET 10 SDK** | Preview or latest release |
 | **GitHub Copilot subscription** | Active subscription required |

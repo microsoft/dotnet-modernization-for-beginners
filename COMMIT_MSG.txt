@@ -1,0 +1,13 @@
+docs: correct extension platform description — not VS-only
+
+The GitHub Copilot app modernization extension runs in Visual Studio,
+VS Code, and GitHub.com. Previous wording implied it was VS-exclusive.
+
+- README.md: updated tool description and Windows-only note
+- 00-introduction/README.md: clarified VS-specific Windows requirement
+- Squad memory updated: now.md, morpheus history, decisions
+
+The course covers the Visual Studio workflow (Windows required), but
+the extension itself is cross-platform.
+
+Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>

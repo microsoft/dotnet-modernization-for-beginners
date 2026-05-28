@@ -1,3 +1,13 @@
+### 2026-05-28: Extension platform description corrected
+
+**By:** Pablo Lopes (via Copilot)
+
+**What:** The GitHub Copilot app modernization extension is NOT Visual Studio-only. It runs in Visual Studio, VS Code, and GitHub.com. This course covers the Visual Studio workflow specifically, which requires Windows. Docs updated to reflect correct scope.
+
+**Why:** Factual correction — previous wording incorrectly implied the extension was VS-exclusive.
+
+---
+
 ### 2026-05-28: Visual Studio 2026 support added
 
 **By:** Pablo Lopes (via Copilot)
