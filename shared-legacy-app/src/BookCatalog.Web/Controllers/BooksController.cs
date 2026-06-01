@@ -14,7 +14,7 @@ namespace BookCatalog.Web.Controllers
         {
             var books = db.Books.Where(b => b.IsActive).OrderBy(b => b.Title).ToList();
             
-            var userAgent = HttpContext.Current.Request.UserAgent;
+            var userAgent = HttpContext.Request.UserAgent;
             ViewBag.UserAgent = userAgent;
             
             return View(books);

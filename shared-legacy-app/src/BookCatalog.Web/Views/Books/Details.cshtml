@@ -4,42 +4,46 @@
     ViewBag.Title = "Book Details";
 }
 
-<h2>Book Details</h2>
+<h2>&#128214; Book Details</h2>
 
-<div>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>Title</dt>
-        <dd>@Model.Title</dd>
-
-        <dt>Author</dt>
-        <dd>@Model.Author</dd>
-
-        <dt>ISBN</dt>
-        <dd>@Model.ISBN</dd>
-
-        <dt>Published Year</dt>
-        <dd>@Model.PublishedYear</dd>
-
-        <dt>Status</dt>
-        <dd>
+<table class="detail-table" cellspacing="0" cellpadding="0">
+    <tr>
+        <th>Title</th>
+        <td><strong>@Model.Title</strong></td>
+    </tr>
+    <tr>
+        <th>Author</th>
+        <td>@Model.Author</td>
+    </tr>
+    <tr>
+        <th>ISBN</th>
+        <td style="font-family:'Courier New',monospace; font-size:11px;">@Model.ISBN</td>
+    </tr>
+    <tr>
+        <th>Published Year</th>
+        <td>@Model.PublishedYear</td>
+    </tr>
+    <tr>
+        <th>Status</th>
+        <td>
             @if (Model.IsActive)
             {
-                <span class="label label-success">Active</span>
+                <span class="badge-active">ACTIVE</span>
             }
             else
             {
-                <span class="label label-default">Inactive</span>
+                <span class="badge-inactive">inactive</span>
             }
-        </dd>
+        </td>
+    </tr>
+    <tr>
+        <th>Date Added</th>
+        <td>@Model.CreatedDate.ToString("MMMM dd, yyyy")</td>
+    </tr>
+</table>
 
-        <dt>Created Date</dt>
-        <dd>@Model.CreatedDate.ToString("MMMM dd, yyyy")</dd>
-    </dl>
-</div>
-
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new { @class = "btn btn-warning" })
-    @Html.ActionLink("Delete", "Delete", new { id = Model.Id }, new { @class = "btn btn-danger" })
-    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-default" })
+<p style="margin-top:10px;">
+    <a href="@Url.Action("Edit", "Books", new { id = Model.Id })" class="btn-classic btn-classic-yellow">[Edit]</a>
+    <a href="@Url.Action("Delete", "Books", new { id = Model.Id })" class="btn-classic btn-classic-red">[Delete]</a>
+    <a href="@Url.Action("Index", "Books")" class="btn-classic">[Back to List]</a>
 </p>

@@ -1,43 +1,47 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Book Catalog - Your Online Book Management Solution" />
+    <meta name="keywords" content="books, catalog, library, reading" />
     <title>@ViewBag.Title - Book Catalog</title>
-    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
-    <script src="~/Scripts/modernizr-2.8.3.js"></script>
+    <link href="~/Content/Site.css?v=2" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Book Catalog", "Index", "Books", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Books", "Index", "Books")</li>
-                    <li>@Html.ActionLink("Add New Book", "Create", "Books")</li>
-                </ul>
-            </div>
+
+    <!-- *** HEADER *** -->
+    <div class="site-header">
+        <a href="@Url.Action("Index", "Books")" class="site-title">&#9733; Book Catalog &#9733;</a>
+        <span class="site-subtitle">:: Your Online Book Management Solution ::</span>
+    </div>
+
+    <!-- *** NAVIGATION *** -->
+    <div class="nav-bar">
+        <a href="@Url.Action("Index", "Books")">[Home]</a>
+        <a href="@Url.Action("Index", "Books")">[Books]</a>
+        <a href="@Url.Action("Create", "Books")">[Add New Book]</a>
+        <span class="nav-hint">Best viewed at 800x600 &bull; Internet Explorer 6.0+</span>
+    </div>
+
+    <!-- *** MAIN CONTENT *** -->
+    <div class="main-content">
+        @RenderBody()
+        <hr />
+    </div>
+
+    <!-- *** FOOTER *** -->
+    <div class="site-footer">
+        <div>
+            &copy; @DateTime.Now.Year Book Catalog Application &bull;
+            Powered by ASP.NET MVC 5 &amp; Entity Framework 6 &bull; .NET Framework 4.8
+        </div>
+        <div style="margin-top: 4px;">
+            You are visitor #&nbsp;<span class="hit-counter">001337</span>
+            &nbsp;&bull;&nbsp;
+            <span style="font-size:9px; color:#888888; font-style:italic;">Page generated in 0.042 seconds</span>
         </div>
     </div>
 
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - Book Catalog Application (Legacy ASP.NET MVC 5)</p>
-        </footer>
-    </div>
-
-    <script src="~/Scripts/jquery-3.7.1.min.js"></script>
-    <script src="~/Scripts/bootstrap.min.js"></script>
     @RenderSection("scripts", required: false)
 </body>
 </html>

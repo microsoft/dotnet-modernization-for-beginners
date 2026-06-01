@@ -4,68 +4,61 @@
     ViewBag.Title = "Add New Book";
 }
 
-<h2>Add New Book</h2>
+<h2>&#10010; Add New Book</h2>
 
-@using (Html.BeginForm("Create", "Books", FormMethod.Post, new { @class = "form-horizontal" }))
+@using (Html.BeginForm("Create", "Books", FormMethod.Post))
 {
     @Html.AntiForgeryToken()
 
-    <div class="form-horizontal">
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Author, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Author, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Author, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.ISBN, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ISBN, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ISBN, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.PublishedYear, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.PublishedYear, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.PublishedYear, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.IsActive, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <div class="checkbox">
-                    @Html.EditorFor(model => model.IsActive)
-                    @Html.ValidationMessageFor(model => model.IsActive, "", new { @class = "text-danger" })
-                </div>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-primary" />
-                @Html.ActionLink("Cancel", "Index", null, new { @class = "btn btn-default" })
-            </div>
-        </div>
+    <div class="error-box" style="display:@(ViewData.ModelState.IsValid ? "none" : "block")">
+        @Html.ValidationSummary(true, "Please fix the errors below:")
     </div>
-}
 
-@section Scripts {
-    <script src="~/Scripts/jquery.validate.min.js"></script>
-    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <div class="classic-form">
+        <table cellspacing="4" cellpadding="2">
+            <tr>
+                <td class="label-cell">@Html.LabelFor(m => m.Title):</td>
+                <td class="field-cell">
+                    @Html.TextBoxFor(m => m.Title, new { required = "required", maxlength = "200" })
+                    @Html.ValidationMessageFor(m => m.Title, "", new { style = "color:#cc0000; font-size:10px;" })
+                </td>
+            </tr>
+            <tr>
+                <td class="label-cell">@Html.LabelFor(m => m.Author):</td>
+                <td class="field-cell">
+                    @Html.TextBoxFor(m => m.Author, new { required = "required", maxlength = "100" })
+                    @Html.ValidationMessageFor(m => m.Author, "", new { style = "color:#cc0000; font-size:10px;" })
+                </td>
+            </tr>
+            <tr>
+                <td class="label-cell">@Html.LabelFor(m => m.ISBN):</td>
+                <td class="field-cell">
+                    @Html.TextBoxFor(m => m.ISBN, new { maxlength = "13" })
+                    @Html.ValidationMessageFor(m => m.ISBN, "", new { style = "color:#cc0000; font-size:10px;" })
+                </td>
+            </tr>
+            <tr>
+                <td class="label-cell">@Html.LabelFor(m => m.PublishedYear):</td>
+                <td class="field-cell">
+                    @Html.TextBoxFor(m => m.PublishedYear, new { style = "width:80px;", type = "number", min = "1800", max = "2100" })
+                    @Html.ValidationMessageFor(m => m.PublishedYear, "", new { style = "color:#cc0000; font-size:10px;" })
+                </td>
+            </tr>
+            <tr>
+                <td class="label-cell">@Html.LabelFor(m => m.IsActive):</td>
+                <td class="field-cell">
+                    @Html.CheckBoxFor(m => m.IsActive)
+                    <span style="font-size:10px; color:#666666;">(check if book is available)</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="label-cell">&nbsp;</td>
+                <td class="field-cell" style="padding-top:6px;">
+                    <input type="submit" value="[ Save Book ]" />
+                    &nbsp;
+                    <a href="@Url.Action("Index", "Books")" class="btn-classic">[ Cancel ]</a>
+                </td>
+            </tr>
+        </table>
+    </div>
 }

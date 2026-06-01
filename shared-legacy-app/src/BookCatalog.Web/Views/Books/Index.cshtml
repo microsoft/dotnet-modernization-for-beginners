@@ -4,63 +4,69 @@
     ViewBag.Title = "Books";
 }
 
-<h2>Book Catalog</h2>
+<h2>&#128218; Book Catalog</h2>
 
 <p>
-    @Html.ActionLink("Add New Book", "Create", null, new { @class = "btn btn-primary" })
+    <a href="@Url.Action("Create", "Books")" class="btn-classic btn-classic-blue">[+] Add New Book</a>
 </p>
 
 @if (Model != null && Model.Any())
 {
-    <table class="table table-striped table-hover">
+    <table class="classic-table" cellspacing="0" cellpadding="0">
         <thead>
             <tr>
+                <th>#</th>
                 <th>Title</th>
                 <th>Author</th>
                 <th>ISBN</th>
-                <th>Published Year</th>
+                <th>Year</th>
                 <th>Status</th>
                 <th>Actions</th>
             </tr>
         </thead>
         <tbody>
+            @{ int rowNum = 1; }
             @foreach (var book in Model)
             {
                 <tr>
-                    <td>@book.Title</td>
+                    <td style="color:#808080; text-align:center;">@(rowNum++)</td>
+                    <td><strong>@book.Title</strong></td>
                     <td>@book.Author</td>
-                    <td>@book.ISBN</td>
-                    <td>@book.PublishedYear</td>
-                    <td>
+                    <td style="font-family:'Courier New',monospace; font-size:10px;">@book.ISBN</td>
+                    <td style="text-align:center;">@book.PublishedYear</td>
+                    <td style="text-align:center;">
                         @if (book.IsActive)
                         {
-                            <span class="label label-success">Active</span>
+                            <span class="badge-active">ACTIVE</span>
                         }
                         else
                         {
-                            <span class="label label-default">Inactive</span>
+                            <span class="badge-inactive">inactive</span>
                         }
                     </td>
-                    <td>
-                        @Html.ActionLink("Details", "Details", new { id = book.Id }, new { @class = "btn btn-sm btn-info" })
-                        @Html.ActionLink("Edit", "Edit", new { id = book.Id }, new { @class = "btn btn-sm btn-warning" })
-                        @Html.ActionLink("Delete", "Delete", new { id = book.Id }, new { @class = "btn btn-sm btn-danger" })
+                    <td style="white-space:nowrap;">
+                        @Html.ActionLink("[View]", "Details", new { id = book.Id }, new { @class = "btn-classic" })
+                        @Html.ActionLink("[Edit]", "Edit", new { id = book.Id }, new { @class = "btn-classic btn-classic-yellow" })
+                        @Html.ActionLink("[Del]", "Delete", new { id = book.Id }, new { @class = "btn-classic btn-classic-red" })
                     </td>
                 </tr>
             }
         </tbody>
     </table>
+    <p style="font-size:10px; color:#808080; margin-top:4px;">
+        Showing @Model.Count() record(s). Last updated: @DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss")
+    </p>
 }
 else
 {
-    <div class="alert alert-info">
-        <strong>No books found.</strong> Click "Add New Book" to get started.
+    <div class="info-box">
+        <strong>No books found.</strong> Click &quot;Add New Book&quot; to get started.
     </div>
 }
 
 @if (ViewBag.UserAgent != null)
 {
-    <div class="alert alert-warning" style="margin-top: 20px;">
-        <small><strong>User Agent:</strong> @ViewBag.UserAgent</small>
+    <div class="user-agent-box">
+        <span class="user-agent-label">YOUR BROWSER:</span> @ViewBag.UserAgent
     </div>
 }

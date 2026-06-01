@@ -135,3 +135,10 @@ $RECYCLE.BIN/
 *.snk
 appsettings.*.Local.json
 secrets.json
+
+# ---------------------------------------------------------------
+# ASP.NET local database files (SQL Server LocalDB / SQL CE)
+# ---------------------------------------------------------------
+*.mdf
+*.ldf
+*.sdf
