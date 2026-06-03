@@ -1,5 +1,4 @@
-![Chapter 00: Introduction to Modernization](images/chapter-header.png)
-
+# Chapter 00: Introduction to Modernization
 In this chapter you'll install the GitHub Copilot app modernization extension and run your first assessment on a small sample app. Along the way you'll see why teams bother upgrading off .NET Framework, and you'll meet the Assess → Plan → Act loop the extension uses.
 
 ## 🎯 Learning Objectives

@@ -1,5 +1,4 @@
-![Chapter 01: Assessment & Planning](images/chapter-header.png)
-
+# Chapter 01: Assessment & Planning
 You've installed the extension and run a preview assessment on a simple sample. Now it's time to run the full Assess → Plan workflow on a real legacy app: BookCatalog, an ASP.NET MVC 5 application running on .NET Framework 4.8. 
 
 In this chapter, you'll scan BookCatalog, interpret what blockers (breaks compilation) versus warnings (deprecated but works) versus informational (nice-to-have) mean for your timeline, and generate a prioritized upgrade plan you'll execute in Chapter 02.
