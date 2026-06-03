@@ -1,4 +1,4 @@
-![Chapter 02: Modernizing](images/chapter-header.png)
+# Chapter 02: Modernizing
 
 You've assessed BookCatalog and generated a 5-task upgrade plan in Chapter 01. Now comes the **Act** phase: the extension will execute that plan one task at a time, pausing after each so you can verify and approve before moving on. By the end of this chapter, BookCatalog will be a SDK-style ASP.NET Core app running on .NET 10 with EF Core, and you'll have learned how Guided Mode keeps you in control of an automated migration.
 
@@ -6,11 +6,11 @@ You've assessed BookCatalog and generated a 5-task upgrade plan in Chapter 01. N
 
 By the end of this chapter, you'll have:
 - Approved the upgrade plan and entered the **Execution** stage
-- Walked through all 5 tasks in order (Prerequisites → SDK-style conversion → ASP.NET Core migration → EF Core migration → Final validation)
-- Seen how the extension handles failures mid-task and recovers without losing progress
-- Verified that the modernized BookCatalog runs on .NET 10 with EF Core
-
-> ⏱️ **Estimated Time**: ~60 minutes (most of it spent watching task 03, the ASP.NET Core migration)
+- Walked through all 5 tasks in Guided Mode — pausing to review after each before continuing
+- Watched the extension auto-recover from two build failures mid-task without manual intervention
+- Seen 89 `System.Web.*` API incompatibilities resolved automatically (all replaced with their ASP.NET Core equivalents)
+- Witnessed EF6 → EF Core: `DbContext` rewired, DI-integrated, old initializer pattern replaced with `EnsureCreated()`
+- Verified BookCatalog builds clean (0 errors, 0 warnings) and runs on .NET 10
 
 ---
 
@@ -42,6 +42,48 @@ The extension confirms approval and transitions to the **Execution** stage. It r
 ![Screenshot: "Plan approved. Entering the Execution stage." with execution.md read and SKILL.md access prompt for the task-execution skill](images/02-plan-approved-skill-access.png)
 
 From here, the extension works through the plan one task at a time, **pausing after each task** so you can review the changes and decide whether to continue. This is what Guided Mode buys you — at any point you can stop, edit the code yourself, or steer the extension in a different direction.
+
+Here's the rhythm you'll be in for the rest of the chapter — each task box shows what it produces and its progress percentage; diamonds are your decision points:
+
+```mermaid
+flowchart TD
+    START([💬 Approve the upgrade plan])
+    DONE([✅ BookCatalog running on .NET 10])
+
+    START --> T1
+
+    T1["**Task 01 · 20%**\n🟢 Prerequisites\n─────────────────\n✔ .NET 10 SDK verified\n✔ No global.json conflicts\n✔ Baseline recorded"]
+    T2["**Task 02 · 40%**\n🟢 SDK-style conversion\n─────────────────\n✔ csproj → Microsoft.NET.Sdk.Web\n✔ packages.config → PackageReference\n✔ Stays on net48"]
+    T3["**Task 03 · 60%**\n🟠 ASP.NET Core migration\n─────────────────\n✔ Global.asax → Program.cs\n✔ System.Web → Microsoft.AspNetCore\n✔ web.config → appsettings.json\n✔ Razor views updated\n⏰ 20–30 min"]
+    T4["**Task 04 · 80%**\n🟢 EF Core migration\n─────────────────\n✔ EF6 → EF Core 10.0.8\n✔ DbContext options pattern\n✔ DI registration\n✔ EnsureCreated + Seed"]
+    T5["**Task 05 · 100%**\n🟢 Final validation\n─────────────────\n✔ Build: 0 errors, 0 warnings\n✔ App starts + data loads\n✔ Follow-ups documented"]
+
+    T1 --> C1{{"You:\nContinue!"}}
+    C1 --> T2
+    T2 --> C2{{"You:\nContinue!"}}
+    C2 --> T3
+    T3 --> C3{{"You:\nContinue!"}}
+    C3 --> T4
+    T4 --> C4{{"You:\nContinue!"}}
+    C4 --> T5
+    T5 --> DONE
+
+
+
+    classDef task fill:#1f6feb15,stroke:#1f6feb,color:#e6edf3,text-align:left
+    classDef hot fill:#f59e0b15,stroke:#f59e0b,color:#e6edf3,text-align:left
+    classDef you fill:#23863615,stroke:#238636,color:#e6edf3
+    classDef warn fill:#da363315,stroke:#da3633,color:#e6edf3,text-align:left
+    classDef cap fill:#23863615,stroke:#238636,color:#e6edf3
+
+    class T1,T2,T4,T5 task
+    class T3 hot
+    class C1,C2,C3,C4 you
+    class T2_FAIL warn
+    class START,DONE cap
+```
+
+> 💡 **Why so many pauses?** Guided Mode trades speed for control. Each "Continue!" is a chance to inspect what just happened, edit code yourself, or course-correct. If you'd rather watch the whole thing run end-to-end, say *"continue in automatic mode"* at any pause — shown as the dashed lines above — and the extension runs the remaining tasks back-to-back.
 
 ---
 
@@ -175,6 +217,19 @@ The page even shows your User-Agent string at the bottom — proof that the one 
 
 > 💡 **The footer still says "Powered by ASP.NET MVC 5 & Entity Framework 6 · .NET Framework 4.8"** — that's a hardcoded string in `_Layout.cshtml` that the migration didn't touch (it's marketing copy, not API). Updating it is a great "post-upgrade follow-up" task to add to your backlog.
 
+## 📊 Before and After
+
+| Aspect | Before (Chapter 01) | After (Chapter 02) |
+|---|---|---|
+| **Runtime** | .NET Framework 4.8 | .NET 10 |
+| **Project format** | Classic Wap (`.csproj`) | SDK-style (`Microsoft.NET.Sdk.Web`) |
+| **Package management** | `packages.config` | `PackageReference` |
+| **Web framework** | ASP.NET MVC 5 (`System.Web`) | ASP.NET Core MVC |
+| **Startup** | `Global.asax.cs` | `Program.cs` |
+| **Configuration** | `web.config` | `appsettings.json` + `IConfiguration` |
+| **Data access** | Entity Framework 6 | EF Core 10.0.8 |
+| **Build time** | ~1–2 seconds (legacy) | 0.201 seconds (SDK incremental) |
+
 ---
 
 ## ✅ You're Ready!
@@ -187,38 +242,39 @@ You've executed all 5 tasks of the upgrade plan in Guided Mode, watched the exte
 
 ## 🔑 Key Takeaways
 
-1. **Guided Mode pauses between every task.** "Continue!" is the magic word — until you send it, nothing moves. That gives you a natural review point after each atomic change.
-2. **Tasks are intentionally small and isolated.** Task 02 stayed on `net48` so structural changes were independent from API changes. When build #1 failed in Task 02, you knew exactly where to look.
-3. **The extension recovers from its own mistakes.** The conversion tool dropped GAC references and set the wrong `OutputType` — and the extension caught both via the build step and fixed them in-line, marking each as "behavior-preserving."
-4. **Progress is real and persisted.** Each task writes to `progress-details.md` and updates a completion percentage. You can stop after any task and resume later without losing state.
-5. **Overrides from the Plan phase are honored.** Choosing "Migrate to EF Core" in Chapter 01 propagated into Task 04 automatically — no need to re-state your intent during Execution.
-6. **The final result is a clean SDK-style project.** `BookCatalog.Web.csproj` shrank from a 100+ line classic Wap file with `packages.config` and dozens of `<Reference>` entries to a 14-line SDK-style file with 3 `PackageReference` entries. That alone is a maintainability win.
+1. **Guided Mode = commit gates.** Every "Continue!" is a checkpoint — you're never more than one task away from a known-good state.
+2. **Task isolation pays off at failure time.** When Task 02's build failed twice, the root cause was immediately obvious: structural conversion mistake, nothing to do with APIs. Isolation makes failures debuggable.
+3. **Auto-recovery doesn't mean magic.** The extension caught the failures because it ran a build step after every structural change. The lesson: always verify with a build step between structural changes and API changes.
+4. **89 API hits ≠ 89 manual hours.** Most `System.Web.Mvc.*` calls have direct ASP.NET Core equivalents — the extension knows the full mapping table. One 20–30 min task replaced what would have been days of docs-hunting.
+5. **The EF6 initializer pattern has no direct EF Core equivalent.** `DropCreateDatabaseIfModelChanges` is gone. The replacement is `EnsureCreated()` + a seed method — simpler and explicit.
+6. **`progress-details.md` is your audit trail.** Every task writes findings to this file. If something goes wrong between sessions, it's the first place to look.
+7. **Separate structural changes from semantic changes.** Task 02 stayed on `net48` deliberately. Never mix "format changes" and "behavior changes" in the same commit — you'll never know which one broke the build.
 
 ---
 
 ## 🛠️ Troubleshooting
 
-**Problem:** The extension stops mid-task and asks you to confirm a Visual Studio dialog (e.g., line endings, save changes, NuGet restore).
+**Problem:** The chat session expired or VS was closed between Chapter 01 and Chapter 02.
 
-**Solution:** This is normal — Visual Studio surfaces dialogs that the extension can't dismiss on its own. Accept the default (e.g., "Yes" / "Save All" / "Restore") and the extension will continue. The "Inconsistent Line Endings" dialog in particular shows up when the extension writes to files Visual Studio already has open.
-
----
-
-**Problem:** Task 02 build succeeds but Task 03 fails repeatedly on Razor view edits.
-
-**Solution:** Make sure no `.cshtml` files are open in Visual Studio while Task 03 runs — Visual Studio locks open files and the extension can't overwrite them. Close all view tabs and send "Continue!" again to retry the failing subtask.
+**Solution:** Reopen the solution and re-trigger the Modernize workflow (right-click solution → Modernize). The extension reads the existing `plan.md` and `tasks.md` and resumes from where it left off.
 
 ---
 
-**Problem:** F5 launches the app but you get a SQL connection error.
+**Problem:** A task fails with a file permission error (e.g., "Unable to write to BookCatalog.Web.csproj").
 
-**Solution:** EF Core uses `EnsureCreated()` to provision the database on first run, but it needs a reachable SQL Server. Check that `appsettings.json` has a valid `ConnectionStrings:DefaultConnection` pointing at your LocalDB instance (e.g., `Server=(localdb)\\MSSQLLocalDB;Database=BookCatalog;Trusted_Connection=True;`). If the connection string didn't carry over from `web.config`, paste it in manually and restart.
+**Solution:** Visual Studio may have the file locked. Try closing and reopening the solution, or stopping the debug session if one is running. Then send "Continue!" again — the extension will retry the file write.
 
 ---
 
-**Problem:** Task 04 reports "EF6 artifacts remain" and won't complete.
+**Problem:** Task 02 build keeps failing after the auto-recovery (more than 2 failures).
 
-**Solution:** The validation looks for leftover `using System.Data.Entity` or `EntityFramework` references. Search the solution for either string and remove any that the migration missed. Stragglers are usually in `.cshtml` files (rare) or in test/helper projects (more common in larger solutions).
+**Solution:** Open `BookCatalog.Web.csproj` and look for duplicate `<Reference>` entries or a missing `<OutputType>Library</OutputType>` element. You can edit the file manually and then send "Continue!" to rerun the build check.
+
+---
+
+**Problem:** The app starts but immediately throws a `SqlException` (Cannot open database).
+
+**Solution:** The EF Core `EnsureCreated()` call needs a LocalDB instance. Run `sqllocaldb info` in a terminal to confirm LocalDB is available. If not, install SQL Server Express with LocalDB from the Visual Studio installer.
 
 ---
 
