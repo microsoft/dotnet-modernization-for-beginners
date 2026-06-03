@@ -47,7 +47,18 @@ This course focuses on the third tool: the extension that specializes in .NET mi
 
 ## 📚 Course Structure
 
-![Learning Path](images/learning-path.png)
+```mermaid
+flowchart LR
+    C00["Chapter 00\n🧭 Introduction\n──────────────\nUnderstand Assess→Plan→Act"]
+    C01["Chapter 01\n🔍 Assessment & Planning\n──────────────\nRun compatibility report\nGenerate upgrade plan"]
+    C02["Chapter 02\n⚡ Modernizing\n──────────────\nMigrate to .NET 10 + EF Core"]
+    C03["Chapter 03\n☁️ Going to the Cloud\n──────────────\nDeploy to Azure App Service"]
+
+    C00 --> C01 --> C02 --> C03
+
+    classDef chapter fill:#1f6feb15,stroke:#1f6feb,color:#e6edf3,text-align:left
+    class C00,C01,C02,C03 chapter
+```
 
 | Chapter | Title | What You'll Do |
 |:-------:|-------|----------------|
