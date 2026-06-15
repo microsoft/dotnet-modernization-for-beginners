@@ -33,7 +33,7 @@ Your .NET Framework 4.8 app works fine today. Why touch it? A few honest reasons
 
 **LTS releases give you a predictable patch window.** Even-numbered modern .NET releases (8, 10, ...) get 3 years of free patches. Odd-numbered ones get 18 months. That's useful for planning. 
 
-**The runtime keeps getting faster.** Each annual release improves the JIT, GC, and ASP.NET Core pipeline. If you're curious how much, the "Performance Improvements in .NET" posts are an exhausting read in the best way. 
+**The runtime keeps getting faster.** Each annual release improves the JIT, GC, and ASP.NET Core pipeline. If you're curious how much, the "[Performance Improvements in .NET](https://devblogs.microsoft.com/dotnet/performance-improvements-in-net-10/)" posts are an exhausting read in the best way. 
 
 **The package ecosystem moved.** Recent Azure SDKs, ML.NET, gRPC, and Aspire target modern .NET. The longer you stay on 4.x, the more new packages you can't pull in.
 
@@ -102,7 +102,7 @@ flowchart TD
 Open Visual Studio 2022 or 2026 and install the GitHub Copilot app modernization extension:
 
 1. Go to **Extensions** → **Manage Extensions**.
-2. Search for "GitHub Copilot app modernization".
+2. Search for "GitHub Copilot Modernization".
 3. Click **Download**.
 4. Restart Visual Studio to complete the installation.
 
@@ -110,7 +110,7 @@ Open Visual Studio 2022 or 2026 and install the GitHub Copilot app modernization
 
 After restarting, you'll see a new **GitHub Copilot** menu in the Visual Studio menu bar:
 
-![Screenshot: Extensions → Manage Extensions → Search results show GitHub Copilot app modernization](images/install-extension.png)
+![Screenshot: Extensions → Manage Extensions → Search results show GitHub Copilot Modernization](images/install-extension.png)
 
 Verify the installation:
 
