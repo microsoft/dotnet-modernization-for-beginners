@@ -1,6 +1,6 @@
-# Chapter 02: Modernizing
+# Chapter 03: Upgrade Execution
 
-You've assessed BookCatalog and generated a 5-task upgrade plan in Chapter 01. Now comes the **Act** phase: the extension will execute that plan one task at a time, pausing after each so you can verify and approve before moving on. By the end of this chapter, BookCatalog will be a SDK-style ASP.NET Core app running on .NET 10 with EF Core, and you'll have learned how Guided Mode keeps you in control of an automated migration.
+You've assessed BookCatalog and finalized the upgrade plan in Chapter 02. Now comes the **Act** phase: the extension will execute that plan one task at a time, pausing after each so you can verify and approve before moving on. By the end of this chapter, BookCatalog will be a SDK-style ASP.NET Core app running on .NET 10 with EF Core, and you'll have learned how Guided Mode keeps you in control of an automated migration.
 
 ## 🎯 Learning Objectives
 
@@ -12,11 +12,18 @@ By the end of this chapter, you'll have:
 - Witnessed EF6 → EF Core: `DbContext` rewired, DI-integrated, old initializer pattern replaced with `EnsureCreated()`
 - Verified BookCatalog builds clean (0 errors, 0 warnings) and runs on .NET 10
 
+## 🧭 Execution Outputs (What This Chapter Produces)
+
+This chapter is execution-focused and should leave you with:
+- Accepted/rejected change decisions at each gate
+- A task-by-task execution trail with validation evidence
+- A final modernized state that passes build and runtime checks
+
 ---
 
 ## ✅ Prerequisites
 
-**From Chapter 01:**
+**From Chapter 02:**
 - A `plan.md` and `tasks.md` file in `.github/upgrades/scenarios/dotnet-version-upgrade/`
 - An `upgrade-options.md` reflecting your strategy decisions (including the EF Core override)
 - BookCatalog still open in Visual Studio with the Modernize chat session active
@@ -25,11 +32,24 @@ By the end of this chapter, you'll have:
 - Familiarity with reading C# diffs
 - A SQL Server LocalDB instance available (the EF Core migration will recreate the database via `EnsureCreated()`)
 
-> 💡 **Tip:** If you skipped source control in Chapter 01 (the "demo" choice), now is a good moment to commit the assessment/plan files. Each task in this chapter modifies real code — having a snapshot to revert to is cheap insurance.
+> 💡 **Tip:** If you skipped source control in Chapter 02 (the "demo" choice), now is a good moment to commit the assessment/plan files. Each task in this chapter modifies real code — having a snapshot to revert to is cheap insurance.
 
 ---
 
 ## ✅ Approving the Plan
+
+### Decision Lens
+Treat plan approval as a quality gate, not a formality:
+- Confirm task boundaries are clear enough to isolate failures
+- Confirm each task has objective done criteria
+- Confirm rollback or pause points exist between major changes
+
+### Artifact Breakdown
+Before approving, quickly validate these artifacts:
+1. `upgrade-options.md`: strategy decisions and overrides
+2. `plan.md`: ordered execution narrative and rationale
+3. `tasks.md`: atomic task units with completion expectations
+4. Pending file diff: only plan-stage artifacts, no premature code edits
 
 The chat session is currently paused at the end of the Plan phase, with `plan.md` and `tasks.md` waiting for your sign-off. In the chat panel you'll see four files staged for review: `upgrade-options.md`, `scenario-instructions.md`, `plan.md` (new), and `tasks.md` (new).
 
@@ -168,7 +188,7 @@ When task 03 completes, the project file looks dramatically different. Open `Boo
 
 Notice what's *missing*: no more `Microsoft.AspNet.Mvc`, no more `Microsoft.AspNet.Razor`, no more `Microsoft.AspNet.WebPages`, no more `Microsoft.Web.Infrastructure`, no more `<Reference>` HintPaths to `System.Web.*`. All of that is now provided by the ASP.NET Core framework reference (`Microsoft.NET.Sdk.Web`).
 
-> 💡 **Why is EF Core already in here?** Task 03 only handles the ASP.NET Core migration — but in Chapter 01 we asked for "Continue. but change to use EF Core instead of keeping EF6", which moved the EF Core package install up into this task's scope. The actual EF6 → EF Core code conversion still happens in Task 04.
+> 💡 **Why is EF Core already in here?** Task 03 only handles the ASP.NET Core migration — but in Chapter 02 we asked for "Continue. but change to use EF Core instead of keeping EF6", which moved the EF Core package install up into this task's scope. The actual EF6 → EF Core code conversion still happens in Task 04.
 
 Send **"Continue!"** when the task is complete.
 
@@ -219,7 +239,7 @@ The page even shows your User-Agent string at the bottom — proof that the one 
 
 ## 📊 Before and After
 
-| Aspect | Before (Chapter 01) | After (Chapter 02) |
+| Aspect | Before (Chapter 02) | After (Chapter 03) |
 |---|---|---|
 | **Runtime** | .NET Framework 4.8 | .NET 10 |
 | **Project format** | Classic Wap (`.csproj`) | SDK-style (`Microsoft.NET.Sdk.Web`) |
@@ -236,7 +256,7 @@ The page even shows your User-Agent string at the bottom — proof that the one 
 
 You've executed all 5 tasks of the upgrade plan in Guided Mode, watched the extension recover from build failures on its own, and verified that BookCatalog now runs as an SDK-style ASP.NET Core app on .NET 10 with EF Core. In Chapter 03, you'll take this modernized app and deploy it to Azure.
 
-**[Continue to Chapter 03: Going to the Cloud →](../03-cloud/README.md)**
+**[Continue to Chapter 04: Going to the Cloud →](../03-cloud/README.md)**
 
 ---
 
@@ -254,7 +274,7 @@ You've executed all 5 tasks of the upgrade plan in Guided Mode, watched the exte
 
 ## 🛠️ Troubleshooting
 
-**Problem:** The chat session expired or VS was closed between Chapter 01 and Chapter 02.
+**Problem:** The chat session expired or VS was closed between Chapter 02 and Chapter 03.
 
 **Solution:** Reopen the solution and re-trigger the Modernize workflow (right-click solution → Modernize). The extension reads the existing `plan.md` and `tasks.md` and resumes from where it left off.
 

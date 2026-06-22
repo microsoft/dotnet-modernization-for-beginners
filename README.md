@@ -10,6 +10,8 @@
 
 You've inherited a legacy .NET app. It works, but it's stuck on .NET Framework 4.8. Security patches are getting scarce, modern libraries won't install, and your team can't use the latest language features. Modernizing feels overwhelming: breaking changes, deprecated APIs, package incompatibilities. This course shows you how to do it systematically using the GitHub Copilot app modernization extension — an AI-powered tool that assesses your code, plans the migration, and helps you execute it step by step.
 
+This course is artifact-first. Instead of only showing mechanics, it teaches you how to read assessment reports and upgrade plans as decision tools: what to fix first, where risk is concentrated, and how to stage execution with confidence.
+
 This course is designed for:
 - **.NET developers on legacy stacks** — If you're maintaining apps on .NET Framework 4.x, .NET Core 3.1, or .NET 5–7, you'll learn a repeatable upgrade process that works for real-world codebases.
 - **Teams planning a migration** — You'll understand the assessment-first approach: how to identify blockers, estimate effort, and prioritize fixes before touching code.
@@ -18,6 +20,11 @@ This course is designed for:
 ## 🎯 What You'll Learn
 
 You'll walk through the full modernization lifecycle: assess a legacy ASP.NET MVC 5 application (the BookCatalog app in this repo), interpret its compatibility report, resolve breaking changes, target .NET 10, and deploy the modernized app to Azure. By the end, you'll have a repeatable workflow you can apply to your own legacy codebases.
+
+You will also learn a practical interpretation model for modernization artifacts:
+- How to translate findings into priorities and sequencing
+- How to separate assessment outputs from planning outputs
+- How to use execution checkpoints to reduce migration risk
 
 ## ✅ Prerequisites
 
@@ -50,28 +57,30 @@ This course focuses on the third tool: the extension that specializes in .NET mi
 ```mermaid
 flowchart LR
     C00["Chapter 00\n🧭 Introduction\n──────────────\nUnderstand Assess→Plan→Act"]
-    C01["Chapter 01\n🔍 Assessment & Planning\n──────────────\nRun compatibility report\nGenerate upgrade plan"]
-    C02["Chapter 02\n⚡ Modernizing\n──────────────\nMigrate to .NET 10 + EF Core"]
-    C03["Chapter 03\n☁️ Going to the Cloud\n──────────────\nDeploy to Azure App Service"]
+    C01["Chapter 01\n🔍 Assessment\n──────────────\nInterpret findings\nEstimate impact"]
+    C02["Chapter 02\n🗺️ Planning\n──────────────\nDefine strategy\nGenerate upgrade plan"]
+    C03["Chapter 03\n⚡ Upgrade Execution\n──────────────\nMigrate to .NET 10 + EF Core"]
+    C04["Chapter 04\n☁️ Going to the Cloud\n──────────────\nDeploy to Azure App Service"]
 
-    C00 --> C01 --> C02 --> C03
+    C00 --> C01 --> C02 --> C03 --> C04
 
     classDef chapter fill:#1f6feb15,stroke:#1f6feb,color:#e6edf3,text-align:left
-    class C00,C01,C02,C03 chapter
+    class C00,C01,C02,C03,C04 chapter
 ```
 
 | Chapter | Title | What You'll Do |
 |:-------:|-------|----------------|
 | **00** | 🧭 [Introduction](./00-introduction/README.md) | Install the extension, understand the 3-phase model (Assess → Plan → Act), and run your first assessment on a standalone sample. |
-| **01** | 🔍 [Assessment & Planning](./01-assessment/README.md) | Open the BookCatalog legacy app, run the compatibility assessment, interpret blockers vs. warnings, and generate an upgrade plan. |
-| **02** | ⚡ [Modernizing](./02-modernizing/README.md) | Execute the extension's Act workflow to migrate BookCatalog to .NET 10, review AI-generated code suggestions, resolve compilation errors, and verify the upgrade. |
-| **03** | ☁️ [Going to the Cloud](./03-cloud/README.md) | Use the extension's cloud-migration flow to deploy the modernized BookCatalog app to Azure, verify the deployment, and clean up resources. |
+| **01** | 🔍 [Assessment](./01-assessment/README.md) | Open the BookCatalog legacy app, run the compatibility assessment, and interpret blockers vs. warnings using report artifacts. |
+| **02** | 🗺️ [Planning](./02-planning/README.md) | Turn assessment findings into strategy decisions, ordered tasks, and execution gates using plan artifacts. |
+| **03** | ⚡ [Upgrade Execution](./02-modernizing/README.md) | Execute the extension's Act workflow to migrate BookCatalog to .NET 10, review AI-generated code suggestions, resolve compilation errors, and verify the upgrade. |
+| **04** | ☁️ [Going to the Cloud](./03-cloud/README.md) | Use the extension's cloud-migration flow to deploy the modernized BookCatalog app to Azure, verify the deployment, and clean up resources. |
 
-> 🚧 **Work-in-progress note:** Chapter **00** establishes the tone, voice, and style for the entire course going forward. Chapters **01**, **02**, and **03** are currently **skeletons only** — placeholder structure that has not yet been written out, reviewed, or technically validated. Treat them as outlines, not finished content.
+> 📌 **Course status:** Chapters **00-04** are actively maintained and aligned to the same artifact-first workflow: assess, plan, execute, and validate.
 
 ## 📖 How This Course Works
 
-**Chapters are sequential.** Chapter 01 builds on the extension installed in Chapter 00. Chapter 02 upgrades the app assessed in Chapter 01. Chapter 03 deploys the modernized output from Chapter 02. Don't skip ahead.
+**Chapters are sequential.** Chapter 01 assesses the app, Chapter 02 turns findings into a plan, Chapter 03 executes the upgrade, and Chapter 04 deploys the modernized output to Azure. Don't skip ahead.
 
 Clone this repo and follow the steps in each chapter's README:
 
@@ -80,7 +89,7 @@ git clone https://github.com/microsoft/dotnet-modernization-for-beginners.git
 cd dotnet-modernization-for-beginners
 ```
 
-Each chapter includes step-by-step instructions, code samples, expected outputs, and troubleshooting tips. The `shared-legacy-app/` folder contains the BookCatalog app used in Chapters 01–03.
+Each chapter includes step-by-step instructions, code samples, expected outputs, and troubleshooting tips. The `shared-legacy-app/` folder contains the BookCatalog app used in Chapters 01-04.
 
 ## 🙋 Getting Help
 

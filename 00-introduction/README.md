@@ -206,7 +206,7 @@ Extension installed, first assessment done, report read. You know what a blocker
 
 Chapter 01 puts the same workflow against something bigger: BookCatalog, an ASP.NET MVC 5 app. You'll run a full assessment, generate an upgrade plan, and set up for the modernization in Chapter 02.
 
-**[Continue to Chapter 01: Assessment & Planning →](../01-assessment/README.md)**
+**[Continue to Chapter 01: Assessment →](../01-assessment/README.md)**
 
 ## 🛠️ Troubleshooting
 

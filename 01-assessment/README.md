@@ -1,15 +1,15 @@
-# Chapter 01: Assessment & Planning
-You've installed the extension and run a preview assessment on a simple sample. Now it's time to run the full Assess → Plan workflow on a real legacy app: BookCatalog, an ASP.NET MVC 5 application running on .NET Framework 4.8. 
+# Chapter 01: Assessment
+You've installed the extension and run a preview assessment on a simple sample. Now it's time to run the full assessment workflow on a real legacy app: BookCatalog, an ASP.NET MVC 5 application running on .NET Framework 4.8.
 
-In this chapter, you'll scan BookCatalog, interpret what blockers (breaks compilation) versus warnings (deprecated but works) versus informational (nice-to-have) mean for your timeline, and generate a prioritized upgrade plan you'll execute in Chapter 02.
+In this chapter, you'll scan BookCatalog and interpret what blockers (breaks compilation) versus warnings (deprecated but works) versus informational (nice-to-have) mean for your timeline.
 
 ## 🎯 Learning Objectives
 
 By the end of this chapter, you'll have:
-- Run a full Assess → Plan workflow on BookCatalog using the GitHub Copilot app modernization extension in Guided Mode
+- Run a full assessment workflow on BookCatalog using the GitHub Copilot app modernization extension in Guided Mode
 - Read a compatibility report: identified which findings are blockers (must fix), warnings (should fix), and informational (optional)
 - Understood the difference between binary incompatible (won't compile), source incompatible (needs code edits), and behavioral changes (runtime surprises)
-- Generated a prioritized upgrade plan ordered by impact
+- Produced an assessment-ready handoff for planning in Chapter 02
 
 ---
 
@@ -134,6 +134,20 @@ Finally, a full compatibility report opens in a new tab:
 ---
 
 ## 📊 Reading the Compatibility Report
+
+### Decision Lens
+Use the report to answer three decisions before touching code:
+- What can block compilation immediately?
+- What should be sequenced early because it has high downstream impact?
+- What can be deferred safely with explicit risk notes?
+
+### Artifact Breakdown
+Read the assessment artifact in this order:
+1. Executive metrics (size, issue concentration, impacted files)
+2. API compatibility categories (binary, source, behavioral)
+3. Technology clusters (where migration effort is concentrated)
+4. Most frequent issues (mechanical replacement candidates)
+5. Project details (project-kind and SDK conversion implications)
 
 The report that opens is a Markdown document titled **"Projects and dependencies analysis"**. It's structured top-down, from the 30,000-ft view to the per-project drill-down. Before diving into the sections, it helps to keep the three API categories in mind — they show up everywhere in the report:
 
@@ -302,123 +316,6 @@ The headline numbers (83 / 6 / 0) come straight from the report's API Compatibil
 
 Remember, **you can edit the assessment to add knowledge or context** that the extension might have missed. For example, if you know that some of those `System.Web.Mvc` hits are in files that are only used for legacy admin pages, you might downgrade their priority from "must fix" to "should fix" and mark them as informational. Or if you have a test project that also has blockers but it's not critical to get running on .NET 10, you could deprioritize it in the plan. 
 
----
-
-## 🗺️ Generating the Upgrade Plan
-
-Once you've read the report in your Guided Mode session, the extension asks: **"To proceed: approve or continue To adjust: Edit assessment.md or tell me what to change To switch mode: Say continue in automatic mode to stop pausing at stage boundaries** 
-
-At the end of the assessment, Guided Mode pauses and prompts you with three options:
-
-- **To proceed**: approve or say "continue"
-- **To adjust**: edit `assessment.md` directly or tell the extension what to change in chat
-- **To switch mode**: say "continue in automatic mode" to stop pausing at stage boundaries
-
-Before continuing, this is your chance to amend the assessment if you spot a false positive or want to reprioritize something. For example, you could say: "In the assessment, please mark the `System.Web.Mvc` hits in `AdminController.cs` as informational instead of blockers, since those pages are low-priority for the upgrade."
-
-![Screenshot: Chat input with the message "Continue" to proceed to the Plan phase](images/plan-continue.png)
-
-The extension then moves to the **Plan** phase. It takes the assessment findings and first surfaces a set of **upgrade strategy questions** — one decision at a time, each with a recommendation pre-selected and an explanation of why. The output is saved in `upgrade-options.md` in your project.
-
-**Walk through each question, then at the end you'll send a single message to confirm your choices (or override any default).** We'll come back to that message at the end of this section.
-
-Let's walk through each decision BookCatalog triggers.
-
-### Upgrade Strategy
-
-The first question is how to spread the migration across time. Because BookCatalog is a single project, the extension has only one option:
-
-| Value | Description |
-|-------|-------------|
-| **All-at-Once** (selected) | The single project is converted to SDK-style, retargeted to net10.0, and all code migrated in one coordinated pass. |
-
-For multi-project solutions you'd also see **Strangler Fig** (migrate one project at a time from the bottom up). With a single project there's no dependency chain to work through, so all-at-once is the only sensible choice.
-
-### Project Structure
-
-Next, how to physically restructure the project during the migration:
-
-| Value | Description |
-|-------|-------------|
-| **In-place rewrite** (selected) | Replaces the Framework web project with an ASP.NET Core project in one pass. No YARP proxy, no parallel projects. |
-| Side-by-side | Creates a new ASP.NET Core project alongside the old one with a YARP proxy; assets migrate incrementally while the old app stays live. Better for large web surfaces. |
-
-BookCatalog is small (1 controller, ~633 LOC), so in-place is the cleaner fit. **Side-by-side** is worth knowing about for larger apps: it keeps the old site live while the new one is built alongside it, routing traffic gradually via a reverse proxy.
-
-> 💡 **YARP** (Yet Another Reverse Proxy) is a Microsoft toolkit used in the side-by-side pattern to route incoming HTTP requests between the old ASP.NET Framework app and the new ASP.NET Core app. This lets you migrate and test incrementally while the old app stays live — at the cost of added infrastructure complexity.
-
-### APIs and Frameworks
-
-89 `System.Web.Mvc` API changes, all with known ASP.NET Core equivalents. The extension recommends resolving them inline:
-
-| Value | Description |
-|-------|-------------|
-| **Fix Inline** (selected) | Resolve every API change in the same task, including complex ones. No deferred stubs to clean up later. |
-| Defer Complex Changes | Stub complex changes to keep the project building, resolve in follow-up subtasks. Better for large bottom-up upgrades. |
-
-**Defer Complex Changes** is the escape hatch for large solutions where you want the project to compile at every step (useful in CI). For BookCatalog, all 89 issues are known patterns, fixing them inline gives you a clean codebase in one pass.
-
-
-EF6 6.4.4 is detected with a single `DbContext`. The extension flags an important choice here:
-
-| Value | Description |
-|-------|-------------|
-| **Keep EF6** (selected) | Upgrade EF6 to 6.5.2 and run it on net10.0. Migrate to EF Core later as a separate effort. Lowest risk. |
-| Migrate to EF Core | Migrate Entity Framework simultaneously with the .NET upgrade. Two sources of breaking changes at once. |
-
-As we are already doing an architectural migration (System.Web → ASP.NET Core), **we will migrate to Core**, as this is a simple app and we want to get all the benefits of EF Core right away. In a larger app with a complex data layer, it might be safer to *keep* EF6 for now, get the app running on .NET 10, then tackle EF Core as a separate project.
-
-`web.config` holds standard connection strings and `appSettings` — nothing unusual:
-
-| Value | Description |
-|-------|-------------|
-| **Auto-migrate to .NET Core Configuration** (selected) | Converts web.config to appsettings.json and migrates code to IConfiguration. |
-| Manual Migration with Mapping Document | Generates a detailed settings mapping first. More control for complex configs. |
-
-**Manual Migration** is for apps where `web.config` has custom config sections, encrypted values, or environment-specific transforms that need human review before touching. BookCatalog's config is standard, so auto-migration handles it.
-
-With all strategy decisions reviewed, you're ready to generate the final plan. The extension synthesizes all of this into a prioritized sequence of atomic tasks.
-
-Type: **"Continue. but change to use EF Core instead of keeping EF6"** and send. This overrides the default EF6 choice to include the EF Core migration in the same pass as the .NET upgrade — a reasonable call for a small app like BookCatalog.
-
----
-
-## Plan Output
-
-When you send that message, it then updates `upgrade-options.md` to reflect your change and confirms it understood. Then the extension acknowledges the override and first asks permission to load the `SKILL.md` from its plan-generation module. Click **Confirm**.
-
-![Screenshot: "Access file 'SKILL.md'?" prompt pointing at the plan-generation skill folder with Confirm/Deny buttons](images/plan-skill-access.png)
-
-It generates the two plan artefacts — `plan.md` (+60 lines) and `tasks.md` (+15 lines) — in your project's `.github/upgrades/scenarios/dotnet-version-upgrade/` folder:
-
-![Screenshot: "Now I'll generate the plan and tasks files." with plan.md (+60) and tasks.md (+15) file changes](images/plan-files-generated.png)
-
-Finally, the extension then synthesizes the assessment findings and all strategy decisions into an **Upgrade Plan Summary** in the chat — a quick table you can review before the full plan files are written:
-
-![Screenshot: Upgrade Plan Summary — Strategy: All-At-Once (single project), Target: .NET 10.0, 5 tasks — table with task # / Task / What it does columns, plus key decisions footer](images/plan-summary.png)
-
-
-The full content of `plan.md` is your Chapter 02 roadmap. It has 5 ordered tasks, each with a clear scope and a "Done when" condition so you know exactly when to move to the next:
-
-**Task 01 — Prerequisites**: Verify .NET 10 SDK is installed, check `global.json` for SDK pins, establish a baseline build. No code changes — just environment validation before anything else runs.
-
-**Task 02 — SDK-style conversion**: Rewrite `BookCatalog.Web.csproj` from classic Wap format to SDK-style and swap `packages.config` for `PackageReference`. The project stays on `net48` through this task so structural and API changes don't mix.
-
-**Task 03 — ASP.NET Core migration**: The main event. Retarget to `net10.0` and replace all 89 `System.Web.*` API hits:
-- `Global.asax.cs` + `RouteConfig` + `FilterConfig` → `Program.cs` startup pipeline
-- `BooksController` → `Microsoft.AspNetCore.Mvc.Controller`, `IActionResult`, `NotFound()`, `RedirectToAction`, `ValidateAntiForgeryToken`, `ModelState`
-- `HttpRequestBase.UserAgent` → ASP.NET Core equivalent
-- `web.config` → `appsettings.json` + `IConfiguration`
-- Razor views + `_Layout.cshtml` updated for ASP.NET Core conventions
-- `Newtonsoft.Json` bumped to 13.0.4; `Microsoft.AspNet.*` packages dropped
-
-**Task 04 — EF Core migration**: Migrate the data layer from EF6 to EF Core (`ApplicationDbContext` + `Book` entity). Replace the `EntityFramework` package with EF Core provider packages, convert the `DbContext` to the options-pattern constructor, register via DI in `Program.cs`, and handle EF6-specific patterns (database initializers → `EnsureCreated`, lazy-loading config).
-
-**Task 05 — Final validation**: Clean build (zero errors, zero warnings), app starts, any tests pass. Document deferred follow-ups (nullable reference types, EF Core migrations).
-
-> 💡 **Why 5 tasks instead of 1?** The plan deliberately isolates failure modes. If task 03 introduces a regression, you know it came from the ASP.NET Core migration — not the SDK conversion or the EF change. Each task is atomic and independently verifiable via its "Done when" condition.
-
-After reviewing the plan summary in the chat, open `plan.md` to see the full details. You can edit this file to adjust task scopes, add notes, or split/merge tasks as needed. The key is that the plan is a living document — generated by the extension but owned and maintained by you.
 
 ---
 
@@ -426,7 +323,7 @@ After reviewing the plan summary in the chat, open `plan.md` to see the full det
 
 You've run Assess → Plan on a real app, read the compatibility report, and understand what blockers vs. warnings vs. informational mean. You know which changes will block the upgrade (blockers) and which are best practices (warnings and info). In Chapter 02, you'll execute the Act phase: let the extension propose code changes, review them, and modernize BookCatalog to run on .NET 10.
 
-**[Continue to Chapter 02: Modernizing →](../02-modernizing/README.md)**
+**[Continue to Chapter 02: Planning →](../02-planning/README.md)**
 
 ---
 
@@ -438,7 +335,7 @@ You've run Assess → Plan on a real app, read the compatibility report, and und
 4. **Behavioral Change = test at runtime.** None this run — the upgrade should behave the same once it compiles.
 5. **Packages split into three buckets:** keep as-is (✅), bump the version (🔄), or remove because the framework now provides it (no suggested version). For BookCatalog: 4 keep, 2 bump, 4 of those keepers are actually getting absorbed into the ASP.NET Core framework reference.
 6. **Difficulty rating ≠ effort estimate.** 🔴 High here means *architectural conversion required*, not *hundreds of hours*. The 89 LOC and one-technology concentration make this a small migration with a scary-looking label.
-7. **The Plan phase asks strategy questions before writing code.** Each question has a recommended default and an alternative — understanding why the default was chosen (EF6 vs EF Core, in-place vs side-by-side, inline vs defer) is as important as the final plan itself.
+7. **Assessment quality determines planning quality.** Clear categorization of blockers, warnings, and behavior-risk items is what makes the planning chapter actionable rather than speculative.
 
 ---
 

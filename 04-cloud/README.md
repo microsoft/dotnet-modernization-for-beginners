@@ -1,6 +1,6 @@
-# Chapter 03: Going to the Cloud
+# Chapter 04: Going to the Cloud
 
-You've got a working .NET 10 app from Chapter 02. Now you'll ship it to Azure — but not with a fire-and-forget `azd up`. Instead, you'll watch the Modernization Agent **plan** the deployment, **provision** the right Azure resources (App Service, SQL Database, Key Vault, Managed Identity), **recover** from real cloud failures (quota limits, missing identity bindings, region mismatches), and finally **publish** the app — all from inside the Copilot chat.
+You've got a working .NET 10 app from Chapter 03. Now you'll ship it to Azure — but not with a fire-and-forget `azd up`. Instead, you'll watch the Modernization Agent **plan** the deployment, **provision** the right Azure resources (App Service, SQL Database, Key Vault, Managed Identity), **recover** from real cloud failures (quota limits, missing identity bindings, region mismatches), and finally **publish** the app — all from inside the Copilot chat.
 
 By the end, BookCatalog is running at a public `*.azurewebsites.net` URL with **zero plaintext secrets** in the app — the SQL connection string lives in Key Vault and the app authenticates with a user-assigned Managed Identity.
 
@@ -18,8 +18,8 @@ By the end of this chapter, you'll have:
 
 ## ✅ Prerequisites
 
-**From Chapter 02:**
-- BookCatalog running locally on .NET 10 with EF Core (Chapter 02 final state)
+**From Chapter 03:**
+- BookCatalog running locally on .NET 10 with EF Core (Chapter 03 final state)
 - The solution open in Visual Studio with the Modernize chat session active
 
 **For This Chapter:**
@@ -34,7 +34,7 @@ By the end of this chapter, you'll have:
 
 ## 🔐 Phase 0 — Cloud-Readiness Prep (Secrets to Key Vault)
 
-Before deploying *anywhere*, the modernized app needs to stop carrying plaintext credentials. In Chapter 02 the `BookCatalogContext` connection string was migrated to `appsettings.json` — fine for LocalDB, **not** fine for cloud.
+Before deploying *anywhere*, the modernized app needs to stop carrying plaintext credentials. In Chapter 03 the `BookCatalogContext` connection string was migrated to `appsettings.json` — fine for LocalDB, **not** fine for cloud.
 
 In a separate session before the deployment, you'd run the extension's **Plaintext Credential** migration (Technology X = *Plaintext Credential*, Technology Y = *Secure Credentials*, Knowledge Base = `azure_key_vault_secret_knowledge_base`). It produces:
 
@@ -232,7 +232,7 @@ curl https://azwebqf7btmy5hetca.azurewebsites.net -I
 # HTTP/1.1 200 OK
 ```
 
-Open the URL in a browser. The same BookCatalog UI from Chapter 02 loads — but every request now goes through App Service → Managed Identity → Key Vault → SQL Database, with **no passwords anywhere in the request chain**.
+Open the URL in a browser. The same BookCatalog UI from Chapter 03 loads — but every request now goes through App Service → Managed Identity → Key Vault → SQL Database, with **no passwords anywhere in the request chain**.
 
 ![Screenshot: BookCatalog running live on Azure App Service — Books page loads with seeded data](images/21-deployed-app.png)
 
@@ -242,7 +242,7 @@ Open the URL in a browser. The same BookCatalog UI from Chapter 02 loads — but
 
 ## 📊 Before and After
 
-| Aspect | Local (Chapter 02) | Cloud (Chapter 03) |
+| Aspect | Local (Chapter 03) | Cloud (Chapter 04) |
 |---|---|---|
 | Hosting | IIS Express / Kestrel on `localhost:5001` | Azure App Service `*.azurewebsites.net` |
 | Database | LocalDB `.mdf` file | Azure SQL Database (Standard S0) |
@@ -279,7 +279,7 @@ az group list --output table | Select-String bookcatalog
 
 ## ✅ You Did It!
 
-You took a .NET Framework 4.8 ASP.NET MVC 5 app, modernized it to .NET 10 + EF Core (Chapters 01 + 02), and shipped it to Azure with a Managed Identity, Key Vault, and zero plaintext secrets (this chapter). The Modernization Agent drove the cloud deploy from a conversation — and recovered from three real Azure failures along the way without needing you to intervene.
+You took a .NET Framework 4.8 ASP.NET MVC 5 app, modernized it to .NET 10 + EF Core (Chapters 01-03), and shipped it to Azure with a Managed Identity, Key Vault, and zero plaintext secrets (this chapter). The Modernization Agent drove the cloud deploy from a conversation — and recovered from three real Azure failures along the way without needing you to intervene.
 
 You now have a repeatable pattern: **assess → plan → execute → cloud-prep → deploy**, all from inside the Copilot chat, all auditable, all idempotent.
 
