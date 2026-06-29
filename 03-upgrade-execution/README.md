@@ -254,9 +254,9 @@ The page even shows your User-Agent string at the bottom — proof that the one 
 
 ## ✅ You're Ready!
 
-You've executed all 5 tasks of the upgrade plan in Guided Mode, watched the extension recover from build failures on its own, and verified that BookCatalog now runs as an SDK-style ASP.NET Core app on .NET 10 with EF Core. In Chapter 03, you'll take this modernized app and deploy it to Azure.
+You've executed all 5 tasks of the upgrade plan in Guided Mode, watched the extension recover from build failures on its own, and verified that BookCatalog now runs as an SDK-style ASP.NET Core app on .NET 10 with EF Core. In Chapter 04, you'll take this modernized app and deploy it to Azure.
 
-**[Continue to Chapter 04: Going to the Cloud →](../03-cloud/README.md)**
+**[Continue to Chapter 04: Going to the Cloud →](../04-cloud/README.md)**
 
 ---
 

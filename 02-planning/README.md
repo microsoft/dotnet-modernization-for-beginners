@@ -180,7 +180,7 @@ After reviewing the plan summary in the chat, open `plan.md` to see the full det
 
 You now have a planning artifact set ready for execution. Phase 01 gave you visibility into what's broken. Phase 02 gave you a strategy and a phased roadmap. Phase 03 is where you execute those tasks and build the new application.
 
-**[Continue to Chapter 03: Upgrade Execution →](../02-modernizing/README.md)**
+**[Continue to Chapter 03: Upgrade Execution →](../03-upgrade-execution/README.md)**
 
 ---
 

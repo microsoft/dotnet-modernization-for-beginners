@@ -31,7 +31,7 @@ You will also learn a practical interpretation model for modernization artifacts
 | Requirement | Version / Notes |
 |-------------|-----------------|
 | **Windows** | Windows 11 (22H2 or later) |
-| **Visual Studio** | 2022 (17.12 or later) or 2026 |
+| **Visual Studio** | 2026 |
 | **GitHub Copilot subscription** | Active subscription required |
 | **.NET Framework 4.8 SDK** | Required to run the legacy sample app |
 | **.NET 10 SDK** | Preview or latest release |
@@ -73,8 +73,8 @@ flowchart LR
 | **00** | 🧭 [Introduction](./00-introduction/README.md) | Install the extension, understand the 3-phase model (Assess → Plan → Act), and run your first assessment on a standalone sample. |
 | **01** | 🔍 [Assessment](./01-assessment/README.md) | Open the BookCatalog legacy app, run the compatibility assessment, and interpret blockers vs. warnings using report artifacts. |
 | **02** | 🗺️ [Planning](./02-planning/README.md) | Turn assessment findings into strategy decisions, ordered tasks, and execution gates using plan artifacts. |
-| **03** | ⚡ [Upgrade Execution](./02-modernizing/README.md) | Execute the extension's Act workflow to migrate BookCatalog to .NET 10, review AI-generated code suggestions, resolve compilation errors, and verify the upgrade. |
-| **04** | ☁️ [Going to the Cloud](./03-cloud/README.md) | Use the extension's cloud-migration flow to deploy the modernized BookCatalog app to Azure, verify the deployment, and clean up resources. |
+| **03** | ⚡ [Upgrade Execution](./03-upgrade-execution/README.md) | Execute the extension's Act workflow to migrate BookCatalog to .NET 10, review AI-generated code suggestions, resolve compilation errors, and verify the upgrade. |
+| **04** | ☁️ [Going to the Cloud](./04-cloud/README.md) | Use the extension's cloud-migration flow to deploy the modernized BookCatalog app to Azure, verify the deployment, and clean up resources. |
 
 > 📌 **Course status:** Chapters **00-04** are actively maintained and aligned to the same artifact-first workflow: assess, plan, execute, and validate.
 
