@@ -343,4 +343,4 @@ You should see your UAMI's resource ID in `userAssignedIdentities`.
 
 ---
 
-**[Back to the top](#chapter-03-going-to-the-cloud)** · **[Course README](../README.md)**
+**[Back to the top](#chapter-04-going-to-the-cloud)** · **[Course README](../README.md)**
