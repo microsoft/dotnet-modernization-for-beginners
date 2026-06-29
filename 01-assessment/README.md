@@ -16,11 +16,11 @@ By the end of this chapter, you'll have:
 ## ✅ Prerequisites
 
 **From Chapter 00:**
-- GitHub Copilot app modernization extension installed in Visual Studio 2022 or 2026
+- GitHub Copilot app modernization extension installed in Visual Studio 2026
 - Understanding of the Assess → Plan → Act loop
 
 **For This Chapter:**
-- Visual Studio 2022 (17.12 or later) or 2026
+- Visual Studio 2026
 - .NET Framework 4.8 SDK
 - .NET 10 SDK
 
@@ -33,7 +33,7 @@ BookCatalog is the sample you'll upgrade through Chapters 01–02. It's a small 
 Open the solution:
 
 1. Navigate to `shared-legacy-app/` in this repo.
-2. Open `BookCatalog.sln` in Visual Studio 2022 or 2026.
+2. Open `BookCatalog.sln` in Visual Studio 2026.
 
 **Expected output:**
 
