@@ -1,10 +1,10 @@
 # Chapter 00: Introduction to Modernization
-In this chapter you'll install the GitHub Copilot app modernization extension and run your first assessment on a small sample app. Along the way you'll see why teams bother upgrading off .NET Framework, and you'll meet the Assess → Plan → Act loop the extension uses.
+In this chapter you'll get started with the GitHub Copilot modernization agent and run your first assessment on a small sample app. Along the way you'll see why teams bother upgrading off .NET Framework, and you'll meet the Assess → Plan → Act loop the extension uses.
 
 ## 🎯 Learning Objectives
 
-By the end of this chapter, you'll have:
-- Installed the GitHub Copilot app modernization extension in Visual Studio 2026
+By the end of this chapter, you'll:
+- Get started with the GitHub Copilot modernization agent in Visual Studio 2026
 - Run your first compatibility assessment on a legacy .NET Framework app
 - Understood the 3-phase model (Assess → Plan → Act) and how it structures every migration
 - Interpreted an assessment report: binary incompatible vs. source incompatible vs. behavioral changes
@@ -51,15 +51,15 @@ This course assumes you've picked **Modernize**. If you're not sure, run the ass
 
 ---
 
-## 🔧 What the Extension Does
+## 🔧 What the Agent Does
 
-The GitHub Copilot app modernization extension walks your project through three phases: **Assess**, **Plan**, and **Act**.
+The GitHub Copilot modernization agent walks your project through three phases: **Assess**, **Plan**, and **Execute**.
 
 | Phase | What It Does | Output |
 |-------|--------------|--------|
 | **Assess** | Scans the codebase for compatibility issues: deprecated APIs, breaking changes, NuGet packages that don't have a modern equivalent. | A report that buckets findings as blockers (won't compile), warnings (deprecated but still works), or informational (worth doing eventually). |
 | **Plan** | Turns the assessment into an ordered to-do list. Blockers first, then warnings, then the rest. | A migration plan with rough effort estimates. |
-| **Act** | Actually makes the changes: edits project files, swaps deprecated APIs, proposes refactors. The AI generates suggestions; you review each one. | Modified files with diffs you accept or reject. |
+| **Execute** | Actually makes the changes: edits project files, swaps deprecated APIs, proposes refactors. The AI generates suggestions; you review each one. | Modified files with diffs you accept or reject. |
 
 You're still the one driving. The extension proposes, you decide.
 
@@ -99,27 +99,13 @@ flowchart TD
 
 ## 📦 Installing the Extension
 
-Open Visual Studio 2026 and install the GitHub Copilot app modernization extension:
+Open Visual Studio 2026 and make sure you have the .NET desktop development workload with these optional components enabled: GitHub Copilot, GitHub Copilot app modernization.
 
-1. Go to **Extensions** → **Manage Extensions**.
-2. Search for "GitHub Copilot Modernization".
-3. Click **Download**.
-4. Restart Visual Studio to complete the installation.
+Visual Studio includes GitHub Copilot modernization through the GitHub Copilot app modernization optional component, so you don't need to install it separately. Enable the GitHub Copilot and GitHub Copilot app modernization optional components in the .NET desktop development workload through the Visual Studio Installer.
 
-**Expected output:**
-
-After restarting, you'll see a new **GitHub Copilot** menu in the Visual Studio menu bar:
-
-![Screenshot: Extensions → Manage Extensions → Search results show GitHub Copilot Modernization](images/install-extension.png)
-
-Verify the installation:
-
-1. Open **GitHub Copilot** → **Settings**.
-2. Confirm your GitHub account is signed in and your Copilot subscription is active.
-
-![Screenshot: GitHub Copilot → Settings → Account status shows "Signed in as [username]"](images/verify-copilot.png)
-
-> 💡 **Tip:** If the extension doesn't appear, check that you're running Visual Studio 2026.
+**Verify the installation**
+Open a solution in Visual Studio.
+Right-click a project in Solution Explorer and select **Modernize**, or open GitHub Copilot Chat and type **@Modernize**.
 
 ---
 
@@ -202,21 +188,13 @@ None of this is fixed yet. The Assess phase only tells you what's there. Plan an
 
 ## ✅ You're Ready!
 
-Extension installed, first assessment done, report read. You know what a blocker is versus a warning, and you've understood the Assess → Plan → Act flow.
+First assessment done and report read. You know what a blocker is versus a warning, and you've understood the Assess → Plan → Act flow.
 
 Chapter 01 puts the same workflow against something bigger: BookCatalog, an ASP.NET MVC 5 app. You'll run a full assessment, generate an upgrade plan, and set up for the modernization in Chapter 02.
 
 **[Continue to Chapter 01: Assessment →](../01-assessment/README.md)**
 
 ## 🛠️ Troubleshooting
-
-**Problem:** The extension doesn't appear in the **Extensions** menu after installation.
-
-**Solution:** Make sure you're running Visual Studio 2026 with GitHub Copilot installed and signed in. The official install guide lists the exact prerequisites and the supported invocation paths (VS, VS Code, Copilot CLI, GitHub.com).
-
-📘 **Learn more:** [Install GitHub Copilot modernization](https://learn.microsoft.com/dotnet/core/porting/github-copilot-app-modernization-install)
-
----
 
 **Problem:** The assessment starts but fails with "Unable to analyze project."
 
@@ -230,7 +208,7 @@ Chapter 01 puts the same workflow against something bigger: BookCatalog, an ASP.
 
 **Solution:** Sign in to GitHub via **Tools** → **Options** → **GitHub** → **Account**. Your account must have an active Copilot subscription (individual, business, or enterprise).
 
-📘 **Learn more:** [Set up GitHub Copilot in Visual Studio](https://learn.microsoft.com/visualstudio/ide/visual-studio-github-copilot-install-and-states)
+📘 **Learn more:** [Set up GitHub Copilot in Visual Studio](https://learn.microsoft.com/en-us/dotnet/core/porting/github-copilot-app-modernization/install?pivots=visualstudio)
 
 ---
 
@@ -238,7 +216,7 @@ Chapter 01 puts the same workflow against something bigger: BookCatalog, an ASP.
 
 A few useful follow-ups:
 
-- 📘 [GitHub Copilot app modernization for .NET — overview](https://learn.microsoft.com/dotnet/core/porting/github-copilot-app-modernization-overview) — the extension and the Assess → Plan → Act flow.
+- 📘 [GitHub Copilot modernization for .NET — overview](https://learn.microsoft.com/dotnet/core/porting/github-copilot-app-modernization/overview) — the extension and the Assess → Plan → Act flow.
 - 📘 [Port from .NET Framework to .NET](https://learn.microsoft.com/dotnet/core/porting/) — the canonical porting guide.
 - 📘 [.NET and .NET Framework support policy](https://dotnet.microsoft.com/platform/support/policy/dotnet-framework) — official end-of-support dates.
 - 📘 [`BinaryFormatter` security guide](https://learn.microsoft.com/dotnet/standard/serialization/binaryformatter-security-guide) — why it's deprecated and what to use instead.
