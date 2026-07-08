@@ -1,12 +1,12 @@
 # Chapter 01: Assessment
-You've installed the extension and run a preview assessment on a simple sample. Now it's time to run the full assessment workflow on a real legacy app: BookCatalog, an ASP.NET MVC 5 application running on .NET Framework 4.8.
+You ran a preview assessment on a simple sample. Now it's time to run the full assessment workflow on a real legacy app: BookCatalog, an ASP.NET MVC 5 application running on .NET Framework 4.8.
 
 In this chapter, you'll scan BookCatalog and interpret what blockers (breaks compilation) versus warnings (deprecated but works) versus informational (nice-to-have) mean for your timeline.
 
 ## 🎯 Learning Objectives
 
 By the end of this chapter, you'll have:
-- Run a full assessment workflow on BookCatalog using the GitHub Copilot app modernization extension in Guided Mode
+- Run a full assessment workflow on BookCatalog using the GitHub Copilot modernization agent in Guided Mode
 - Read a compatibility report: identified which findings are blockers (must fix), warnings (should fix), and informational (optional)
 - Understood the difference between binary incompatible (won't compile), source incompatible (needs code edits), and behavioral changes (runtime surprises)
 - Produced an assessment-ready handoff for planning in Chapter 02
@@ -16,7 +16,7 @@ By the end of this chapter, you'll have:
 ## ✅ Prerequisites
 
 **From Chapter 00:**
-- GitHub Copilot app modernization extension installed in Visual Studio 2026
+- Getting started with the GitHub Copilot modernization agent in Visual Studio 2026
 - Understanding of the Assess → Plan → Act loop
 
 **For This Chapter:**
@@ -64,7 +64,7 @@ This app is a realistic sample of a legacy .NET Framework app. It has common blo
 
 ## 🔍 Running the Assessment
 
-Trigger the extension using the same path as Chapter 00, but this time you'll go through both Assess and Plan phases (not just Assess):
+Trigger the agent using the same path as Chapter 00, but this time you'll go through both Assess and Plan phases (not just Assess):
 
 
 1. Right-click the **solution** in Solution Explorer.
@@ -85,7 +85,7 @@ We'll select to "Upgrade to a newer version of .NET". Our goal is the same as Ch
 
 ![Screenshot: Click "Upgrade to a newer version of .NET" option](images/upgrade-dotnet-option.png)
 
-The extension confirms it's starting the workflow and runs a quick state check on your solution:
+The agent confirms it's starting the workflow and runs a quick state check on your solution:
 
 ![Screenshot: Copilot replies "I'll help you upgrade your .NET project to a newer version. Let me first check the current state and load the necessary scenario instructions." with "Getting state" and "Getting solution path" checks](images/modernize-getting-state.png)
 
@@ -93,7 +93,7 @@ It then asks for permission to run a `cd` and inspect the git status of the work
 
 ![Screenshot: Terminal prompt "Do you want to run 'cd' in the terminal?" with cd, git rev-parse, git branch, and git status commands](images/modernize-terminal-confirm.png)
 
-Once initialized, the extension shows the **Upgrade Settings** with the available target frameworks. The default is .NET 10.0 (LTS):
+Once initialized, the agent shows the **Upgrade Settings** with the available target frameworks. The default is .NET 10.0 (LTS):
 
 ![Screenshot: Upgrade Settings panel listing Target Framework options — .NET 8.0 (LTS), .NET 9.0 (STS), .NET 10.0 (LTS) default, .NET 11.0 (Preview) — with project BookCatalog.Web currently on .NET Framework 4.8](images/upgrade-settings-target.png)
 
@@ -101,23 +101,23 @@ Right below, it lists the available **Flow Mode** options — *Automatic* (defau
 
 ![Screenshot: Flow Mode panel showing Automatic (default) and Guided options](images/upgrade-settings-flow.png)
 
-The extension asks you for the target framework. Type: **".NET 10, Guided Mode"**. 
+The agent asks you for the target framework. Type: **".NET 10, Guided Mode"**. 
 
-About source control, you can choose to let the extension create a new branch for the upgrade or skip source control if you prefer to manage it yourself. For this demo, we'll select **Skip source control** to keep things simple, but in a real project, you'd likely want to use source control to track changes and collaborate with your team. Plus, the ability to roll back any undesirable changes can be key when running automated code modifications.
+About source control, you can choose to let the agent create a new branch for the upgrade or skip source control if you prefer to manage it yourself. For this demo, we'll select **Skip source control** to keep things simple, but in a real project, you'd likely want to use source control to track changes and collaborate with your team. Plus, the ability to roll back any undesirable changes can be key when running automated code modifications.
 
 ![Screenshot: Chat input with the message ".NET 10, Guided for reviews in my side"](images/upgrade-settings-input.png)
 
-The extension echoes back the choices you made so you can verify them before it kicks off the scan:
+The agent echoes back the choices you made so you can verify them before it kicks off the scan:
 
 ![Screenshot: "Settings confirmed:" panel listing Target Framework .NET 10.0 (LTS), Flow Mode Guided, Source Control Skipped (demo)](images/settings-confirmed.png)
 
-It then enters the **Assessment** stage and asks for permission to read the `assessment.md` instructions from the extension's skill folder. Click **Confirm** (or **Always allow** for this session).
+It then enters the **Assessment** stage and asks for permission to read the `assessment.md` instructions from the agent's skill folder. Click **Confirm** (or **Always allow** for this session).
 
 ![Screenshot: File access prompt "Access file 'assessment.md'?" pointing at the dotnet-version-upgrade skill folder with Confirm/Deny buttons](images/assessment-file-access.png)
 
-The extension scans the code, dependencies, and project configuration. This takes 1–2 minutes! During this time, it looks for known blockers (APIs that won't compile on the target framework), warnings (APIs that are deprecated but still compile), and informational findings (APIs that work but have better alternatives). It also gathers context on the project structure, dependencies, and code patterns to generate a comprehensive compatibility report.
+The agent scans the code, dependencies, and project configuration. This takes 1–2 minutes! During this time, it looks for known blockers (APIs that won't compile on the target framework), warnings (APIs that are deprecated but still compile), and informational findings (APIs that work but have better alternatives). It also gathers context on the project structure, dependencies, and code patterns to generate a comprehensive compatibility report.
 
-When done, the extension posts an **Assessment Complete** summary in the chat with the project, current and target frameworks, and an overall difficulty rating:
+When done, the agent posts an **Assessment Complete** summary in the chat with the project, current and target frameworks, and an overall difficulty rating:
 
 ![Screenshot: "Assessment Complete" summary for BookCatalog.Web — Current .NET Framework 4.8 (classic, non-SDK-style, ASP.NET MVC 5 Web App), Target .NET 10.0, Difficulty High](images/assessment-complete.png)
 
@@ -314,14 +314,14 @@ Boiling the whole report down to one decision-making table:
 
 The headline numbers (83 / 6 / 0) come straight from the report's API Compatibility table. Together they tell you this is a **one-developer, few-day migration** dominated by find-and-replace work on MVC types, plus one real architectural change (Global.asax → Program.cs).
 
-Remember, **you can edit the assessment to add knowledge or context** that the extension might have missed. For example, if you know that some of those `System.Web.Mvc` hits are in files that are only used for legacy admin pages, you might downgrade their priority from "must fix" to "should fix" and mark them as informational. Or if you have a test project that also has blockers but it's not critical to get running on .NET 10, you could deprioritize it in the plan. 
+Remember, **you can edit the assessment to add knowledge or context** that the agent might have missed. For example, if you know that some of those `System.Web.Mvc` hits are in files that are only used for legacy admin pages, you might downgrade their priority from "must fix" to "should fix" and mark them as informational. Or if you have a test project that also has blockers but it's not critical to get running on .NET 10, you could deprioritize it in the plan. 
 
 
 ---
 
 ## ✅ You're Ready!
 
-You've run Assess → Plan on a real app, read the compatibility report, and understand what blockers vs. warnings vs. informational mean. You know which changes will block the upgrade (blockers) and which are best practices (warnings and info). In Chapter 02, you'll execute the Act phase: let the extension propose code changes, review them, and modernize BookCatalog to run on .NET 10.
+You've run Assess → Plan on a real app, read the compatibility report, and understand what blockers vs. warnings vs. informational mean. You know which changes will block the upgrade (blockers) and which are best practices (warnings and info). In Chapter 02, you'll execute the Act phase: let the agent propose code changes, review them, and modernize BookCatalog to run on .NET 10.
 
 **[Continue to Chapter 02: Planning →](../02-planning/README.md)**
 
@@ -349,19 +349,19 @@ You've run Assess → Plan on a real app, read the compatibility report, and und
 
 **Problem:** The report shows blockers, but I expected fewer (or more).
 
-**Solution:** The extension scans for all uses of unsupported APIs. Small differences are normal. If you spot something that looks wrong, note the line number and check the code file directly—there may be a false positive worth reporting.
+**Solution:** The agent scans for all uses of unsupported APIs. Small differences are normal. If you spot something that looks wrong, note the line number and check the code file directly—there may be a false positive worth reporting.
 
 ---
 
 **Problem:** I'm in Flow Mode instead of Guided Mode.
 
-**Solution:** When the extension asks for target framework, type exactly: **".NET 10, Guided Mode and No Source Control"**. This ensures you pause after Assess to read the report before Plan starts. Flow Mode automates everything; we want you to read and understand first.
+**Solution:** When the agent asks for target framework, type exactly: **".NET 10, Guided Mode and No Source Control"**. This ensures you pause after Assess to read the report before Plan starts. Flow Mode automates everything; we want you to read and understand first.
 
 ---
 
 ## 📚 Learn More
 
-- 📘 [GitHub Copilot app modernization for .NET](https://learn.microsoft.com/dotnet/core/porting/github-copilot-app-modernization-overview) — how Assess → Plan → Act works
+- 📘 [GitHub Copilot modernization for .NET](https://learn.microsoft.com/dotnet/core/porting/github-copilot-app-modernization-overview) — how Assess → Plan → Act works
 - 📘 [Port from .NET Framework to .NET](https://learn.microsoft.com/dotnet/core/porting/) — the full migration guide
 - 📘 [Migrate from System.Web to ASP.NET Core](https://learn.microsoft.com/dotnet/core/porting/net-framework-to-core-migration) — technical deep dive on the biggest blocker
 - 📘 [Migrate to Entity Framework Core](https://learn.microsoft.com/ef/core/what-is-new/ef6-efcore-porting/) — how to move from EF6 to EF Core
