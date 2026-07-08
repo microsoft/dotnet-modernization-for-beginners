@@ -1,13 +1,13 @@
 # Chapter 03: Upgrade Execution
 
-You've assessed BookCatalog and finalized the upgrade plan in Chapter 02. Now comes the **Act** phase: the extension will execute that plan one task at a time, pausing after each so you can verify and approve before moving on. By the end of this chapter, BookCatalog will be a SDK-style ASP.NET Core app running on .NET 10 with EF Core, and you'll have learned how Guided Mode keeps you in control of an automated migration.
+You've assessed BookCatalog and finalized the upgrade plan in Chapter 02. Now comes the **Act** phase: the agent will execute that plan one task at a time, pausing after each so you can verify and approve before moving on. By the end of this chapter, BookCatalog will be a SDK-style ASP.NET Core app running on .NET 10 with EF Core, and you'll have learned how Guided Mode keeps you in control of an automated migration.
 
 ## 🎯 Learning Objectives
 
 By the end of this chapter, you'll have:
 - Approved the upgrade plan and entered the **Execution** stage
 - Walked through all 5 tasks in Guided Mode — pausing to review after each before continuing
-- Watched the extension auto-recover from two build failures mid-task without manual intervention
+- Watched the agent auto-recover from two build failures mid-task without manual intervention
 - Seen 89 `System.Web.*` API incompatibilities resolved automatically (all replaced with their ASP.NET Core equivalents)
 - Witnessed EF6 → EF Core: `DbContext` rewired, DI-integrated, old initializer pattern replaced with `EnsureCreated()`
 - Verified BookCatalog builds clean (0 errors, 0 warnings) and runs on .NET 10
@@ -57,11 +57,11 @@ Type **"Approve the upgrade plan"** and send.
 
 ![Screenshot: Total changes (4) listing upgrade-options.md, scenario-instructions.md, plan.md (new) and tasks.md (new), with chat input "Approve the upgrade plan"](images/01-approve-plan.png)
 
-The extension confirms approval and transitions to the **Execution** stage. It reads its own `execution.md` instructions and asks permission to load the `SKILL.md` from the task-execution skill folder. Click **Confirm**.
+The agent confirms approval and transitions to the **Execution** stage. It reads its own `execution.md` instructions and asks permission to load the `SKILL.md` from the task-execution skill folder. Click **Confirm**.
 
 ![Screenshot: "Plan approved. Entering the Execution stage." with execution.md read and SKILL.md access prompt for the task-execution skill](images/02-plan-approved-skill-access.png)
 
-From here, the extension works through the plan one task at a time, **pausing after each task** so you can review the changes and decide whether to continue. This is what Guided Mode buys you — at any point you can stop, edit the code yourself, or steer the extension in a different direction.
+From here, the agent works through the plan one task at a time, **pausing after each task** so you can review the changes and decide whether to continue. This is what Guided Mode buys you — at any point you can stop, edit the code yourself, or steer the agent in a different direction.
 
 Here's the rhythm you'll be in for the rest of the chapter — each task box shows what it produces and its progress percentage; diamonds are your decision points:
 
@@ -103,19 +103,19 @@ flowchart TD
     class START,DONE cap
 ```
 
-> 💡 **Why so many pauses?** Guided Mode trades speed for control. Each "Continue!" is a chance to inspect what just happened, edit code yourself, or course-correct. If you'd rather watch the whole thing run end-to-end, say *"continue in automatic mode"* at any pause — shown as the dashed lines above — and the extension runs the remaining tasks back-to-back.
+> 💡 **Why so many pauses?** Guided Mode trades speed for control. Each "Continue!" is a chance to inspect what just happened, edit code yourself, or course-correct. If you'd rather watch the whole thing run end-to-end, say *"continue in automatic mode"* at any pause — shown as the dashed lines above — and the agent runs the remaining tasks back-to-back.
 
 ---
 
 ## 🟢 Task 01 — Prerequisites
 
-The first task is verification only — no code changes, just environment checks. The extension validates the .NET 10 SDK is installed and looks for a `global.json` that might pin a different SDK version.
+The first task is verification only — no code changes, just environment checks. The agent validates the .NET 10 SDK is installed and looks for a `global.json` that might pin a different SDK version.
 
 ![Screenshot: "This is a simple verification task." with 4 sub-tasks done — Validating net10.0 SDK installation, Validating net10.0 SDK in global.json, "Couldn't run file_search" warning, Read 0 files for 'global.json'](images/03-task01-validation.png)
 
-> 💡 **The "Couldn't run file_search" warning is expected** when there's no `global.json` to find — the extension follows up by directly reading the file and confirming it doesn't exist. A missing `global.json` is the *good* outcome here: no SDK pin conflicts.
+> 💡 **The "Couldn't run file_search" warning is expected** when there's no `global.json` to find — the agent follows up by directly reading the file and confirming it doesn't exist. A missing `global.json` is the *good* outcome here: no SDK pin conflicts.
 
-The extension writes its findings to `progress-details.md` and completes the task:
+The agent writes its findings to `progress-details.md` and completes the task:
 
 ![Screenshot: "No global.json exists (clean — no SDK pin conflicts). SDK is confirmed compatible." with progress-details.md (+17) update and "Completing task 01-prerequisites"](images/04-task01-completing.png)
 
@@ -133,7 +133,7 @@ To move on, type **"Continue!"** and send.
 
 Task 02 rewrites `BookCatalog.Web.csproj` from the classic non-SDK Web Application Project (Wap) format into modern SDK-style format, and migrates `packages.config` to `PackageReference`. **The project stays on `net48` through this task** — so if anything breaks, you know it's structural, not API-related.
 
-The extension starts by loading two relevant skills (one for SDK conversion, one for the Wap → SDK transition):
+The agent starts by loading two relevant skills (one for SDK conversion, one for the Wap → SDK transition):
 
 ![Screenshot: "Continuing to Task 02 — SDK-style conversion. Let me start the task." with Read SKILL.md (lines 1-300) and Read SKILL.md (lines 1-250)](images/07-task02-starting.png)
 
@@ -141,32 +141,32 @@ It then enriches `task.md` with project-specific research before running the act
 
 ![Screenshot: "This is a single-project, atomic task. Let me enrich task.md, then run the conversion." with Read task.md and Generating edits...](images/08-task02-enriching.png)
 
-> 💡 **Visual Studio may pop up an "Inconsistent Line Endings" dialog** when the extension edits `task.md`. Pick **Windows (CR LF)** and **Yes** — this is purely cosmetic and doesn't affect the migration.
+> 💡 **Visual Studio may pop up an "Inconsistent Line Endings" dialog** when the agent edits `task.md`. Pick **Windows (CR LF)** and **Yes** — this is purely cosmetic and doesn't affect the migration.
 
 ![Screenshot: Visual Studio "Inconsistent Line Endings" dialog for task.md with "Windows (CR LF)" selected and Yes/No buttons](images/09-line-endings-dialog.png)
 
-With research enriched, the extension runs the conversion on `BookCatalog.Web.csproj` and verifies `packages.config` is gone:
+With research enriched, the agent runs the conversion on `BookCatalog.Web.csproj` and verifies `packages.config` is gone:
 
 ![Screenshot: "Now run the SDK-style conversion." — Converting project BookCatalog.Web.csproj to SDK-style, "Conversion succeeded.", Read BookCatalog.Web.csproj (lines 1-120), Read 0 files for 'packages.config'](images/10-task02-converting.png)
 
-The conversion is done, but the extension hasn't trusted it yet. It asks permission to **build the solution** as a sanity check (still on `net48`):
+The conversion is done, but the agent hasn't trusted it yet. It asks permission to **build the solution** as a sanity check (still on `net48`):
 
 ![Screenshot: "packages.config is removed and the project is now SDK-style (Microsoft.NET.Sdk.Web), still on net48..." with Build Solution Confirm prompt](images/11-build-solution-prompt.png)
 
-Click **Confirm** — and here's where things get interesting. The first build **fails twice**, and watching how the extension recovers is the most important part of this task:
+Click **Confirm** — and here's where things get interesting. The first build **fails twice**, and watching how the agent recovers is the most important part of this task:
 
 ![Screenshot: Two "Build failed" messages followed by recovery — first restoring System.Web framework references (10 lines added), then fixing OutputType from Exe to Library (1 line changed), then "Build successful"](images/12-build-failed-recovered.png)
 
 Two distinct conversion-tool mistakes, both auto-corrected:
 
-1. **Build failed #1**: The conversion dropped the `System.Web` / `System.Web.Routing` GAC references that classic Wap projects get implicitly but SDK-style `net48` projects don't. The extension re-added them (+10 lines).
-2. **Build failed #2**: The conversion set `OutputType=Exe`, but a `net48` ASP.NET MVC web app builds as a `Library`. The extension flipped it back (-1, +1 line).
+1. **Build failed #1**: The conversion dropped the `System.Web` / `System.Web.Routing` GAC references that classic Wap projects get implicitly but SDK-style `net48` projects don't. The agent re-added them (+10 lines).
+2. **Build failed #2**: The conversion set `OutputType=Exe`, but a `net48` ASP.NET MVC web app builds as a `Library`. The agent flipped it back (-1, +1 line).
 
 After both fixes, the build succeeds on `net48` in SDK-style format. **Task complete:**
 
 ![Screenshot: "Task 02 Complete (40%)" — SDK-style conversion done with both behavior-preserving fixes documented, and "Next up — Task 03: ASP.NET Core migration"](images/13-task02-complete.png)
 
-> 💡 **Why this matters:** the extension explicitly flags both fixes as **behavior-preserving** — they restored what the conversion tool dropped, nothing more. The MVC/Razor/WebPages references are intentionally still present; they'll be removed in Task 03 when the project actually moves to ASP.NET Core. Each task does *one thing*, and that discipline is what makes the whole migration debuggable.
+> 💡 **Why this matters:** the agent explicitly flags both fixes as **behavior-preserving** — they restored what the conversion tool dropped, nothing more. The MVC/Razor/WebPages references are intentionally still present; they'll be removed in Task 03 when the project actually moves to ASP.NET Core. Each task does *one thing*, and that discipline is what makes the whole migration debuggable.
 
 Send **"Continue!"** to move on.
 
@@ -176,11 +176,11 @@ Send **"Continue!"** to move on.
 
 This is the big one. Task 03 retargets the project to `net10.0` and rewrites all 89 `System.Web.*` API hits — `Global.asax.cs` + `RouteConfig` + `FilterConfig` become `Program.cs`, `BooksController` moves to `Microsoft.AspNetCore.Mvc.Controller` with `IActionResult`, `web.config` becomes `appsettings.json`, Razor views and `_Layout.cshtml` are updated for ASP.NET Core conventions, and the `Microsoft.AspNet.*` packages are dropped.
 
-The extension starts by loading the dedicated MVC migration skill:
+The agent starts by loading the dedicated MVC migration skill:
 
 ![Screenshot: "Continuing to Task 03 — the ASP.NET Core migration. Let me start the task." with Starting task 03-aspnetcore-migration and SKILL.md access prompt for migrating-aspnet-framework-to-core](images/14-task03-skill-access.png)
 
-> ⏰ **This task takes the longest** — expect 20–30 minutes of edits across many files. The extension will work through subtasks (controller migration, startup conversion, Razor updates, config migration) and you'll see a steady stream of file edits in the chat. Resist the urge to interrupt; let it finish the subtask group before reviewing.
+> ⏰ **This task takes the longest** — expect 20–30 minutes of edits across many files. The agent will work through subtasks (controller migration, startup conversion, Razor updates, config migration) and you'll see a steady stream of file edits in the chat. Resist the urge to interrupt; let it finish the subtask group before reviewing.
 
 When task 03 completes, the project file looks dramatically different. Open `BookCatalog.Web.csproj` and you should see a clean SDK-style file targeting `net10.0` with EF Core and Newtonsoft.Json as the only `PackageReference` entries:
 
@@ -213,7 +213,7 @@ A quick map of what each row means:
 | **Startup** | EF6 init block → DI scope `EnsureCreated()` + `Seed()` | The classic `Application_Start` initializer pattern is gone |
 | **Controller** | `BooksController` → constructor injection; removed manual `new` + `Dispose` | EF Core `DbContext` lifecycle is managed by DI |
 
-The extension confirms **0 errors, 0 warnings** and explicitly verifies that no EF6 artifacts remain in the codebase. Send **"Continue!"** to kick off the final task.
+The agent confirms **0 errors, 0 warnings** and explicitly verifies that no EF6 artifacts remain in the codebase. Send **"Continue!"** to kick off the final task.
 
 ---
 
@@ -254,7 +254,7 @@ The page even shows your User-Agent string at the bottom — proof that the one 
 
 ## ✅ You're Ready!
 
-You've executed all 5 tasks of the upgrade plan in Guided Mode, watched the extension recover from build failures on its own, and verified that BookCatalog now runs as an SDK-style ASP.NET Core app on .NET 10 with EF Core. In Chapter 04, you'll take this modernized app and deploy it to Azure.
+You've executed all 5 tasks of the upgrade plan in Guided Mode, watched the agent recover from build failures on its own, and verified that BookCatalog now runs as an SDK-style ASP.NET Core app on .NET 10 with EF Core. In Chapter 04, you'll take this modernized app and deploy it to Azure.
 
 **[Continue to Chapter 04: Going to the Cloud →](../04-cloud/README.md)**
 
@@ -264,8 +264,8 @@ You've executed all 5 tasks of the upgrade plan in Guided Mode, watched the exte
 
 1. **Guided Mode = commit gates.** Every "Continue!" is a checkpoint — you're never more than one task away from a known-good state.
 2. **Task isolation pays off at failure time.** When Task 02's build failed twice, the root cause was immediately obvious: structural conversion mistake, nothing to do with APIs. Isolation makes failures debuggable.
-3. **Auto-recovery doesn't mean magic.** The extension caught the failures because it ran a build step after every structural change. The lesson: always verify with a build step between structural changes and API changes.
-4. **89 API hits ≠ 89 manual hours.** Most `System.Web.Mvc.*` calls have direct ASP.NET Core equivalents — the extension knows the full mapping table. One 20–30 min task replaced what would have been days of docs-hunting.
+3. **Auto-recovery doesn't mean magic.** The agent caught the failures because it ran a build step after every structural change. The lesson: always verify with a build step between structural changes and API changes.
+4. **89 API hits ≠ 89 manual hours.** Most `System.Web.Mvc.*` calls have direct ASP.NET Core equivalents — the agent knows the full mapping table. One 20–30 min task replaced what would have been days of docs-hunting.
 5. **The EF6 initializer pattern has no direct EF Core equivalent.** `DropCreateDatabaseIfModelChanges` is gone. The replacement is `EnsureCreated()` + a seed method — simpler and explicit.
 6. **`progress-details.md` is your audit trail.** Every task writes findings to this file. If something goes wrong between sessions, it's the first place to look.
 7. **Separate structural changes from semantic changes.** Task 02 stayed on `net48` deliberately. Never mix "format changes" and "behavior changes" in the same commit — you'll never know which one broke the build.
@@ -276,13 +276,13 @@ You've executed all 5 tasks of the upgrade plan in Guided Mode, watched the exte
 
 **Problem:** The chat session expired or VS was closed between Chapter 02 and Chapter 03.
 
-**Solution:** Reopen the solution and re-trigger the Modernize workflow (right-click solution → Modernize). The extension reads the existing `plan.md` and `tasks.md` and resumes from where it left off.
+**Solution:** Reopen the solution and re-trigger the Modernize workflow (right-click solution → Modernize). The agent reads the existing `plan.md` and `tasks.md` and resumes from where it left off.
 
 ---
 
 **Problem:** A task fails with a file permission error (e.g., "Unable to write to BookCatalog.Web.csproj").
 
-**Solution:** Visual Studio may have the file locked. Try closing and reopening the solution, or stopping the debug session if one is running. Then send "Continue!" again — the extension will retry the file write.
+**Solution:** Visual Studio may have the file locked. Try closing and reopening the solution, or stopping the debug session if one is running. Then send "Continue!" again — the agent will retry the file write.
 
 ---
 
