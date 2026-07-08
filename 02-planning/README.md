@@ -25,19 +25,19 @@ By the end of this chapter, you'll have:
 
 ## 🗺️ Generating the Upgrade Plan
 
-Once you've read the report in your Guided Mode session, the extension asks: **"To proceed: approve or continue To adjust: Edit assessment.md or tell me what to change To switch mode: Say continue in automatic mode to stop pausing at stage boundaries**
+Once you've read the report in your Guided Mode session, the agent asks: **"To proceed: approve or continue To adjust: Edit assessment.md or tell me what to change To switch mode: Say continue in automatic mode to stop pausing at stage boundaries**
 
 At the end of the assessment, Guided Mode pauses and prompts you with three options:
 
 - **To proceed**: approve or say "continue"
-- **To adjust**: edit `assessment.md` directly or tell the extension what to change in chat
+- **To adjust**: edit `assessment.md` directly or tell the agent what to change in chat
 - **To switch mode**: say "continue in automatic mode" to stop pausing at stage boundaries
 
 Before continuing, this is your chance to amend the assessment if you spot a false positive or want to reprioritize something. For example, you could say: "In the assessment, please mark the `System.Web.Mvc` hits in `AdminController.cs` as informational instead of blockers, since those pages are low-priority for the upgrade."
 
 ![Screenshot: Chat input with the message "Continue" to proceed to the Plan phase](images/plan-continue.png)
 
-The extension then moves to the **Plan** phase. It takes the assessment findings and first surfaces a set of **upgrade strategy questions** — one decision at a time, each with a recommendation pre-selected and an explanation of why. The output is saved in `upgrade-options.md` in your project.
+The agent then moves to the **Plan** phase. It takes the assessment findings and first surfaces a set of **upgrade strategy questions** — one decision at a time, each with a recommendation pre-selected and an explanation of why. The output is saved in `upgrade-options.md` in your project.
 
 **Walk through each question, then at the end you'll send a single message to confirm your choices (or override any default).** We'll come back to that message at the end of this section.
 
@@ -45,7 +45,7 @@ Let's walk through each decision BookCatalog triggers.
 
 ### Upgrade Strategy
 
-The first question is how to spread the migration across time. Because BookCatalog is a single project, the extension has only one option:
+The first question is how to spread the migration across time. Because BookCatalog is a single project, the agent has only one option:
 
 | Value | Description |
 |-------|-------------|
@@ -68,7 +68,7 @@ BookCatalog is small (1 controller, ~633 LOC), so in-place is the cleaner fit. *
 
 ### APIs and Frameworks
 
-89 `System.Web.Mvc` API changes, all with known ASP.NET Core equivalents. The extension recommends resolving them inline:
+89 `System.Web.Mvc` API changes, all with known ASP.NET Core equivalents. The agent recommends resolving them inline:
 
 | Value | Description |
 |-------|-------------|
@@ -79,7 +79,7 @@ BookCatalog is small (1 controller, ~633 LOC), so in-place is the cleaner fit. *
 
 ### Entity Framework
 
-EF6 6.4.4 is detected with a single `DbContext`. The extension flags an important choice here:
+EF6 6.4.4 is detected with a single `DbContext`. The agent flags an important choice here:
 
 | Value | Description |
 |-------|-------------|
@@ -99,7 +99,7 @@ As we are already doing an architectural migration (System.Web → ASP.NET Core)
 
 **Manual Migration** is for apps where `web.config` has custom config sections, encrypted values, or environment-specific transforms that need human review before touching. BookCatalog's config is standard, so auto-migration handles it.
 
-With all strategy decisions reviewed, you're ready to generate the final plan. The extension synthesizes all of this into a prioritized sequence of atomic tasks.
+With all strategy decisions reviewed, you're ready to generate the final plan. The agent synthesizes all of this into a prioritized sequence of atomic tasks.
 
 Type: **"Continue. Change to use EF Core instead of keeping EF6"** and send. This overrides the default EF6 choice to include the EF Core migration in the same pass as the .NET upgrade — a reasonable call for a small app like BookCatalog.
 
@@ -107,7 +107,7 @@ Type: **"Continue. Change to use EF Core instead of keeping EF6"** and send. Thi
 
 ## Plan Output
 
-When you send that message, it then updates `upgrade-options.md` to reflect your change and confirms it understood. Then the extension acknowledges the override and first asks permission to load the `SKILL.md` from its plan-generation module. Click **Confirm**.
+When you send that message, it then updates `upgrade-options.md` to reflect your change and confirms it understood. Then the agent acknowledges the override and first asks permission to load the `SKILL.md` from its plan-generation module. Click **Confirm**.
 
 ![Screenshot: "Access file 'SKILL.md'?" prompt pointing at the plan-generation skill folder with Confirm/Deny buttons](images/plan-skill-access.png)
 
@@ -115,7 +115,7 @@ It generates the two plan artefacts — `plan.md` (+60 lines) and `tasks.md` (+1
 
 ![Screenshot: "Now I'll generate the plan and tasks files." with plan.md (+60) and tasks.md (+15) file changes](images/plan-files-generated.png)
 
-Finally, the extension then synthesizes the assessment findings and all strategy decisions into an **Upgrade Plan Summary** in the chat — a quick table you can review before the full plan files are written:
+Finally, the agent then synthesizes the assessment findings and all strategy decisions into an **Upgrade Plan Summary** in the chat — a quick table you can review before the full plan files are written:
 
 ![Screenshot: Upgrade Plan Summary — Strategy: All-At-Once (single project), Target: .NET 10.0, 5 tasks — table with task # / Task / What it does columns, plus key decisions footer](images/plan-summary.png)
 
@@ -143,7 +143,7 @@ The full content of `plan.md` is your Chapter 02 roadmap. It has 5 ordered tasks
 
 > 💡 **Why 5 tasks instead of 1?** The plan deliberately isolates failure modes. If task 03 introduces a regression, you know it came from the ASP.NET Core migration — not the SDK conversion or the EF change. Each task is atomic and independently verifiable via its "Done when" condition.
 
-After reviewing the plan summary in the chat, open `plan.md` to see the full details. You can edit this file to adjust task scopes, add notes, or split/merge tasks as needed. The key is that the plan is a living document — generated by the extension but owned and maintained by you.
+After reviewing the plan summary in the chat, open `plan.md` to see the full details. You can edit this file to adjust task scopes, add notes, or split/merge tasks as needed. The key is that the plan is a living document — generated by the agent but owned and maintained by you.
 
 ---
 
@@ -186,7 +186,7 @@ You now have a planning artifact set ready for execution. Phase 01 gave you visi
 
 ## 📚 Learn More
 
-- [GitHub Copilot app modernization for .NET](https://learn.microsoft.com/dotnet/core/porting/github-copilot-app-modernization-overview)
+- [GitHub Copilot modernization for .NET](https://learn.microsoft.com/dotnet/core/porting/github-copilot-app-modernization-overview)
 - [Port from .NET Framework to .NET](https://learn.microsoft.com/dotnet/core/porting/)
 - [Migrate from System.Web to ASP.NET Core](https://learn.microsoft.com/dotnet/core/porting/net-framework-to-core-migration)
 - [Entity Framework 6 to Entity Framework Core migration guide](https://learn.microsoft.com/ef/efcore/what-is-new/ef6-efcore-porting/)
