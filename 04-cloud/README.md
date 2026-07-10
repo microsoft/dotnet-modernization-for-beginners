@@ -36,7 +36,7 @@ By the end of this chapter, you'll have:
 
 Before deploying *anywhere*, the modernized app needs to stop carrying plaintext credentials. In Chapter 03 the `BookCatalogContext` connection string was migrated to `appsettings.json` — fine for LocalDB, **not** fine for cloud.
 
-In a separate session before the deployment, you'd run the extension's **Plaintext Credential** migration (Technology X = *Plaintext Credential*, Technology Y = *Secure Credentials*, Knowledge Base = `azure_key_vault_secret_knowledge_base`). It produces:
+In a separate session before the deployment, you'd run the agent's **Plaintext Credential** migration (Technology X = *Plaintext Credential*, Technology Y = *Secure Credentials*, Knowledge Base = `azure_key_vault_secret_knowledge_base`). It produces:
 
 - `Program.cs` — `builder.Configuration.AddAzureKeyVault(...)` wired with `DefaultAzureCredential`, and a `KeyVaultName` setting read from config
 - `appsettings.json` — the inline connection string replaced with a placeholder + a `KeyVaultName` key
