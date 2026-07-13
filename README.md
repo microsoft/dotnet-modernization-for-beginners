@@ -101,7 +101,7 @@ Once you've worked through the chapters, use these two resources to keep buildin
 ## 🙋 Getting Help
 
 - **Issues:** Found a bug or unclear instruction? [Open an issue](https://github.com/microsoft/dotnet-modernization-for-beginners/issues).
-- **Docs:** [GitHub Copilot documentation](https://docs.github.com/copilot) | [.NET 10 migration guide](https://learn.microsoft.com/dotnet/core/whats-new/dotnet-10) | [GitHub Copilot app modernization docs](https://aka.ms/ghcp-appmod/dotnet-docs)
+- **Docs:** [GitHub Copilot documentation](https://docs.github.com/copilot) | [.NET 10 migration guide](https://learn.microsoft.com/dotnet/core/whats-new/dotnet-10) | [GitHub Copilot modernization docs](https://aka.ms/ghcp-appmod/dotnet-docs)
 - **Community:** Join the [Azure AI Discord](https://aka.ms/foundry/discord) to connect with other developers.
 
 ## Contributing
