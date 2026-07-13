@@ -4,7 +4,7 @@
 
 🎯 [What You'll Learn](#-what-youll-learn) &ensp; ✅ [Prerequisites](#-prerequisites) &ensp; 📚 [Course Structure](#-course-structure)
 
-# .NET Modernization for Beginners -  WIP
+# .NET Modernization for Beginners
 
 > **✨ Take a legacy ASP.NET app from .NET Framework 4.8 to .NET 10 — using AI.**
 
@@ -75,8 +75,6 @@ flowchart LR
 | **02** | 🗺️ [Planning](./02-planning/README.md) | Turn assessment findings into strategy decisions, ordered tasks, and execution gates using plan artifacts. |
 | **03** | ⚡ [Upgrade Execution](./03-upgrade-execution/README.md) | Execute the agent's Act workflow to migrate BookCatalog to .NET 10, review AI-generated code suggestions, resolve compilation errors, and verify the upgrade. |
 | **04** | ☁️ [Going to the Cloud](./04-cloud/README.md) | Use the agent's cloud-migration flow to deploy the modernized BookCatalog app to Azure, verify the deployment, and clean up resources. |
-
-> 📌 **Course status:** Chapters **00-04** are actively maintained and aligned to the same artifact-first workflow: assess, plan, execute, and validate.
 
 ## 📖 How This Course Works
 
