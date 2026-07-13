@@ -91,10 +91,17 @@ cd dotnet-modernization-for-beginners
 
 Each chapter includes step-by-step instructions, code samples, expected outputs, and troubleshooting tips. The `shared-legacy-app/` folder contains the BookCatalog app used in Chapters 01-04.
 
+## 🚀 Keep Going
+
+Once you've worked through the chapters, use these two resources to keep building on the same modernization workflow:
+
+- **Documentation:** [GitHub Copilot app modernization docs](https://aka.ms/ghcp-appmod/dotnet-docs) for deeper guidance on the assess, plan, and execute flows.
+- **Workshop:** [Hands-on modernization workshop](https://aka.ms/ghcp-appmod/dotnet-mod-workshop) to practice the experience in a guided lab format.
+
 ## 🙋 Getting Help
 
 - **Issues:** Found a bug or unclear instruction? [Open an issue](https://github.com/microsoft/dotnet-modernization-for-beginners/issues).
-- **Docs:** [GitHub Copilot documentation](https://docs.github.com/copilot) | [.NET 10 migration guide](https://learn.microsoft.com/dotnet/core/whats-new/dotnet-10) | (GitHub Copilot modernization documentation)[https://aka.ms/ghcp-modernization/dotNET]
+- **Docs:** [GitHub Copilot documentation](https://docs.github.com/copilot) | [.NET 10 migration guide](https://learn.microsoft.com/dotnet/core/whats-new/dotnet-10) | [GitHub Copilot app modernization docs](https://aka.ms/ghcp-appmod/dotnet-docs)
 - **Community:** Join the [Azure AI Discord](https://aka.ms/foundry/discord) to connect with other developers.
 
 ## Contributing

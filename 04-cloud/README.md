@@ -283,6 +283,8 @@ You took a .NET Framework 4.8 ASP.NET MVC 5 app, modernized it to .NET 10 + EF C
 
 You now have a repeatable pattern: **assess → plan → execute → cloud-prep → deploy**, all from inside the Copilot chat, all auditable, all idempotent.
 
+> 🚀 **Keep going:** Explore the [GitHub Copilot app modernization docs](https://aka.ms/ghcp-appmod/dotnet-docs) for deeper reference material, then reinforce the workflow with the [hands-on modernization workshop](https://aka.ms/ghcp-appmod/dotnet-mod-workshop).
+
 ---
 
 ## 🔑 Key Takeaways
