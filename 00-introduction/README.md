@@ -1,5 +1,5 @@
 # Chapter 00: Introduction to Modernization
-In this chapter you'll get started with the GitHub Copilot modernization agent and run your first assessment on a small sample app. Along the way you'll see why teams bother upgrading off .NET Framework, and you'll meet the Assess → Plan → Act loop the extension uses.
+In this chapter you'll get started with the GitHub Copilot modernization agent and run your first assessment on a small sample app. Along the way you'll see why teams bother upgrading off .NET Framework, and you'll meet the Assess → Plan → Act loop the agent uses.
 
 ## 🎯 Learning Objectives
 
@@ -15,13 +15,13 @@ By the end of this chapter, you'll:
 
 | Requirement | Version / Notes |
 |-------------|-----------------|
-| **Windows** | Windows 11 (22H2 or later) — Visual Studio requires Windows. On macOS or Linux, use the extension via VS Code or GitHub.com instead. |
+| **Windows** | Windows 11 (22H2 or later) — Visual Studio requires Windows. On macOS or Linux, use the extension via VS Code or GitHub Coplit CLI instead. |
 | **Visual Studio** | 2026, with .NET desktop development workload |
 | **.NET 10 SDK** | Preview or latest release |
 | **GitHub Copilot subscription** | Active subscription required |
 | **Prior experience** | C#, Visual Studio basics |
 
-> ⚠️ **Note:** This chapter includes extension installation. If you've already installed the GitHub Copilot app modernization extension, skip to the [Your First Assessment](#-your-first-assessment) section.
+> ⚠️ **Note:** This chapter includes getting started with the agent. If you've already used the GitHub Copilot modernization agent, skip to the [Your First Assessment](#-your-first-assessment) section.
 
 ---
 
@@ -61,7 +61,7 @@ The GitHub Copilot modernization agent walks your project through three phases: 
 | **Plan** | Turns the assessment into an ordered to-do list. Blockers first, then warnings, then the rest. | A migration plan with rough effort estimates. |
 | **Execute** | Actually makes the changes: edits project files, swaps deprecated APIs, proposes refactors. The AI generates suggestions; you review each one. | Modified files with diffs you accept or reject. |
 
-You're still the one driving. The extension proposes, you decide.
+You're still the one driving. The agent proposes, you decide.
 
 ```mermaid
 flowchart TD
@@ -97,11 +97,11 @@ flowchart TD
 
 ---
 
-## 📦 Installing the Extension
+## 📦 Getting started
 
-Open Visual Studio 2026 and make sure you have the .NET desktop development workload with these optional components enabled: GitHub Copilot, GitHub Copilot app modernization.
+Open Visual Studio 2026 and make sure you have the .NET desktop development workload with these optional components enabled: GitHub Copilot, GitHub Copilot modernization.
 
-Visual Studio includes GitHub Copilot modernization through the GitHub Copilot app modernization optional component, so you don't need to install it separately. Enable the GitHub Copilot and GitHub Copilot app modernization optional components in the .NET desktop development workload through the Visual Studio Installer.
+Visual Studio includes GitHub Copilot modernization through the GitHub Copilot modernization optional component, so you don't need to install it separately. Enable the GitHub Copilot and GitHub Copilot modernization optional components in the .NET desktop development workload through the Visual Studio Installer.
 
 **Verify the installation**
 Open a solution in Visual Studio.
@@ -133,15 +133,15 @@ Trigger the assessment:
 2. Select **Modernize**.
 3. When the chat window opens, choose **Upgrade to a newer version of .NET**.
 4. Send message.
-5. After this initial message, the extension will take over and ask you which target framework you want. Write **".NET 10, Guided Mode and No Source Control"** and send.
+5. After this initial message, the agent will take over and ask you which target framework you want. Write **".NET 10, Guided Mode and No Source Control"** and send.
 
- > ⚠️ **Guided vs. Flow Mode:** The extension has two modes. Flow Mode handles everything automatically. Guided Mode pauses after each phase so you can read the report before anything changes. Use Guided Mode here — the whole point of this chapter is to understand what the report is saying.
+ > ⚠️ **Guided vs. Flow Mode:** The agent has two modes. Flow Mode handles everything automatically. Guided Mode pauses after each phase so you can read the report before anything changes. Use Guided Mode here — the whole point of this chapter is to understand what the report is saying.
 
  > ⚠️ **Source control:** We're skipping it for this demo. On a real project, make sure you're on a clean Git branch before running Act — you'll want to be able to diff or roll back.
 
 **Expected output:**
 
-The extension scans the code and produces a compatibility report. Expect 30–60 seconds.
+The agent scans the code and produces a compatibility report. Expect 30–60 seconds.
 
 When complete, the report opens in a new tab:
 
@@ -180,7 +180,7 @@ The **Technologies and Features** section groups those 7 issues by area, which i
 - **Legacy Configuration System** — 2 issues. `ConfigurationManager` and `app.config` are replaced by `Microsoft.Extensions.Configuration`.
 - **Deprecated Remoting & Serialization** — 2 issues. `BinaryFormatter` is removed. `System.Text.Json` or protobuf are the go-to replacements.
 
-The **Most Frequent API Issues** table at the bottom lists the specific types: `System.Web.HttpContext` twice, `BinaryFormatter` twice, `ConfigurationManager` twice. Memorize these names — they'll come up again in Chapter 02 when the extension proposes actual code edits.
+The **Most Frequent API Issues** table at the bottom lists the specific types: `System.Web.HttpContext` twice, `BinaryFormatter` twice, `ConfigurationManager` twice. Memorize these names — they'll come up again in Chapter 02 when the agent proposes actual code edits.
 
 None of this is fixed yet. The Assess phase only tells you what's there. Plan and Act are in Chapter 02.
 
@@ -216,7 +216,7 @@ Chapter 01 puts the same workflow against something bigger: BookCatalog, an ASP.
 
 A few useful follow-ups:
 
-- 📘 [GitHub Copilot modernization for .NET — overview](https://learn.microsoft.com/dotnet/core/porting/github-copilot-app-modernization/overview) — the extension and the Assess → Plan → Act flow.
+- 📘 [GitHub Copilot modernization for .NET — overview](https://learn.microsoft.com/dotnet/core/porting/github-copilot-app-modernization/overview) — the agent and the Assess → Plan → Act flow.
 - 📘 [Port from .NET Framework to .NET](https://learn.microsoft.com/dotnet/core/porting/) — the canonical porting guide.
 - 📘 [.NET and .NET Framework support policy](https://dotnet.microsoft.com/platform/support/policy/dotnet-framework) — official end-of-support dates.
 - 📘 [`BinaryFormatter` security guide](https://learn.microsoft.com/dotnet/standard/serialization/binaryformatter-security-guide) — why it's deprecated and what to use instead.
