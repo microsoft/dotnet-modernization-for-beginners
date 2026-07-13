@@ -15,7 +15,7 @@ By the end of this chapter, you'll:
 
 | Requirement | Version / Notes |
 |-------------|-----------------|
-| **Windows** | Windows 11 (22H2 or later) — Visual Studio requires Windows. On macOS or Linux, use the extension via VS Code or GitHub Coplit CLI instead. |
+| **Windows** | Windows 11 (22H2 or later) — Visual Studio requires Windows. On macOS or Linux, use the agent via VS Code or GitHub Copilot CLI instead. |
 | **Visual Studio** | 2026, with .NET desktop development workload |
 | **.NET 10 SDK** | Preview or latest release |
 | **GitHub Copilot subscription** | Active subscription required |
@@ -99,9 +99,9 @@ flowchart TD
 
 ## 📦 Getting started
 
-Open Visual Studio 2026 and make sure you have the .NET desktop development workload with these optional components enabled: GitHub Copilot, GitHub Copilot modernization.
+Open Visual Studio 2026 and make sure you have the .NET desktop development workload with these optional components enabled: GitHub Copilot, GitHub Copilot modernization agent.
 
-Visual Studio includes GitHub Copilot modernization through the GitHub Copilot modernization optional component, so you don't need to install it separately. Enable the GitHub Copilot and GitHub Copilot modernization optional components in the .NET desktop development workload through the Visual Studio Installer.
+Visual Studio includes the GitHub Copilot modernization agent through the GitHub Copilot modernization optional component, so you don't need to install it separately. Enable the GitHub Copilot and GitHub Copilot modernization optional components in the .NET desktop development workload through the Visual Studio Installer.
 
 **Verify the installation**
 Open a solution in Visual Studio.
@@ -223,4 +223,3 @@ A few useful follow-ups:
 - 📘 [Strangler Fig pattern](https://learn.microsoft.com/azure/architecture/patterns/strangler-fig) — incremental modernization without a big-bang rewrite.
 
 ---
-

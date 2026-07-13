@@ -109,7 +109,7 @@ Four resources, four reasons — every row maps a concrete app dependency to its
 
 The agent next offers two paths:
 
-![Screenshot: "Two ways to deploy" — Option A Guided/automated (recommended): agent uses App Modernization deployment tooling to 1. Analyze project + generate .azure/plan.md  2. Provision Azure resources (Bicep or az CLI)  3. Configure Managed Identity + Key Vault access  4. Deploy the app. Option B Manual: VS Publish dialog or azd up / az webapp up. Plus opening of "Before I start, I need a few things"](images/04-two-ways-to-deploy.png)
+![Screenshot: "Two ways to deploy" — Option A Guided/automated (recommended): agent uses modernization deployment tooling to 1. Analyze project + generate .azure/plan.md  2. Provision Azure resources (Bicep or az CLI)  3. Configure Managed Identity + Key Vault access  4. Deploy the app. Option B Manual: VS Publish dialog or azd up / az webapp up. Plus opening of "Before I start, I need a few things"](images/04-two-ways-to-deploy.png)
 
 For this chapter we pick **Option A — Guided/automated**. The agent will drive the whole thing, asking for your approval before each `az` command. You stay in control without writing any Bicep yourself.
 

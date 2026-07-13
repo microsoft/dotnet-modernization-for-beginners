@@ -1,12 +1,12 @@
 # SimpleLegacyApp — Chapter 00 demo
 
-A tiny .NET Framework 4.8 console app used by [Chapter 00](../README.md) to run your **first** GitHub Copilot app modernization assessment.
+A tiny .NET Framework 4.8 console app used by [Chapter 00](../README.md) to run your **first** GitHub Copilot modernization agent assessment.
 
 ## What's inside (and why)
 
 | File | Modernization signal |
 |------|----------------------|
-| `SimpleLegacyApp.csproj` | Targets `net48` — the source framework the extension will assess. |
+| `SimpleLegacyApp.csproj` | Targets `net48` — the source framework the agent will assess. |
 | `Program.cs` | Uses `System.Web.HttpContext.Current` → **blocker** in .NET 10. |
 | `Serialization.cs` | Uses `BinaryFormatter` → **warning** (deprecated, removed in modern .NET). |
 | `App.config` | Legacy `ConfigurationManager` settings → informational (move to `appsettings.json`). |
