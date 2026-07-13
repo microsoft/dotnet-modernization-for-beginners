@@ -77,7 +77,7 @@ When the chat window opens, notice that we have options to customize the workflo
 - Migrate to Azure
 - Explore more modernization options
 
-Plus, you can write your own custom instructions to the agent in chat.
+Plus, you can write your own custom instructions in the chat window.
 
 ![Screenshot: Chat window shows options for modernization](images/modernization-options.png)
 
