@@ -105,7 +105,7 @@ The agent asks you for the target framework. Type: **".NET 10, Guided Mode"**.
 
 About source control, you can choose to let the agent create a new branch for the upgrade or skip source control if you prefer to manage it yourself. For this demo, we'll select **Skip source control** to keep things simple, but in a real project, you'd likely want to use source control to track changes and collaborate with your team. Plus, the ability to roll back any undesirable changes can be key when running automated code modifications.
 
-![Screenshot: Chat input with the message ".NET 10, Guided for reviews in my side"](images/upgrade-settings-input.png)
+> **What you'll see:** The chat input contains your selections for .NET 10, Guided Mode, and source control.
 
 The agent echoes back the choices you made so you can verify them before it kicks off the scan:
 

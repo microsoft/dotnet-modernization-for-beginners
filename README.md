@@ -104,7 +104,7 @@ Once you've worked through the chapters, use these two resources to keep buildin
 
 ## Contributing
 
-Contributions are welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+Contributions are welcome through [pull requests](https://github.com/microsoft/dotnet-modernization-for-beginners/pulls) and [issues](https://github.com/microsoft/dotnet-modernization-for-beginners/issues).
 
 ## License
 

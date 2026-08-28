@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <script>
+    (() => {
+      const param = new URLSearchParams(window.location.search).get("clawpilotTheme");
+      const theme = param || "dark";
+      document.documentElement.setAttribute("data-theme", theme);
+    })();
+  </script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A practical, artifact-first course for modernizing .NET Framework applications with GitHub Copilot.">
+  <meta name="theme-color" content="#0d0b12">
+  <title>.NET Modernization for Beginners</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/marked@15.0.12/marked.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/dompurify@3.2.6/dist/purify.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mermaid@11.6.0/dist/mermaid.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#article">Skip to course content</a>
+
+  <header class="site-header">
+    <a class="brand" href="#/overview" aria-label=".NET Modernization for Beginners home">
+      <span class="brand-mark" aria-hidden="true">.NET</span>
+      <span class="brand-copy">
+        <strong>Modernization</strong>
+        <span>for Beginners</span>
+      </span>
+    </a>
+
+    <div class="header-actions">
+      <button class="icon-button mobile-only" id="chapters-toggle" type="button" aria-label="Open chapters" aria-controls="course-nav" aria-expanded="false" title="Chapters">
+        <i data-lucide="menu" aria-hidden="true"></i>
+      </button>
+      <button class="icon-button mobile-only" id="outline-toggle" type="button" aria-label="Open page outline" aria-controls="page-outline" aria-expanded="false" title="On this page">
+        <i data-lucide="list-tree" aria-hidden="true"></i>
+      </button>
+      <a class="icon-button repository-link" href="https://github.com/microsoft/dotnet-modernization-for-beginners" aria-label="View repository on GitHub" title="View on GitHub">
+        <i data-lucide="github" aria-hidden="true"></i>
+      </a>
+      <button class="icon-button" id="theme-toggle" type="button" aria-label="Switch color theme" title="Switch color theme">
+        <i data-lucide="sun-moon" aria-hidden="true"></i>
+      </button>
+    </div>
+  </header>
+
+  <div class="course-shell">
+    <aside class="course-nav" id="course-nav" aria-label="Course chapters">
+      <div class="nav-intro">
+        <p class="eyebrow">Learning path</p>
+        <p>Assess, plan, and modernize a real .NET Framework application.</p>
+        <p class="course-progress" id="course-progress"></p>
+      </div>
+      <nav id="chapter-nav"></nav>
+    </aside>
+
+    <main id="main-content" tabindex="-1">
+      <div class="reading-progress" aria-hidden="true">
+        <span id="reading-progress-bar"></span>
+      </div>
+      <article class="article" id="article" aria-live="polite">
+        <div class="loading-state" role="status">
+          <span class="loading-line loading-line-short"></span>
+          <span class="loading-line"></span>
+          <span class="loading-line"></span>
+          <span class="loading-line loading-line-medium"></span>
+          <span class="sr-only">Loading course content</span>
+        </div>
+      </article>
+      <nav class="chapter-pager" id="chapter-pager" aria-label="Chapter pagination"></nav>
+    </main>
+
+    <aside class="page-outline" id="page-outline" aria-label="On this page">
+      <p class="eyebrow">On this page</p>
+      <nav id="outline-nav"></nav>
+    </aside>
+  </div>
+
+  <button class="drawer-backdrop" id="drawer-backdrop" type="button" aria-label="Close navigation"></button>
+
+  <noscript>
+    <div class="noscript-message">
+      JavaScript is required for the course reader. You can still read the
+      <a href="../README.md">course README</a> directly.
+    </div>
+  </noscript>
+</body>
+</html>

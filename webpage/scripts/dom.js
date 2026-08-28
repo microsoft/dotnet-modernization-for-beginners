@@ -1,0 +1,12 @@
+export const article = document.querySelector("#article");
+export const chapterNav = document.querySelector("#chapter-nav");
+export const outlineNav = document.querySelector("#outline-nav");
+export const chapterPager = document.querySelector("#chapter-pager");
+export const progressBar = document.querySelector("#reading-progress-bar");
+export const courseProgress = document.querySelector("#course-progress");
+export const courseNavPanel = document.querySelector("#course-nav");
+export const outlinePanel = document.querySelector("#page-outline");
+export const chaptersToggle = document.querySelector("#chapters-toggle");
+export const outlineToggle = document.querySelector("#outline-toggle");
+export const drawerBackdrop = document.querySelector("#drawer-backdrop");
+export const themeToggle = document.querySelector("#theme-toggle");
