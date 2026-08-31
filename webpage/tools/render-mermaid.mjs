@@ -66,15 +66,21 @@ function sourceForTheme(source, textColor) {
   );
 }
 
-function renderDiagram(sourceFile, outputFile, configFile, backgroundColor) {
+function renderDiagram(sourceFile, outputFile, configFile, backgroundColor, puppeteerConfigFile) {
   const executable = process.platform === "win32" ? "mmdc.cmd" : "mmdc";
-  const result = spawnSync(executable, [
+  const argumentsList = [
     "--input", sourceFile,
     "--output", outputFile,
     "--configFile", configFile,
     "--backgroundColor", backgroundColor,
     "--quiet"
-  ], {
+  ];
+
+  if (puppeteerConfigFile) {
+    argumentsList.push("--puppeteerConfigFile", puppeteerConfigFile);
+  }
+
+  const result = spawnSync(executable, argumentsList, {
     encoding: "utf8",
     shell: process.platform === "win32"
   });
@@ -92,6 +98,14 @@ try {
     const configFile = join(temporaryDirectory, `${theme}.json`);
     await writeFile(configFile, JSON.stringify(config));
     configFiles[theme] = configFile;
+  }
+
+  let puppeteerConfigFile;
+  if (process.env.CI === "true") {
+    puppeteerConfigFile = join(temporaryDirectory, "puppeteer.json");
+    await writeFile(puppeteerConfigFile, JSON.stringify({
+      args: ["--no-sandbox", "--disable-setuid-sandbox"]
+    }));
   }
 
   for (const documentPath of documents) {
@@ -116,7 +130,8 @@ try {
             sourceFile,
             join(outputDirectory, `${hash}-${theme}.svg`),
             configFiles[theme],
-            config.themeVariables.background
+            config.themeVariables.background,
+            puppeteerConfigFile
           );
         }
 
