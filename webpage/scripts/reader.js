@@ -1,6 +1,8 @@
-import { chapters, contentUrl } from "./config.js";
+import { chapters, contentUrl, siteUrl } from "./config.js";
 import { article, chapterPager, outlineNav } from "./dom.js";
 import { buildOutline, closeDrawers, renderChapterNav, renderPager } from "./ui.js";
+
+let diagramManifestPromise;
 
 function getRoute() {
   const route = window.location.hash.replace(/^#\/?/, "");
@@ -87,25 +89,51 @@ function rewriteDocumentLinks(chapter) {
   });
 }
 
-async function renderMermaid() {
-  const diagrams = article.querySelectorAll("pre code.language-mermaid");
-  diagrams.forEach((code) => {
-    const container = document.createElement("div");
-    container.className = "mermaid";
-    container.textContent = code.textContent;
-    code.parentElement.replaceWith(container);
-  });
+async function loadDiagramManifest() {
+  if (!diagramManifestPromise) {
+    diagramManifestPromise = fetch(siteUrl("diagrams/manifest.json"))
+      .then((response) => response.ok ? response.json() : null)
+      .catch(() => null);
+  }
 
+  return diagramManifestPromise;
+}
+
+function createDiagramVariant(diagram, theme) {
+  const link = document.createElement("a");
+  link.className = `diagram-variant diagram-${theme}`;
+  link.href = siteUrl(diagram[theme]);
+  link.target = "_blank";
+  link.rel = "noreferrer";
+  link.setAttribute("aria-label", `Open ${diagram.alt} in a new tab`);
+
+  const image = document.createElement("img");
+  image.src = siteUrl(diagram[theme]);
+  image.alt = diagram.alt;
+  image.loading = "lazy";
+  image.decoding = "async";
+  link.append(image);
+
+  return link;
+}
+
+async function renderDiagrams(chapter) {
+  const diagrams = article.querySelectorAll("pre code.language-mermaid");
   if (!diagrams.length) return;
 
-  try {
-    await mermaid.run({ nodes: article.querySelectorAll(".mermaid") });
-  } catch (error) {
-    article.querySelectorAll(".mermaid:not([data-processed])").forEach((diagram) => {
-      diagram.classList.add("mermaid-error");
-    });
-    console.warn("A Mermaid diagram could not be rendered.", error);
-  }
+  const manifest = await loadDiagramManifest();
+  const assets = manifest?.documents?.[chapter.path];
+  if (!assets || assets.length !== diagrams.length) return;
+
+  diagrams.forEach((code, index) => {
+    const figure = document.createElement("figure");
+    figure.className = "diagram-asset";
+    figure.append(
+      createDiagramVariant(assets[index], "light"),
+      createDiagramVariant(assets[index], "dark")
+    );
+    code.parentElement.replaceWith(figure);
+  });
 }
 
 export async function renderRoute() {
@@ -133,7 +161,7 @@ export async function renderRoute() {
     rewriteDocumentLinks(chapter);
     buildOutline(chapter);
     renderPager(chapter);
-    await renderMermaid();
+    await renderDiagrams(chapter);
     document.title = `${chapter.title} | .NET Modernization for Beginners`;
     article.removeAttribute("aria-busy");
 

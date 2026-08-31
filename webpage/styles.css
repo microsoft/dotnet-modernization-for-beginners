@@ -606,8 +606,25 @@ a:hover {
   background: var(--cp-surface);
 }
 
-.mermaid-error {
-  white-space: pre-wrap;
+.diagram-asset {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.diagram-variant {
+  display: block;
+  border-radius: 0.625rem;
+  cursor: zoom-in;
+}
+
+.diagram-variant img {
+  margin: 0 auto;
+  background: var(--cp-bg-elevated);
+}
+
+html[data-theme="dark"] .diagram-light,
+html[data-theme="light"] .diagram-dark {
+  display: none;
 }
 
 .media-unavailable {

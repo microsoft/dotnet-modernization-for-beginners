@@ -15,3 +15,7 @@ const contentRoot = new URL(sourcePreview ? "../" : "content/", document.baseURI
 export function contentUrl(path) {
   return new URL(path, contentRoot).href;
 }
+
+export function siteUrl(path) {
+  return new URL(path, document.baseURI).href;
+}

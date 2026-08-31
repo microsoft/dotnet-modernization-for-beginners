@@ -27,6 +27,11 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v7
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+
       - name: Configure Pages
         uses: actions/configure-pages@v6
 
@@ -40,6 +45,12 @@ jobs:
           for chapter in 00-introduction 01-assessment 02-planning 03-upgrade-execution 04-cloud; do
             cp -R "$chapter" "_site/content/$chapter"
           done
+
+      - name: Generate Mermaid SVGs
+        shell: bash
+        run: |
+          npm install --global @mermaid-js/mermaid-cli@11.16.0
+          node webpage/tools/render-mermaid.mjs _site/content _site/diagrams
 
       - name: Upload static site
         uses: actions/upload-pages-artifact@v5

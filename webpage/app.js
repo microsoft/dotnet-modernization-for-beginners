@@ -19,11 +19,6 @@ import {
 } from "./scripts/ui.js";
 
 marked.use({ breaks: false, gfm: true });
-mermaid.initialize({
-  startOnLoad: false,
-  securityLevel: "strict",
-  theme: document.documentElement.dataset.theme === "dark" ? "dark" : "neutral"
-});
 
 themeToggle.addEventListener("click", toggleTheme);
 chaptersToggle.addEventListener("click", () => {
