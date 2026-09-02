@@ -363,5 +363,5 @@ You've run Assess → Plan on a real app, read the compatibility report, and und
 
 - 📘 [GitHub Copilot modernization for .NET](https://learn.microsoft.com/dotnet/core/porting/github-copilot-app-modernization-overview) — how Assess → Plan → Act works
 - 📘 [Port from .NET Framework to .NET](https://learn.microsoft.com/dotnet/core/porting/) — the full migration guide
-- 📘 [Migrate from System.Web to ASP.NET Core](https://learn.microsoft.com/dotnet/core/porting/net-framework-to-core-migration) — technical deep dive on the biggest blocker
-- 📘 [Migrate to Entity Framework Core](https://learn.microsoft.com/ef/core/what-is-new/ef6-efcore-porting/) — how to move from EF6 to EF Core
+- 📘 [Migrate from System.Web to ASP.NET Core](https://learn.microsoft.com/aspnet/core/migration/fx-to-core/?view=aspnetcore-10.0) — technical deep dive on the biggest blocker
+- 📘 [Migrate to Entity Framework Core](https://learn.microsoft.com/ef/efcore-and-ef6/porting/) — how to move from EF6 to EF Core
