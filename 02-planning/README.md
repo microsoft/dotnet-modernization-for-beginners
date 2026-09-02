@@ -188,6 +188,6 @@ You now have a planning artifact set ready for execution. Phase 01 gave you visi
 
 - [GitHub Copilot modernization for .NET](https://learn.microsoft.com/dotnet/core/porting/github-copilot-app-modernization-overview)
 - [Port from .NET Framework to .NET](https://learn.microsoft.com/dotnet/core/porting/)
-- [Migrate from System.Web to ASP.NET Core](https://learn.microsoft.com/dotnet/core/porting/net-framework-to-core-migration)
-- [Entity Framework 6 to Entity Framework Core migration guide](https://learn.microsoft.com/ef/efcore/what-is-new/ef6-efcore-porting/)
+- [Migrate from System.Web to ASP.NET Core](https://learn.microsoft.com/en-us/aspnet/core/migration/fx-to-core/?view=aspnetcore-10.0)
+- [Entity Framework 6 to Entity Framework Core migration guide](https://learn.microsoft.com/en-us/ef/efcore-and-ef6/porting/)
 - [Configuration in .NET](https://learn.microsoft.com/dotnet/core/extensions/configuration)

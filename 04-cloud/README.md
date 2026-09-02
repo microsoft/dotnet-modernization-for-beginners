@@ -204,7 +204,7 @@ The agent flags an important compatibility check before publishing: EF Core's `S
 
 Then it zips and deploys:
 
-![Screenshot: "Publish succeeded. Now let me zip the published output and deploy it to the App Service:" `Compress-Archive -Path .azure/publish/* -DestinationPath .azure/app.zip` (~16 MB zip created). Then `az webapp deploy --resource-group rg-bookcatalog-eastus2 --name azwebqf7btmy5hetca --src-path .azure/app.zip --type zip` with "Reading background terminal in 84 seconds"](images/20-webapp-deploy.png)
+![Screenshot: "Publish succeeded. Now let me zip the published output and deploy it to the App Service:" `Compress-Archive -Path .azure/publish/* -DestinationPath .azure/app.zip` (~16 MB zip created). Then `az webapp deploy --resource-group rg-bookcatalog-eastus2 --name <app-name> --src-path .azure/app.zip --type zip` with "Reading background terminal in 84 seconds"](images/20-webapp-deploy.png)
 
 The zip-deploy is the last `az` call. Once it completes, the app is live.
 
@@ -217,7 +217,7 @@ Set the three app settings the runtime needs:
 ```pwsh
 az webapp config appsettings set `
   --resource-group rg-bookcatalog-eastus2 `
-  --name azwebqf7btmy5hetca `
+  --name <app-name> `
   --settings `
     KeyVaultName=azkvqf7btmy5hetca `
     AZURE_CLIENT_ID=<your-uami-client-id> `
@@ -227,8 +227,8 @@ az webapp config appsettings set `
 Restart and hit the URL:
 
 ```pwsh
-az webapp restart --resource-group rg-bookcatalog-eastus2 --name azwebqf7btmy5hetca
-curl https://azwebqf7btmy5hetca.azurewebsites.net -I
+az webapp restart --resource-group rg-bookcatalog-eastus2 --name <app-name>
+curl https://<app-name>.azurewebsites.net -I
 # HTTP/1.1 200 OK
 ```
 
