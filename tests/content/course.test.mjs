@@ -29,6 +29,20 @@ const recordedBookCatalogFiles = [
     "ch3-2-most-tasks-complete"].map(name => `examples/assessments/bookcatalog/images/${name}.png`)
 ];
 
+test("the shared page head includes Clarity tracking", () => {
+  const html = read("webpage/index.html");
+  const head = html.match(/<head>([\s\S]*?)<\/head>/)?.[1];
+  assert.ok(head, "The shared page must have a head element.");
+  assert.match(head, /<script type="text\/javascript">[\s\S]*https:\/\/www\.clarity\.ms\/tag\/[\s\S]*"ynx84zjbvb"[\s\S]*<\/script>/);
+  assert.equal(html.match(/https:\/\/www\.clarity\.ms\/tag\//g)?.length, 1);
+});
+
+test("the published site retains the shared page shell", {
+  skip: !existsSync(join(root, "_site")) && "Build the website before checking its artifact."
+}, () => {
+  assert.equal(read("_site/index.html"), read("webpage/index.html"));
+});
+
 test("each chapter has the planned era and complete palettes", () => {
   assert.deepEqual(chapters.map(chapter => chapter.era),
     ["1960s", "1970s", "soundcheck", "1980s", "1990s", "2000s-2010s", "2020s"]);

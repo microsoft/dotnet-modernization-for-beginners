@@ -358,8 +358,13 @@ test("theme choice persists and supports old theme links", async ({ page }) => {
 
 test("local assets, layout, contrast, and code remain usable", async ({ page }) => {
   const remote = [];
+  const isAnalytics = url => url.hostname === "clarity.ms"
+    || url.hostname.endsWith(".clarity.ms")
+    || url.hostname === "c.bing.com";
+  await page.route(isAnalytics, route => route.abort());
   page.on("request", request => {
-    if (!request.url().startsWith("http://127.0.0.1:4189/")) remote.push(request.url());
+    const url = new URL(request.url());
+    if (url.origin !== "http://127.0.0.1:4189" && !isAnalytics(url)) remote.push(request.url());
   });
   for (const theme of ["light", "dark"]) {
     for (const width of [1440, 390, 320]) {

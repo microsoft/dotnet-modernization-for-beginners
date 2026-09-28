@@ -64,6 +64,7 @@ A script error stops the command. The launcher does not retry the script with an
 
 | File | Responsibility |
 | --- | --- |
+| `index.html` | Shared page shell and Microsoft Clarity tracking script |
 | `scripts/chapters.js` | Chapter order, stable identifiers, and reference routes |
 | `scripts/reader.js` | Markdown, links, themed illustrations, and code copy |
 | `scripts/illustrations.js` | Illustration locations, captions, and text descriptions |
@@ -165,7 +166,10 @@ Keep code legible in every era. Do not add simulated CRT effects, flashing eleme
 
 ## Progress and privacy
 
-The reader stores progress in this browser. It does not send progress to a server.
+The reader stores progress in this browser.
+
+The website also uses Microsoft Clarity for usage analytics. Its script loads from `www.clarity.ms` and sends usage data to Microsoft Clarity.
+The tracking code is in the shared `index.html` head, so it loads for every chapter and reference page.
 
 Completion means the learner marked a step after following its instructions. It doesn't mean the website tested the application.
 
