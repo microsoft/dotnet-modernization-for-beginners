@@ -80,6 +80,11 @@ A script error stops the command. The launcher does not retry the script with an
 | `../docs/illustrations/` | Generated image files used by the READMEs and website |
 
 New reference documents belong in `scripts/chapters.js`. The build uses this shared list.
+The optional modernization reference guide helps people and coding agents use the lessons as source material.
+Its source is `docs/modernization-reference.md`. It doesn't add a required course step.
+The build copies the repository's `llms.txt` to the website root.
+Keep its links on the public GitHub Pages address and point them to plain Markdown under `content/`.
+The index doesn't require the JavaScript reader. It doesn't guarantee discovery by search engines or agents.
 Chapter folders use their course numbers, from `02-introduction` through `07-cloud`.
 The root `README.md` is Chapter 01. Setup is in `03-prerequisites`.
 Keep the chapter slugs unchanged: they identify existing website links and saved progress, not source folders.

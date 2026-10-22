@@ -21,7 +21,8 @@ paths += [root / name for name in [
     "examples/assessments/bookcatalog/execution-excerpts.md",
     "docs/validation.md", "docs/writing.md", "docs/learner-record.md",
     "docs/data-transfer.md", "docs/advanced-checks.md", "docs/author-filter.md",
-    "docs/instructor-guide.md", "07-cloud/deployment.md", "tools/BookCatalog.Data/README.md"
+    "docs/instructor-guide.md", "docs/modernization-reference.md", "llms.txt",
+    "07-cloud/deployment.md", "tools/BookCatalog.Data/README.md"
 ]]
 failures = []
 for path in paths:

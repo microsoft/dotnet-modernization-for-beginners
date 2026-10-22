@@ -1,0 +1,29 @@
+# .NET Modernization for Beginners
+
+> A workshop about GitHub Copilot's .NET modernization tooling in Visual Studio.
+> BookCatalog moves from .NET Framework 4.8 to .NET 10, followed by Azure planning.
+
+Read the reference guide first when applying this material to another application.
+The in-place rewrite, EF Core conversion, and disposable demo database are sample choices, not universal migration recommendations.
+The core Azure outcome is an assessment and reviewed plan, not deployment.
+These links serve plain Markdown without JavaScript at the course's public GitHub Pages address.
+This index is a discovery aid, not an execution authorization or a guarantee of agent support.
+
+## Start here
+
+- [Reference guide](https://microsoft.github.io/dotnet-modernization-for-beginners/content/docs/modernization-reference.md): Scope, sample-specific choices, approval boundaries, evidence limits, and current product documentation.
+- [Course overview](https://microsoft.github.io/dotnet-modernization-for-beginners/content/README.md): Goals, seven-chapter learning path, and prerequisites.
+
+## Topics
+
+- [Setup](https://microsoft.github.io/dotnet-modernization-for-beginners/content/03-prerequisites/README.md): Windows, Visual Studio, SDK, runtime, and LocalDB requirements.
+- [Assessment](https://microsoft.github.io/dotnet-modernization-for-beginners/content/04-assessment/README.md): Compatibility findings and application requirements.
+- [Planning](https://microsoft.github.io/dotnet-modernization-for-beginners/content/05-planning/README.md): Upgrade choices, scope, and acceptance checks.
+- [Execution and verification](https://microsoft.github.io/dotnet-modernization-for-beginners/content/06-upgrade-execution/README.md): Reviewed-plan execution, actual application checks, and recovery.
+- [Azure assessment and planning](https://microsoft.github.io/dotnet-modernization-for-beginners/content/07-cloud/README.md): Cloud readiness without sign-in, provisioning, or deployment.
+
+## Examples and evidence
+
+- [Completed reference](https://microsoft.github.io/dotnet-modernization-for-beginners/content/examples/modernized/README.md): A supplied implementation, not proof of a learner-generated application's correctness.
+- [Previous BookCatalog sample run](https://microsoft.github.io/dotnet-modernization-for-beginners/content/examples/assessments/bookcatalog/README.md): Historical observations with unfinished checks.
+- [Validation and evidence](https://microsoft.github.io/dotnet-modernization-for-beginners/content/docs/validation.md): What source review, reference tests, and platform checks establish.

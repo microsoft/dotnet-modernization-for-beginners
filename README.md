@@ -82,6 +82,12 @@ Existing books don't need to survive the upgrade. You don't need backups, snapsh
 
 Tool output varies by version and application. Compare the report's meaning and your app's behavior, not screenshot counts.
 
+## Using the course as a reference
+
+Helping with another application's modernization?
+The [modernization reference guide](docs/modernization-reference.md) helps people and coding agents find relevant chapters and distinguish reusable guidance from BookCatalog-specific choices.
+It's optional and doesn't add a course step.
+
 ## Samples and help
 
 - [Legacy sample quickstart](shared-legacy-app/README.md): run BookCatalog before upgrading it.

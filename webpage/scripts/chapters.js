@@ -25,6 +25,7 @@ export const references = [
   { path: "07-cloud/deployment.md", title: "Optional Azure deployment" },
   { path: "tools/BookCatalog.Data/README.md", title: "Selected-record helper" },
   { path: "docs/instructor-guide.md", title: "Optional instructor guide", era: "briefing" },
+  { path: "docs/modernization-reference.md", title: "Modernization reference guide" },
   { path: "docs/validation.md", title: "Maintainer validation" },
   { path: "docs/writing.md", title: "Writing guide" },
   { path: "webpage/README.md", title: "Website guide" }

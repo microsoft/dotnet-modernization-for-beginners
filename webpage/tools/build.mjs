@@ -37,6 +37,7 @@ try {
   for (const path of ["index.html", "app.js", ".nojekyll", "scripts", "seasons"]) {
     await cp(join(root, "webpage", path), join(stage, path), { recursive: true, filter: source => !source.endsWith(".mjs") && !source.endsWith("README.md") });
   }
+  await cp(join(root, "llms.txt"), join(stage, "llms.txt"));
   await mkdir(join(stage, "content"), { recursive: true });
   const publicFiles = selectPublicContent(gitFiles([]), gitFiles(["--others", "--exclude-standard"]));
   for (const document of [...chapters, ...references]) {
