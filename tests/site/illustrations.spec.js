@@ -1,5 +1,5 @@
 import { test, expect } from "./fixtures.js";
-import { chapters } from "../../webpage/scripts/chapters.js";
+import { routeForPath } from "../../webpage/scripts/routes.js";
 import { illustrations, illustrationPath } from "../../webpage/scripts/illustrations.js";
 import halloween from "../../webpage/seasons/halloween/season.js";
 
@@ -44,11 +44,10 @@ for (const season of ["classic", "halloween"]) for (const illustration of illust
   }
 
   test(`${season} ${illustration.id}: image theme, full-size link, and text alternative work on mobile`, async ({ page }) => {
-    const chapter = chapters.find(item => item.path === illustration.document);
     const description = (season === "halloween" && halloween.illustrationText?.[illustration.id]?.description)
       || illustration.description;
     await page.setViewportSize({ width: 390, height: 844 });
-    await page.goto(`?season=${season}&clawpilotTheme=light#/${chapter.slug}`);
+    await page.goto(`?season=${season}&clawpilotTheme=light${routeForPath(illustration.document)}`);
     const figure = page.locator(`[data-illustration="${illustration.id}"]`);
     await expect(figure).toBeVisible();
     await figure.scrollIntoViewIfNeeded();
@@ -74,7 +73,7 @@ for (const season of ["classic", "halloween"]) for (const illustration of illust
     await popup.close();
     await page.reload();
     await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
-    await expect(page.locator(".illustration-dark")).toBeVisible();
+    await expect(figure.locator(".illustration-dark")).toBeVisible();
     await expect(page.locator("#era-label")).toHaveCount(0);
   });
 }

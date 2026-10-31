@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="720" viewBox="0 0 1100 720" role="img" aria-labelledby="illustration-autopilot-flow-light-title illustration-autopilot-flow-light-desc" data-illustration="autopilot-flow" data-era="autopilot" data-theme="light">
+  <title id="illustration-autopilot-flow-light-title">One goal, continuous progress</title>
+  <desc id="illustration-autopilot-flow-light-desc">The BookCatalog folder and .NET 10 goal start an automatic sequence: Assess, Plan, Upgrade, and Validate. No new prompt is needed at each stage. The learner follows Canvas, steers the plan when needed, then runs the app and checks that a saved edit remains after restart. The steering path returns to the plan without restarting the upgrade.</desc>
+  <defs>
+    <marker id="illustration-autopilot-flow-light-arrow" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="18" markerHeight="18" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M1 1L11 6 1 11Z" fill="#79521f"/></marker>
+    <marker id="illustration-autopilot-flow-light-return" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="16" markerHeight="16" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M1 1L11 6 1 11" fill="none" stroke="#55615b" stroke-width="2"/></marker>
+    <marker id="illustration-autopilot-flow-light-trail" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="18" markerHeight="18" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L11 6 1 11Z" fill="#fffaf0"/></marker>
+
+  </defs>
+  <rect width="1100" height="720" fill="#eee5cf"/>
+  <text x="60" y="89" fill="#252b29" font-size="44" font-weight="400" text-anchor="start" font-family="Georgia, serif" letter-spacing="0"><tspan x="60" dy="0">One goal. Continuous progress.</tspan></text><text x="63" y="132" fill="#55615b" font-size="23" font-weight="400" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" letter-spacing="0"><tspan x="63" dy="0">Copilot runs the stages. You steer and try the app.</tspan></text>
+      <rect x="60" y="170" width="980" height="80" rx="18" fill="#f5ecd7" stroke="#79521f" stroke-width="2"/>
+      <text x="550" y="219" fill="#252b29" font-size="29" font-weight="700" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" letter-spacing="0"><tspan x="550" dy="0">BookCatalog folder + .NET 10 goal</tspan></text>
+      <path d="M550 250V270H175V290" fill="none" stroke="#79521f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="1" marker-end="url(#illustration-autopilot-flow-light-arrow)"/>
+      <rect x="60" y="290" width="230" height="175" rx="16" fill="#fffaf0" stroke="#bdc6bd" stroke-width="2"/>
+          <circle cx="85" cy="318" r="18" fill="#79521f" stroke="#fffaf0" stroke-width="4"/><text x="85" y="326" fill="#ffffff" font-size="24" font-weight="700" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" letter-spacing="0"><tspan x="85" dy="0">1</tspan></text>
+          <text x="185" y="346" fill="#252b29" font-size="29" font-weight="700" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" letter-spacing="0"><tspan x="185" dy="0">Assess</tspan></text>
+          <text x="175" y="394" fill="#252b29" font-size="22" font-weight="400" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" letter-spacing="0"><tspan x="175" dy="0">Find changes</tspan><tspan x="175" dy="28.16">for .NET 10</tspan></text>
+          <path d="M290 370h20" fill="none" stroke="#79521f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="1" marker-end="url(#illustration-autopilot-flow-light-arrow)"/><rect x="310" y="290" width="230" height="175" rx="16" fill="#fffaf0" stroke="#bdc6bd" stroke-width="2"/>
+          <circle cx="335" cy="318" r="18" fill="#79521f" stroke="#fffaf0" stroke-width="4"/><text x="335" y="326" fill="#ffffff" font-size="24" font-weight="700" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" letter-spacing="0"><tspan x="335" dy="0">2</tspan></text>
+          <text x="435" y="346" fill="#252b29" font-size="29" font-weight="700" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" letter-spacing="0"><tspan x="435" dy="0">Plan</tspan></text>
+          <text x="425" y="394" fill="#252b29" font-size="22" font-weight="400" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" letter-spacing="0"><tspan x="425" dy="0">Choose the work</tspan><tspan x="425" dy="28.16">and task order</tspan></text>
+          <path d="M540 370h20" fill="none" stroke="#79521f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="1" marker-end="url(#illustration-autopilot-flow-light-arrow)"/><rect x="560" y="290" width="230" height="175" rx="16" fill="#fffaf0" stroke="#bdc6bd" stroke-width="2"/>
+          <circle cx="585" cy="318" r="18" fill="#79521f" stroke="#fffaf0" stroke-width="4"/><text x="585" y="326" fill="#ffffff" font-size="24" font-weight="700" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" letter-spacing="0"><tspan x="585" dy="0">3</tspan></text>
+          <text x="685" y="346" fill="#252b29" font-size="29" font-weight="700" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" letter-spacing="0"><tspan x="685" dy="0">Upgrade</tspan></text>
+          <text x="675" y="394" fill="#252b29" font-size="22" font-weight="400" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" letter-spacing="0"><tspan x="675" dy="0">Update the code</tspan><tspan x="675" dy="28.16">and dependencies</tspan></text>
+          <path d="M790 370h20" fill="none" stroke="#79521f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="1" marker-end="url(#illustration-autopilot-flow-light-arrow)"/><rect x="810" y="290" width="230" height="175" rx="16" fill="#fffaf0" stroke="#bdc6bd" stroke-width="2"/>
+          <circle cx="835" cy="318" r="18" fill="#79521f" stroke="#fffaf0" stroke-width="4"/><text x="835" y="326" fill="#ffffff" font-size="24" font-weight="700" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" letter-spacing="0"><tspan x="835" dy="0">4</tspan></text>
+          <text x="935" y="346" fill="#252b29" font-size="29" font-weight="700" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" letter-spacing="0"><tspan x="935" dy="0">Validate</tspan></text>
+          <text x="925" y="394" fill="#252b29" font-size="22" font-weight="400" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" letter-spacing="0"><tspan x="925" dy="0">Build and check</tspan><tspan x="925" dy="28.16">the application</tspan></text>
+
+      <path d="M925 465V500H820V535" fill="none" stroke="#79521f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="1" marker-end="url(#illustration-autopilot-flow-light-arrow)"/>
+      <path d="M300 535V505H425V465" fill="none" stroke="#55615b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="1" stroke-dasharray="7 8" marker-end="url(#illustration-autopilot-flow-light-return)"/>
+      <rect x="150" y="535" width="800" height="115" rx="18" fill="#f5ecd7" stroke="#79521f" stroke-width="2"/>
+      <text x="550" y="580" fill="#252b29" font-size="28" font-weight="700" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" letter-spacing="0"><tspan x="550" dy="0">Follow Canvas. Steer when needed.</tspan></text>
+      <text x="550" y="619" fill="#55615b" font-size="23" font-weight="400" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" letter-spacing="0"><tspan x="550" dy="0">Run BookCatalog and check a saved edit after restart.</tspan></text>
+  <g aria-hidden="true"><g transform="translate(1028 75) scale(0.45)">
+    <path d="M-38 43q-3-27 0-56C-35-64 33-67 38-15q0 39 18 53-21 3-29-7-10 24-29 13-18 19-36-1Z" fill="#f3ecda"/>
+    <path d="M-25-22q-8 29 0 43M28 3q3 16 10 25" fill="none" stroke="#6a887d" stroke-width="2" opacity=".6"/>
+    <ellipse cx="-10" cy="-10" rx="3" ry="5" fill="#263b34"/><ellipse cx="12" cy="-12" rx="3" ry="5" fill="#263b34"/>
+    <path d="M-3 7q6 6 12-2" fill="none" stroke="#263b34" stroke-width="2" stroke-linecap="round"/>
+  </g><path transform="translate(984 37) scale(0.5)" d="M0-14 4-4 14 0 4 4 0 14-4 4-14 0-4-4Z" fill="#d4b16a"/></g>
+</svg>

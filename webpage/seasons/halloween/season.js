@@ -11,6 +11,12 @@ function palette(paper, surface, soft, accent, a, b, c, dark = false) {
 }
 
 const eras = {
+  autopilot: {
+    label: "Clockwork observatory", scene: "clockwork-observatory", art: "halloween-clockwork-observatory-light.svg", artDark: "halloween-clockwork-observatory-dark.svg",
+    heading: 'Georgia, "Times New Roman", serif', interface: '"Trebuchet MS", Verdana, sans-serif', radius: "18px", control: "8px",
+    light: palette("#eee5cf", "#fffaf0", "#f5ecd7", "#79521f", "#6a887d", "#b66b3f", "#d4b16a"),
+    dark: palette("#242b2c", "#303839", "#3e4846", "#edc883", "#8daf9d", "#d4966e", "#edc883", true)
+  },
   "1960s": {
     label: "Pumpkin patch", scene: "pumpkin-patch", art: "halloween-pumpkin-patch-light.svg", artDark: "halloween-pumpkin-patch-dark.svg",
     heading: 'Georgia, "Times New Roman", serif', interface: '-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif', radius: "4px", control: "5px",

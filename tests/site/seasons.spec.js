@@ -46,14 +46,15 @@ test("Halloween gives every stop its own scene, label, and art", async ({ page }
 
 test("Halloween swaps lesson illustrations and setup text, and classic does not", async ({ page }) => {
   const setup = chapters.find(item => item.slug === "prerequisites");
+  const soundcheck = page.locator('[data-illustration="soundcheck"]');
   await open(page, setup.slug, "season=halloween");
-  await expect(page.locator(".illustration-light")).toHaveAttribute("href", /\/seasons\/halloween\/illustrations\/soundcheck-light\.svg$/);
-  await expect(page.locator(".illustration-light img")).toHaveAttribute("alt", halloween.illustrationText.soundcheck.description);
-  await expect.poll(() => page.locator(".illustration-light img").evaluate(image => image.complete && image.naturalWidth > 0)).toBeTruthy();
+  await expect(soundcheck.locator(".illustration-light")).toHaveAttribute("href", /\/seasons\/halloween\/illustrations\/soundcheck-light\.svg$/);
+  await expect(soundcheck.locator(".illustration-light img")).toHaveAttribute("alt", halloween.illustrationText.soundcheck.description);
+  await expect.poll(() => soundcheck.locator(".illustration-light img").evaluate(image => image.complete && image.naturalWidth > 0)).toBeTruthy();
   expect(await page.locator(".era-intro h1").evaluate(element => getComputedStyle(element).fontStyle)).toBe("italic");
 
   await open(page, setup.slug, "season=classic");
-  await expect(page.locator(".illustration-light")).toHaveAttribute("href", /\/content\/docs\/illustrations\/soundcheck-light\.svg$/);
+  await expect(soundcheck.locator(".illustration-light")).toHaveAttribute("href", /\/content\/docs\/illustrations\/soundcheck-light\.svg$/);
   await expect(page.locator(".scene-name")).toHaveCount(0);
   await expect(page.locator("html")).not.toHaveAttribute("data-scene", /.+/);
 });

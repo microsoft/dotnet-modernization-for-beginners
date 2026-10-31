@@ -132,6 +132,27 @@ function addChapterHeader(chapter) {
     setting.textContent = era.label;
     panel.before(setting);
   }
+  if (chapter.era === "autopilot") {
+    panel.classList.add("autopilot-intro");
+    const copy = document.createElement("div");
+    copy.className = "autopilot-copy";
+    const kicker = document.createElement("p");
+    kicker.className = "autopilot-kicker";
+    kicker.textContent = "Autopilot / One goal";
+    const caption = document.createElement("p");
+    caption.className = "autopilot-caption";
+    caption.textContent = "Set the direction. Follow the upgrade.";
+    const tags = document.createElement("ul");
+    tags.className = "autopilot-tags";
+    tags.setAttribute("aria-label", "Copilot app workflow");
+    for (const label of ["Attach a folder", "Start Autopilot", "Follow Canvas"]) {
+      const tag = document.createElement("li");
+      tag.textContent = label;
+      tags.append(tag);
+    }
+    copy.append(kicker, heading, caption, tags);
+    panel.append(copy);
+  }
   if (chapter.era === "1950s") {
     panel.classList.add("flight-intro");
     const copy = document.createElement("div");

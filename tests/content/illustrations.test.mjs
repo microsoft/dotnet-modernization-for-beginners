@@ -5,30 +5,53 @@ import { dirname, resolve } from "node:path";
 import { chapters, references } from "../../webpage/scripts/chapters.js";
 import { illustrations, illustrationPath } from "../../webpage/scripts/illustrations.js";
 import { eras } from "../../webpage/scripts/eras.js";
-import { renderIllustration, renderSoundcheckHeader } from "../../webpage/tools/illustration-art.mjs";
+import { renderIllustration, renderSoundcheckHeader, renderAutopilotHeader } from "../../webpage/tools/illustration-art.mjs";
 import { renderIllustrations } from "../../webpage/tools/render-illustrations.mjs";
 
 const root = resolve(import.meta.dirname, "../..");
 
-test("each chapter embeds its own original illustration as a normal README image", async () => {
-  assert.equal(illustrations.length, chapters.length);
+test("chapters and illustrated references embed their original SVGs as normal Markdown images", async () => {
   assert.equal(new Set(illustrations.map(item => item.id)).size, illustrations.length);
   for (const chapter of chapters) {
-    const matching = illustrations.filter(item => item.document === chapter.path);
-    assert.equal(matching.length, 1, chapter.path);
-    const [illustration] = matching;
-    assert.equal(illustration.era, chapter.era);
+    assert.ok(illustrations.some(item => item.document === chapter.path), chapter.path);
+  }
+  for (const illustration of illustrations) {
+    const document = [...chapters, ...references].find(item => item.path === illustration.document);
+    assert.ok(document, illustration.document);
+    assert.equal(illustration.era, document.era);
     assert.ok(illustration.description.length > 100);
-    const markdown = await readFile(resolve(root, chapter.path), "utf8");
+    const markdown = await readFile(resolve(root, document.path), "utf8");
     const images = [...markdown.matchAll(/!\[([^\]]+)\]\(([^)\s]+)\)/g)];
     const path = resolve(root, illustrationPath(illustration.id, "light"));
-    const embedded = images.filter(match => resolve(root, dirname(chapter.path), match[2]) === path);
-    assert.equal(embedded.length, 1, chapter.path);
+    const embedded = images.filter(match => resolve(root, dirname(document.path), match[2]) === path);
+    assert.equal(embedded.length, 1, document.path);
     assert.ok(embedded[0][1].length > 60, "README images need meaningful alternative text.");
   }
   for (const document of [...chapters, ...references]) {
     const markdown = await readFile(resolve(root, document.path), "utf8");
     assert.doesNotMatch(markdown, /^```mermaid\b/m, document.path);
+  }
+});
+
+test("route diagrams distinguish stage control while keeping the final app check", () => {
+  const text = id => renderIllustration(id, "light").replace(/<[^>]+>/g, " ");
+  assert.match(text("route-choices"), /Visual Studio/);
+  assert.match(text("route-choices"), /Copilot app/);
+  assert.match(text("route-choices"), /EF Core/);
+  assert.match(text("route-choices"), /EF6/);
+  assert.match(text("route-choices"), /Check add, edit, and restart/);
+  assert.match(text("autopilot-flow"), /No new prompt is needed at each stage/);
+  assert.match(text("autopilot-flow"), /saved edit after restart/);
+});
+
+test("Autopilot headers have original generated artwork in both modes", async () => {
+  for (const [mode, file] of [["light", eras.autopilot.art], ["dark", eras.autopilot.artDark]]) {
+    const svg = renderAutopilotHeader(mode);
+    assert.equal((await readFile(resolve(root, "webpage/seasons/classic/assets", file), "utf8")).trim(), svg.trim());
+    assert.match(svg, /Autopilot flight deck/);
+    assert.match(svg, /\.NET 10/);
+    assert.ok(svg.includes(eras.autopilot[mode].paper));
+    assert.doesNotMatch(svg, /<image|<script|<animate|(?:href|src)=["']https?:/);
   }
 });
 

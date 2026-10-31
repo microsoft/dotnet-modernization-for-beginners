@@ -158,7 +158,7 @@ test("the completed reference has its own future era without adding a course ste
   assert.ok(!reference.core);
   assert.deepEqual(references.filter(item => item.era).map(item => item.path),
     ["shared-legacy-app/README.md", "examples/modernized/README.md",
-      "examples/assessments/bookcatalog/README.md", "docs/instructor-guide.md"]);
+      "examples/assessments/bookcatalog/README.md", "03-prerequisites/copilot-app.md", "docs/instructor-guide.md"]);
   assert.ok(existsSync(join(root, "webpage/seasons/classic/assets", getEra("2050s").art)));
   assert.equal(routeForPath(reference.path), "#/reference?path=examples%2Fmodernized%2FREADME.md");
 });

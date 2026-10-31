@@ -175,4 +175,27 @@ If the command isn't available, check the installed modernization component and 
 
 Continue when BookCatalog runs and `@Modernize` responds.
 
+## Choose your route
+
+Continue to Chapter 04 for the Visual Studio route.
+It uses an in-place ASP.NET Core rewrite with EF Core.
+
+For a guided, automatic experience, [Modernize with the GitHub Copilot app](copilot-app.md).
+Attach your BookCatalog folder and describe the goal.
+Copilot carries the assessment, planning, code changes, and validation forward in Autopilot.
+Follow the work in Canvas and steer the agent whenever you want to adjust its direction.
+
+Both routes start with BookCatalog and target .NET 10.
+Choose how you want to direct the work:
+
+![BookCatalog starts on Framework 4.8, branches into Visual Studio's stage-by-stage route or the Copilot app's Autopilot route, then returns to running the upgraded app.](../docs/illustrations/route-choices-light.svg)
+
+| What you'll do | [Visual Studio](../04-assessment/README.md) | [Copilot app](copilot-app.md) |
+| --- | --- | --- |
+| Start the work | Open `BookCatalog.sln` in Visual Studio | Attach `shared-legacy-app` to chat |
+| Direct the upgrade | Request each stage and review before continuing in Guided flow | Give one goal and let Autopilot carry the stages forward |
+| Follow progress | Copilot Chat and the Upgrade Agent Dashboard | Chat and the Canvas dashboard |
+| Modernize the app | Rewrite in place with EF Core and a separate demo database | Keep EF6 during a temporary side-by-side move, then remove the old host |
+| Check the result | Run the app and check a saved edit after restart | Run the app and check a saved edit after restart |
+
 **[Next: Assess Book Catalog](../04-assessment/README.md)** · **[Back: Meet the app](../02-introduction/README.md)**

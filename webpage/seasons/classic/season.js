@@ -1,5 +1,13 @@
 // Classic: the course gets more modern at each stop. Era IDs are shared by every season.
 const eras = {
+  autopilot: {
+    label: "Autopilot flight deck", art: "era-autopilot-light.svg", artDark: "era-autopilot-dark.svg",
+    heading: 'Outfit, "Trebuchet MS", sans-serif', interface: '"Segoe UI", Tahoma, sans-serif', radius: "18px", control: "10px",
+    light: { paper: "#eaf0ff", surface: "#ffffff", ink: "#172747", muted: "#4f5d77", accent: "#2752b3", accentText: "#ffffff",
+      soft: "#dfe8ff", line: "#8b9bc0", selected: "#f4be72", selectedText: "#172747", a: "#5288be", b: "#cf704d", c: "#f4be72" },
+    dark: { paper: "#0d1930", surface: "#152541", ink: "#f0f5ff", muted: "#b6c8e3", accent: "#a5c9ff", accentText: "#12223b",
+      soft: "#213657", line: "#6d88ae", selected: "#f4be72", selectedText: "#172747", a: "#72a6df", b: "#f19a79", c: "#f4be72" }
+  },
   workbench: {
     label: "Workshop manual", art: "era-workbench.svg",
     heading: '"Courier New", Consolas, monospace', interface: 'Verdana, Tahoma, sans-serif', radius: "0px", control: "2px",

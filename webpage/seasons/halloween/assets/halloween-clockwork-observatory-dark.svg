@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="640" viewBox="0 0 720 640" role="img" aria-labelledby="title" data-scene="clockwork-observatory" data-theme="dark">
+    <title id="title">Clockwork observatory</title>
+    <defs>
+      <clipPath id="scene"><path d="M24 616V287a336 263 0 0 1 672 0v329Z"/></clipPath>
+      <pattern id="engraving" width="9" height="9" patternUnits="userSpaceOnUse"><path d="m0 9 9-9" stroke="#edc883" stroke-width=".6" opacity=".11"/></pattern>
+    </defs>
+    <g clip-path="url(#scene)">
+      <path d="M0 0h720v640H0Z" fill="#293d37"/>
+      <circle cx="487" cy="150" r="67" fill="#edc883"/><path d="M440.1 155q46.9 -60.300000000000004 93.8 0" fill="none" stroke="#293d37" stroke-width="1" opacity="0.18" stroke-linecap="round" stroke-linejoin="round"/><path transform="translate(180 112) scale(0.4)" d="M0-14 4-4 14 0 4 4 0 14-4 4-14 0-4-4Z" fill="#edc883"/><path transform="translate(284 78) scale(0.4)" d="M0-14 4-4 14 0 4 4 0 14-4 4-14 0-4-4Z" fill="#edc883"/><path transform="translate(575 262) scale(0.4)" d="M0-14 4-4 14 0 4 4 0 14-4 4-14 0-4-4Z" fill="#edc883"/><path transform="translate(135 312) scale(0.4)" d="M0-14 4-4 14 0 4 4 0 14-4 4-14 0-4-4Z" fill="#edc883"/>
+      <path d="M117 490V292a243 216 0 0 1 486 0v198Z" fill="#8daf9d" opacity=".3"/>
+      <path d="M117 490V292a243 216 0 0 1 486 0v198M360 75v422M117 292h486M173 162q120 159 0 328M547 162q-120 159 0 328" fill="none" stroke="#edc883" stroke-width="2" opacity="1" stroke-linecap="round" stroke-linejoin="round"/>
+      <ellipse cx="360" cy="356" rx="181" ry="76" fill="none" stroke="#edc883" stroke-width="3" transform="rotate(-20 360 356)"/>
+      <ellipse cx="360" cy="356" rx="181" ry="76" fill="none" stroke="#8daf9d" stroke-width="3" transform="rotate(32 360 356)"/>
+      <g transform="translate(361 272) scale(0.7)">
+    <path d="M-38 43q-3-27 0-56C-35-64 33-67 38-15q0 39 18 53-21 3-29-7-10 24-29 13-18 19-36-1Z" fill="#f3ecda"/>
+    <path d="M-25-22q-8 29 0 43M28 3q3 16 10 25" fill="none" stroke="#8daf9d" stroke-width="2" opacity=".6"/>
+    <ellipse cx="-10" cy="-10" rx="3" ry="5" fill="#263b34"/><ellipse cx="12" cy="-12" rx="3" ry="5" fill="#263b34"/>
+    <path d="M-3 7q6 6 12-2" fill="none" stroke="#263b34" stroke-width="2" stroke-linecap="round"/>
+  </g><g transform="translate(360 420) scale(0.8)">
+    <path d="M-90-50Q-45-66 0-40q45-26 90-10V65Q45 49 0 76-45 49-90 65Z" fill="#f3ecda" stroke="#edc883" stroke-width="5"/>
+    <path d="M0-40V76M-70-24l48 6m-48 16 48 6m-48 16 48 6M22-18l48-6M22 4l48-6M22 26l48-6" fill="none" stroke="#54645f" stroke-width="3"/>
+    <path transform="translate(48 42) scale(0.6)" d="M0-14 4-4 14 0 4 4 0 14-4 4-14 0-4-4Z" fill="#edc883"/>
+  </g>
+      <path d="M144 514h432l25 27H119Z" fill="#d4966e"/>
+      <rect x="157" y="541" width="406" height="65" rx="17" fill="#293d37" stroke="#edc883" stroke-width="2"/>
+      <circle cx="218" cy="573" r="18" fill="#8daf9d" stroke="#edc883" stroke-width="2"/>
+        <path d="M218 563v20m-10-10h20" fill="none" stroke="#edc883" stroke-width="2" opacity="1" stroke-linecap="round" stroke-linejoin="round"/><path d="M239 573h49" fill="none" stroke="#edc883" stroke-width="2" opacity="1" stroke-linecap="round" stroke-linejoin="round"/><circle cx="312" cy="573" r="18" fill="#8daf9d" stroke="#edc883" stroke-width="2"/>
+        <path d="M312 563v20m-10-10h20" fill="none" stroke="#edc883" stroke-width="2" opacity="1" stroke-linecap="round" stroke-linejoin="round"/><path d="M333 573h49" fill="none" stroke="#edc883" stroke-width="2" opacity="1" stroke-linecap="round" stroke-linejoin="round"/><circle cx="406" cy="573" r="18" fill="#8daf9d" stroke="#edc883" stroke-width="2"/>
+        <path d="M406 563v20m-10-10h20" fill="none" stroke="#edc883" stroke-width="2" opacity="1" stroke-linecap="round" stroke-linejoin="round"/><path d="M427 573h49" fill="none" stroke="#edc883" stroke-width="2" opacity="1" stroke-linecap="round" stroke-linejoin="round"/><circle cx="500" cy="573" r="18" fill="#8daf9d" stroke="#edc883" stroke-width="2"/>
+        <path d="M500 563v20m-10-10h20" fill="none" stroke="#edc883" stroke-width="2" opacity="1" stroke-linecap="round" stroke-linejoin="round"/>
+      <g transform="translate(129 532) scale(0.65)">
+    <path d="M-3-35q-5-18 10-25" fill="none" stroke="#8daf9d" stroke-width="7" stroke-linecap="round"/>
+    <path d="M0-34c-70-24-78 74-22 76q22 7 44 0C78 40 70-58 0-34Z" fill="#d4966e"/>
+    <path d="M-13-31q-35 40-8 70M10-31q31 42 10 70M0-31v69" fill="none" stroke="#edc883" stroke-width="2" opacity=".7"/>
+    <path d="m-29-2 10-12 6 12m24 0 7-12 10 12M-18 14q18 17 36 0l-8 14H-9Z" fill="#293d37"/>
+  </g><g transform="translate(609 618) scale(-1.05 1.05)">
+    <path d="M0 0Q-5-65 17-129" fill="none" stroke="#8daf9d" stroke-width="2" opacity="1" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M0 -16q-38-8-27-25 21 1 27 25m2 -11q34-9 29-28-24 4-29 28" fill="#8daf9d"/><path d="M2 -38q-38-8-27-25 21 1 27 25m4 -33q34-9 29-28-24 4-29 28" fill="#8daf9d"/><path d="M4 -60q-38-8-27-25 21 1 27 25m6 -55q34-9 29-28-24 4-29 28" fill="#8daf9d"/><path d="M6 -82q-38-8-27-25 21 1 27 25m8 -77q34-9 29-28-24 4-29 28" fill="#8daf9d"/><path d="M8 -104q-38-8-27-25 21 1 27 25m10 -99q34-9 29-28-24 4-29 28" fill="#8daf9d"/>
+  </g>
+      <path d="M0 0h720v640H0Z" fill="url(#engraving)"/>
+    </g>
+    <path d="M35 605V287a325 252 0 0 1 650 0v318Z" fill="none" stroke="#edc883" stroke-width="1" opacity=".6"/>
+    <path d="M335 626h50m-25-5v10" stroke="#edc883" stroke-width="1"/>
+  </svg>

@@ -1,6 +1,7 @@
 import { test, expect } from "./fixtures.js";
 import { chapters, references, sectionAliases } from "../../webpage/scripts/chapters.js";
 import { parseRoute } from "../../webpage/scripts/routes.js";
+import { illustrations } from "../../webpage/scripts/illustrations.js";
 import { zipEntries } from "../content/zip-entries.mjs";
 
 // Published section IDs remain usable even when their content moves to optional reference pages.
@@ -75,7 +76,8 @@ test("all chapters, references, illustrations, and original section links work",
       await expect(page.locator(`[id="${alias}"]`)).toBeAttached();
       await expect(page.locator(`[id="${target}"]`)).toBeAttached();
     }
-    await expect(page.locator(".course-illustration")).toHaveCount(1);
+    await expect(page.locator(".course-illustration"))
+      .toHaveCount(illustrations.filter(item => item.document === chapter.path).length);
     for (const image of await page.locator(".course-illustration img").all()) {
       const response = await page.request.get(await image.getAttribute("src"));
       expect(response.ok()).toBeTruthy();

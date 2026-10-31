@@ -1,5 +1,5 @@
 import GithubSlugger from "../vendor/github-slugger/index.js";
-import { chapters, sectionAliases } from "./chapters.js";
+import { chapters, references, sectionAliases } from "./chapters.js";
 import { routeForPath } from "./routes.js";
 import { applyEra } from "./eras.js";
 import { article, chapterNav, chapterPager, outlineNav, courseProgress, courseNavPanel, outlinePanel,
@@ -34,7 +34,12 @@ export function renderProgress(store, chapter) {
       ${previousCompleted.some(mark => mark.slug === item.slug) && !completed.includes(item.slug) ? "<small>Earlier exercise completed</small>" : ""}
       ${previousReading.includes(item.slug) && !completed.includes(item.slug) ? "<small>Previously read</small>" : ""}
       ${completed.includes(item.slug) ? '<span class="sr-only">Completed</span>' : ""}</span>
-    </a></li>`).join("")}</ol>`;
+    </a></li>
+    ${references.filter(reference => reference.navAfter === item.slug).map(reference => `
+      <li><a class="chapter-link" href="${routeForPath(reference.path)}" ${reference.path === chapter.path ? 'aria-current="page"' : ""}>
+        <span class="chapter-number" aria-hidden="true">+</span>
+        <span>${reference.title}<small>Optional automatic route</small></span>
+      </a></li>`).join("")}`).join("")}</ol>`;
 }
 
 export function buildOutline(chapter) {

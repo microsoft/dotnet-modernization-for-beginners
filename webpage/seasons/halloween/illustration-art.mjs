@@ -1,6 +1,7 @@
 import { getEra as eraFor } from "../../scripts/eras.js";
 import halloween from "./season.js";
 import { halloweenMotifs } from "./art.mjs";
+import { drawRouteChoices, drawAutopilotFlow } from "../../tools/illustration-art.mjs";
 
 const getEra = id => eraFor(id, halloween);
 
@@ -8,6 +9,8 @@ const illustrations = {
   journey: { era: "1960s", height: 840, draw: journey },
   workflow: { era: "1970s", height: 820, draw: workflow },
   soundcheck: { era: "soundcheck", height: 850, draw: soundcheck },
+  "route-choices": { era: "soundcheck", height: 820, draw: drawRouteChoices },
+  "autopilot-flow": { era: "autopilot", height: 720, draw: drawAutopilotFlow },
   investigation: { era: "1980s", height: 830, draw: investigation },
   plan: { era: "1990s", height: 820, draw: plan },
   architecture: { era: "2000s-2010s", height: 860, draw: architecture },

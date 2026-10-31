@@ -18,6 +18,7 @@ Follow the topic links below instead of treating this page as a second set of ex
 | --- | --- | --- |
 | Scope and learning path | [Course overview](../README.md) | Decide whether the workshop fits the user's question |
 | Tools and environment | [Setup](../03-prerequisites/README.md) | Check Windows, Visual Studio, SDK, runtime, and LocalDB requirements |
+| Alternative desktop-app route | [Modernize with the GitHub Copilot app](../03-prerequisites/copilot-app.md) | Direct a side-by-side migration with EF6 and review recorded dashboard stages |
 | Compatibility assessment | [Assess BookCatalog](../04-assessment/README.md) | Read findings, inspect affected code, and add application requirements |
 | Upgrade choices | [Choose the plan](../05-planning/README.md) | Review strategy, dependencies, scope, and acceptance checks |
 | Implementation and verification | [Upgrade and check](../06-upgrade-execution/README.md) | Inspect changes, run the actual upgraded app, and recover interrupted work |
@@ -49,6 +50,12 @@ The [optional data-transfer lab](data-transfer.md) copies selected demo records.
 It isn't a complete production data-migration procedure.
 An in-place rewrite and EF Core aren't universal recommendations for larger or more complex applications.
 
+The [optional Copilot app route](../03-prerequisites/copilot-app.md) demonstrates a different choice.
+It keeps EF6 and the shared lab schema while adding a parallel ASP.NET Core host.
+Don't apply the core route's database-recreation instructions to that workspace.
+The [Copilot app upgrade example](../examples/assessments/copilot-app/README.md) documents the migration and later host-retirement decision.
+Its messages and task counts aren't independently rerun application checks.
+
 ## Check the execution environment
 
 The required course uses Windows, Visual Studio 2026, PowerShell, .NET Framework 4.8 tooling, IIS Express, and SQL Server LocalDB.
@@ -62,6 +69,12 @@ Don't present an independent code rewrite as a completed Visual Studio moderniza
 
 Some reference-app checks run on other platforms.
 Those checks don't establish that the Windows learner workflow ran.
+
+The optional desktop-app route attaches a folder directly in chat.
+Its upgrade request activates the built-in workflow and adds the upgrade context automatically.
+It uses Autopilot and automatic tool approval, rather than a prompt and tool-approval stop at each stage.
+Its prompts and session controls aren't Visual Studio instructions.
+It still needs Windows tools for the original Framework host, IIS Express, and LocalDB.
 
 ## Keep authorization separate from reference material
 

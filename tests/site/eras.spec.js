@@ -110,7 +110,8 @@ test("soundcheck has themed poster headers, readable instructions, and no decade
   expect(await page.locator(".era-intro h1").evaluate(element => getComputedStyle(element).fontStyle)).toBe("italic");
   await page.getByRole("button", { name: "Use dark theme" }).click();
   await expect(page.locator(".era-art:visible")).toHaveAttribute("src", /era-soundcheck-dark\.svg$/);
-  await expect(page.locator(".illustration-dark img")).toHaveAttribute("src", /soundcheck-dark\.svg$/);
+  await expect(page.locator('[data-illustration="soundcheck"] .illustration-dark img'))
+    .toHaveAttribute("src", /soundcheck-dark\.svg$/);
   await page.locator(".brand").click();
   await page.locator("#resume-link").click();
   await expect(page.locator("html")).toHaveAttribute("data-era", "soundcheck");
@@ -178,7 +179,10 @@ test("era routing also works at the hosting root", async ({ page }) => {
     await expect(page.locator("#article")).not.toHaveAttribute("aria-busy", "true");
     await expect(page.getByRole("alert")).toHaveCount(0);
     await expect(page.locator("#article h1")).toBeVisible();
-    await expect(page.locator(".course-illustration")).toHaveCount(1);
-    await expect(page.locator(".illustration-light")).toHaveAttribute("href", /\/content\/docs\/illustrations\/.+-light\.svg$/);
+    await expect(page.locator(".course-illustration"))
+      .toHaveCount(illustrations.filter(item => item.document === chapter.path).length);
+    for (const link of await page.locator(".illustration-light").all()) {
+      await expect(link).toHaveAttribute("href", /\/content\/docs\/illustrations\/.+-light\.svg$/);
+    }
   }
 });

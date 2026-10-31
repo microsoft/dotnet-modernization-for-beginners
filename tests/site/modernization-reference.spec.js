@@ -18,7 +18,7 @@ for (const base of ["/workshop/", "http://127.0.0.1:4193/"]) {
     const text = await index.text();
     const prefix = "https://microsoft.github.io/dotnet-modernization-for-beginners/";
     const links = [...text.matchAll(/\[[^\]]+\]\((https:[^)]+)\)/g)];
-    expect(links).toHaveLength(10);
+    expect(links).toHaveLength(11);
     for (const [, url] of links) {
       expect(url.startsWith(prefix)).toBeTruthy();
       const response = await request.get(`${base}${url.slice(prefix.length)}`);

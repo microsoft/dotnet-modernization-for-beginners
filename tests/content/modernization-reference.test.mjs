@@ -28,7 +28,7 @@ test("the modernization guide is discoverable without adding a required step", (
 
 test("the discovery index links to declared sources with sample and evidence boundaries", () => {
   assert.equal(indexedPaths[0], guide);
-  assert.equal(indexedPaths.length, 10);
+  assert.equal(indexedPaths.length, 11);
   assert.equal(new Set(indexedPaths).size, indexedPaths.length);
   for (const path of indexedPaths) {
     assert.ok([...chapters, ...references].some(item => item.path === path), path);

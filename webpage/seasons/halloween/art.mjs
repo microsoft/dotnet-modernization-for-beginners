@@ -35,7 +35,7 @@ export function renderHalloweenHeader(id, mode) {
     "pumpkin-patch": "#173b32", "haunted-library": "#283e31", "trick-or-treat": "#492e42",
     "ghost-bureau": "#243f4b", spellbook: "#382e4b", "monster-lab": "#293e32",
     "moonlit-sky": "#263753", "pumpkin-shed": "#413a2a", "raven-lookout": "#293d4a",
-    "ghost-scrapbook": "#483333", "enchanted-garden": "#204638"
+    "ghost-scrapbook": "#483333", "enchanted-garden": "#204638", "clockwork-observatory": "#293d37"
   }[era.scene];
   const art = { ...p, ink: night, surface: "#f3ecda" };
   const { pumpkin, ghost, star, bat, book } = halloweenMotifs(art);
@@ -68,6 +68,18 @@ export function renderHalloweenHeader(id, mode) {
   const window = (x, y, w, h) => `<path d="M${x} ${y + h}v-${h - w / 2}a${w / 2} ${w / 2} 0 0 1 ${w} 0v${h - w / 2}Z" fill="${p.c}"/>
     ${line(`M${x + w / 2} ${y}v${h}M${x} ${y + h * .5}h${w}`, night, 5)}`;
   const scenes = {
+    "clockwork-observatory": () => `
+      ${moon(487, 150, 67)}${stars([[180, 112], [284, 78], [575, 262], [135, 312]])}
+      <path d="M117 490V292a243 216 0 0 1 486 0v198Z" fill="${p.a}" opacity=".3"/>
+      ${line("M117 490V292a243 216 0 0 1 486 0v198M360 75v422M117 292h486M173 162q120 159 0 328M547 162q-120 159 0 328", p.c, 2)}
+      <ellipse cx="360" cy="356" rx="181" ry="76" fill="none" stroke="${p.c}" stroke-width="3" transform="rotate(-20 360 356)"/>
+      <ellipse cx="360" cy="356" rx="181" ry="76" fill="none" stroke="${p.a}" stroke-width="3" transform="rotate(32 360 356)"/>
+      ${ghost(361, 272, .7)}${book(360, 420, .8)}
+      <path d="M144 514h432l25 27H119Z" fill="${p.b}"/>
+      <rect x="157" y="541" width="406" height="65" rx="17" fill="${night}" stroke="${p.c}" stroke-width="2"/>
+      ${[218, 312, 406, 500].map((x, i) => `<circle cx="${x}" cy="573" r="18" fill="${p.a}" stroke="${p.c}" stroke-width="2"/>
+        ${line(`M${x} 563v20m-10-10h20`, p.c, 2)}${i < 3 ? line(`M${x + 21} 573h49`, p.c, 2) : ""}`).join("")}
+      ${pumpkin(129, 532, .65)}${sprig(609, 618, 1.05, -1)}`,
     "pumpkin-patch": () => `${moon(449, 139, 61)}
       ${stars([[193, 123], [286, 72], [529, 233], [359, 176, .6], [99, 222]])}
       <path d="M0 365Q153 245 339 340T720 311V640H0Z" fill="${p.a}" opacity=".5"/>

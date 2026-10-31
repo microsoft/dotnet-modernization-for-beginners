@@ -7,6 +7,8 @@ const illustrations = {
   journey: { era: "1960s", height: 840, draw: journey },
   workflow: { era: "1970s", height: 820, draw: workflow },
   soundcheck: { era: "soundcheck", height: 850, draw: soundcheck },
+  "route-choices": { era: "soundcheck", height: 820, draw: drawRouteChoices },
+  "autopilot-flow": { era: "autopilot", height: 720, draw: drawAutopilotFlow },
   investigation: { era: "1980s", height: 830, draw: investigation },
   plan: { era: "1990s", height: 820, draw: plan },
   architecture: { era: "2000s-2010s", height: 860, draw: architecture },
@@ -63,6 +65,100 @@ export function renderIllustration(id, mode) {
   <rect width="1100" height="${height}" fill="${p.paper}"/>
   ${art}
 </svg>`;
+}
+
+export function drawRouteChoices(p, { text, path, heading }) {
+  const card = (x, title, rhythm, details, data, color) => `
+    <rect x="${x}" y="315" width="460" height="310" rx="18" fill="${p.surface}" stroke="${p.line}" stroke-width="2"/>
+    <path d="M${x + 18} 315h424" stroke="${color}" stroke-width="7" stroke-linecap="round"/>
+    ${text(x + 230, 365, title, { size: 34, weight: 700, anchor: "middle" })}
+    ${text(x + 230, 410, rhythm, { size: 23, anchor: "middle", fill: p.accent })}
+    ${text(x + 230, 470, details, { size: 23, anchor: "middle" })}
+    ${text(x + 230, 583, data, { size: 22, anchor: "middle", fill: p.muted })}`;
+  return {
+    title: "One app, two upgrade routes",
+    description: "Start with BookCatalog on .NET Framework 4.8. The Visual Studio route uses Guided flow to assess, plan, and execute with review stops, an in-place upgrade, and EF Core. The Copilot app route uses one goal and Autopilot, with progress in Canvas and EF6 during a temporary side-by-side migration. Both routes finish with running the .NET 10 app and checking a saved edit after restart.",
+    art: `${heading("One app. Two ways to upgrade.", "Choose how you want to direct the work.", { size: 44 })}
+      <rect x="340" y="165" width="420" height="90" rx="18" fill="${p.surface}" stroke="${p.accent}" stroke-width="2"/>
+      ${text(550, 205, "BookCatalog", { size: 29, weight: 700, anchor: "middle" })}
+      ${text(550, 237, ".NET Framework 4.8", { size: 21, anchor: "middle", fill: p.muted })}
+      ${path("M550 255V285H290V315", { width: 3, arrow: true })}
+      ${path("M550 285H810V315", { width: 3, arrow: true })}
+      ${card(60, "Visual Studio", "Assess  >  Plan  >  Execute",
+        ["Review each stage in chat.", "Use Guided flow to pause."], "In-place app + EF Core", p.a)}
+      ${card(580, "Copilot app", "One goal  >  Autopilot",
+        ["Follow progress in Canvas.", "Steer without restarting."], "Temporary host + EF6", p.b)}
+      ${path("M290 625V650H550V680", { width: 3, arrow: true })}
+      ${path("M810 625V650H550", { width: 3 })}
+      <rect x="340" y="680" width="420" height="90" rx="18" fill="${p.soft}" stroke="${p.accent}" stroke-width="2"/>
+      ${text(550, 718, "Run your .NET 10 app", { size: 27, weight: 700, anchor: "middle" })}
+      ${text(550, 751, "Check add, edit, and restart.", { size: 21, anchor: "middle", fill: p.muted })}`
+  };
+}
+
+export function drawAutopilotFlow(p, { text, path, number, heading }) {
+  const stages = [
+    ["Assess", ["Find changes", "for .NET 10"]],
+    ["Plan", ["Choose the work", "and task order"]],
+    ["Upgrade", ["Update the code", "and dependencies"]],
+    ["Validate", ["Build and check", "the application"]]
+  ];
+  return {
+    title: "One goal, continuous progress",
+    description: "The BookCatalog folder and .NET 10 goal start an automatic sequence: Assess, Plan, Upgrade, and Validate. No new prompt is needed at each stage. The learner follows Canvas, steers the plan when needed, then runs the app and checks that a saved edit remains after restart. The steering path returns to the plan without restarting the upgrade.",
+    art: `${heading("One goal. Continuous progress.", "Copilot runs the stages. You steer and try the app.", { size: 44 })}
+      <rect x="60" y="170" width="980" height="80" rx="18" fill="${p.soft}" stroke="${p.accent}" stroke-width="2"/>
+      ${text(550, 219, "BookCatalog folder + .NET 10 goal", { size: 29, weight: 700, anchor: "middle" })}
+      ${path("M550 250V270H175V290", { width: 3, arrow: true })}
+      ${stages.map(([title, detail], i) => {
+        const x = 60 + i * 250;
+        return `<rect x="${x}" y="290" width="230" height="175" rx="16" fill="${p.surface}" stroke="${p.line}" stroke-width="2"/>
+          ${number(x + 25, 318, String(i + 1), p.accent, p.accentText, 18)}
+          ${text(x + 125, 346, title, { size: 29, weight: 700, anchor: "middle" })}
+          ${text(x + 115, 394, detail, { size: 22, anchor: "middle" })}
+          ${i < 3 ? path(`M${x + 230} 370h20`, { width: 3, arrow: true }) : ""}`;
+      }).join("")}
+      ${path("M925 465V500H820V535", { width: 3, arrow: true })}
+      ${path("M300 535V505H425V465", { stroke: p.muted, width: 3, dash: "7 8", arrow: "return" })}
+      <rect x="150" y="535" width="800" height="115" rx="18" fill="${p.soft}" stroke="${p.accent}" stroke-width="2"/>
+      ${text(550, 580, "Follow Canvas. Steer when needed.", { size: 28, weight: 700, anchor: "middle" })}
+      ${text(550, 619, "Run BookCatalog and check a saved edit after restart.", { size: 23, anchor: "middle", fill: p.muted })}`
+  };
+}
+
+export function renderAutopilotHeader(mode) {
+  if (!["light", "dark"].includes(mode)) throw new Error(`Unknown illustration theme: ${mode}`);
+  const p = getEra("autopilot")[mode];
+  const { text, path } = primitives(p, `autopilot-header-${mode}`);
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="720" height="640" viewBox="0 0 720 640" role="img" aria-labelledby="autopilot-title" data-theme="${mode}">
+    <title id="autopilot-title">Autopilot flight deck</title>
+    <defs><clipPath id="window"><rect x="50" y="45" width="620" height="550" rx="94"/></clipPath></defs>
+    <rect x="28" y="23" width="664" height="594" rx="108" fill="${p.soft}" stroke="${p.line}" stroke-width="2"/>
+    <g clip-path="url(#window)">
+      <path d="M50 45h620v550H50Z" fill="${p.surface}"/>
+      <circle cx="532" cy="155" r="95" fill="${p.c}" opacity=".28"/>
+      ${path("M93 338Q362 58 636 334M91 376Q362 120 636 373M90 416Q362 190 635 414", { stroke: p.a, width: 2, opacity: .7 })}
+      ${path("M111 264Q382 271 602 122", { stroke: p.accent, width: 4, dash: "6 10" })}
+      <circle cx="602" cy="122" r="12" fill="${p.b}" stroke="${p.surface}" stroke-width="5"/>
+      <g transform="translate(359 257) rotate(-8)">
+        <path d="M-92-64Q-46-84 0-58q46-26 92-6V72Q46 51 0 76-46 51-92 72Z" fill="${p.soft}" stroke="${p.accent}" stroke-width="4"/>
+        ${path("M0-58V76M-67-40l43 5m-43 24 43 5M24-35l43-5M24-6l43-5", { stroke: p.accent, width: 3 })}
+        <rect x="-52" y="4" width="104" height="47" rx="9" fill="${p.accent}"/>
+        ${text(0, 35, ".NET 10", { size: 23, weight: 700, anchor: "middle", fill: p.accentText })}
+      </g>
+      <path d="M50 432q310-83 620 0v163H50Z" fill="${p.paper}" stroke="${p.line}" stroke-width="2"/>
+      <rect x="183" y="429" width="354" height="111" rx="24" fill="${p.surface}" stroke="${p.accent}" stroke-width="2"/>
+      ${text(360, 468, "AUTOPILOT", { size: 27, weight: 700, anchor: "middle", spacing: 3 })}
+      ${path("M224 500H496", { stroke: p.line, width: 4 })}
+      ${[224, 292, 360, 428, 496].map((x, i) => `<circle cx="${x}" cy="500" r="8" fill="${i < 3 ? p.accent : p.c}" stroke="${p.surface}" stroke-width="3"/>`).join("")}
+      ${[116, 603].map(x => `<circle cx="${x}" cy="492" r="38" fill="${p.soft}" stroke="${p.line}" stroke-width="2"/>
+        <path d="M${x - 24} 494a24 24 0 0 1 48 0" fill="none" stroke="${p.a}" stroke-width="5"/>
+        ${path(`M${x} 494l17-18`, { stroke: p.accent, width: 3 })}`).join("")}
+      ${path("M125 563H594", { stroke: p.line, width: 2 })}
+      ${text(360, 586, "ONE GOAL. A NEW FOUNDATION.", { size: 18, anchor: "middle", fill: p.muted, spacing: 1 })}
+    </g>
+    ${path("M63 331h22m550 0h22M360 57v18", { stroke: p.accent, width: 3 })}
+  </svg>`;
 }
 
 function journey(p, { text, path, number, heading }, prefix) {

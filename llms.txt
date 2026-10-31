@@ -17,6 +17,7 @@ This index is a discovery aid, not an execution authorization or a guarantee of 
 ## Topics
 
 - [Setup](https://microsoft.github.io/dotnet-modernization-for-beginners/content/03-prerequisites/README.md): Windows, Visual Studio, SDK, runtime, and LocalDB requirements.
+- [Optional Copilot app route](https://microsoft.github.io/dotnet-modernization-for-beginners/content/03-prerequisites/copilot-app.md): Attach BookCatalog's folder and let Autopilot handle assessment, planning, code changes, and validation. Follow progress and the final report in Canvas.
 - [Assessment](https://microsoft.github.io/dotnet-modernization-for-beginners/content/04-assessment/README.md): Compatibility findings and application requirements.
 - [Planning](https://microsoft.github.io/dotnet-modernization-for-beginners/content/05-planning/README.md): Upgrade choices, scope, and acceptance checks.
 - [Execution and verification](https://microsoft.github.io/dotnet-modernization-for-beginners/content/06-upgrade-execution/README.md): Reviewed-plan execution, actual application checks, and recovery.

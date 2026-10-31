@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="820" viewBox="0 0 1100 820" role="img" aria-labelledby="illustration-route-choices-light-title illustration-route-choices-light-desc" data-illustration="route-choices" data-era="soundcheck" data-theme="light">
+  <title id="illustration-route-choices-light-title">One app, two upgrade routes</title>
+  <desc id="illustration-route-choices-light-desc">Start with BookCatalog on .NET Framework 4.8. The Visual Studio route uses Guided flow to assess, plan, and execute with review stops, an in-place upgrade, and EF Core. The Copilot app route uses one goal and Autopilot, with progress in Canvas and EF6 during a temporary side-by-side migration. Both routes finish with running the .NET 10 app and checking a saved edit after restart.</desc>
+  <defs>
+    <marker id="illustration-route-choices-light-arrow" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="18" markerHeight="18" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M1 1L11 6 1 11Z" fill="#7b285d"/></marker>
+    <marker id="illustration-route-choices-light-return" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="16" markerHeight="16" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M1 1L11 6 1 11" fill="none" stroke="#685261" stroke-width="2"/></marker>
+    <marker id="illustration-route-choices-light-trail" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="18" markerHeight="18" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L11 6 1 11Z" fill="#fffaf0"/></marker>
+
+  </defs>
+  <rect width="1100" height="820" fill="#fff1d5"/>
+  <text x="60" y="89" fill="#44213e" font-size="44" font-weight="700" text-anchor="start" font-family="Trebuchet MS, Verdana, sans-serif" letter-spacing="0"><tspan x="60" dy="0">One app. Two ways to upgrade.</tspan></text><text x="63" y="132" fill="#685261" font-size="23" font-weight="400" text-anchor="start" font-family="Trebuchet MS, Verdana, sans-serif" letter-spacing="0"><tspan x="63" dy="0">Choose how you want to direct the work.</tspan></text>
+      <rect x="340" y="165" width="420" height="90" rx="18" fill="#fffaf0" stroke="#7b285d" stroke-width="2"/>
+      <text x="550" y="205" fill="#44213e" font-size="29" font-weight="700" text-anchor="middle" font-family="Trebuchet MS, Verdana, sans-serif" letter-spacing="0"><tspan x="550" dy="0">BookCatalog</tspan></text>
+      <text x="550" y="237" fill="#685261" font-size="21" font-weight="400" text-anchor="middle" font-family="Trebuchet MS, Verdana, sans-serif" letter-spacing="0"><tspan x="550" dy="0">.NET Framework 4.8</tspan></text>
+      <path d="M550 255V285H290V315" fill="none" stroke="#7b285d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="1" marker-end="url(#illustration-route-choices-light-arrow)"/>
+      <path d="M550 285H810V315" fill="none" stroke="#7b285d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="1" marker-end="url(#illustration-route-choices-light-arrow)"/>
+
+    <rect x="60" y="315" width="460" height="310" rx="18" fill="#fffaf0" stroke="#a27e90" stroke-width="2"/>
+    <path d="M78 315h424" stroke="#087e80" stroke-width="7" stroke-linecap="round"/>
+    <text x="290" y="365" fill="#44213e" font-size="34" font-weight="700" text-anchor="middle" font-family="Trebuchet MS, Verdana, sans-serif" letter-spacing="0"><tspan x="290" dy="0">Visual Studio</tspan></text>
+    <text x="290" y="410" fill="#7b285d" font-size="23" font-weight="400" text-anchor="middle" font-family="Trebuchet MS, Verdana, sans-serif" letter-spacing="0"><tspan x="290" dy="0">Assess  &gt;  Plan  &gt;  Execute</tspan></text>
+    <text x="290" y="470" fill="#44213e" font-size="23" font-weight="400" text-anchor="middle" font-family="Trebuchet MS, Verdana, sans-serif" letter-spacing="0"><tspan x="290" dy="0">Review each stage in chat.</tspan><tspan x="290" dy="29.44">Use Guided flow to pause.</tspan></text>
+    <text x="290" y="583" fill="#685261" font-size="22" font-weight="400" text-anchor="middle" font-family="Trebuchet MS, Verdana, sans-serif" letter-spacing="0"><tspan x="290" dy="0">In-place app + EF Core</tspan></text>
+
+    <rect x="580" y="315" width="460" height="310" rx="18" fill="#fffaf0" stroke="#a27e90" stroke-width="2"/>
+    <path d="M598 315h424" stroke="#de692e" stroke-width="7" stroke-linecap="round"/>
+    <text x="810" y="365" fill="#44213e" font-size="34" font-weight="700" text-anchor="middle" font-family="Trebuchet MS, Verdana, sans-serif" letter-spacing="0"><tspan x="810" dy="0">Copilot app</tspan></text>
+    <text x="810" y="410" fill="#7b285d" font-size="23" font-weight="400" text-anchor="middle" font-family="Trebuchet MS, Verdana, sans-serif" letter-spacing="0"><tspan x="810" dy="0">One goal  &gt;  Autopilot</tspan></text>
+    <text x="810" y="470" fill="#44213e" font-size="23" font-weight="400" text-anchor="middle" font-family="Trebuchet MS, Verdana, sans-serif" letter-spacing="0"><tspan x="810" dy="0">Follow progress in Canvas.</tspan><tspan x="810" dy="29.44">Steer without restarting.</tspan></text>
+    <text x="810" y="583" fill="#685261" font-size="22" font-weight="400" text-anchor="middle" font-family="Trebuchet MS, Verdana, sans-serif" letter-spacing="0"><tspan x="810" dy="0">Temporary host + EF6</tspan></text>
+      <path d="M290 625V650H550V680" fill="none" stroke="#7b285d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="1" marker-end="url(#illustration-route-choices-light-arrow)"/>
+      <path d="M810 625V650H550" fill="none" stroke="#7b285d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="1"/>
+      <rect x="340" y="680" width="420" height="90" rx="18" fill="#f6e4ca" stroke="#7b285d" stroke-width="2"/>
+      <text x="550" y="718" fill="#44213e" font-size="27" font-weight="700" text-anchor="middle" font-family="Trebuchet MS, Verdana, sans-serif" letter-spacing="0"><tspan x="550" dy="0">Run your .NET 10 app</tspan></text>
+      <text x="550" y="751" fill="#685261" font-size="21" font-weight="400" text-anchor="middle" font-family="Trebuchet MS, Verdana, sans-serif" letter-spacing="0"><tspan x="550" dy="0">Check add, edit, and restart.</tspan></text>
+</svg>

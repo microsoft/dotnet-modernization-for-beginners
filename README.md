@@ -73,6 +73,11 @@ You choose the options, adjust its instructions, and try the result.
 
 The seven chapters take you from the starting point through the Azure migration plan.
 
+**Alternative after Setup:** [Modernize with the GitHub Copilot app](03-prerequisites/copilot-app.md).
+Attach your BookCatalog folder and let the desktop app carry the upgrade forward in Autopilot.
+Follow assessment, planning, code changes, and validation in Canvas, and steer the agent as needed.
+This optional route uses a separate learner copy. It doesn't replace or add to the seven required chapters.
+
 ## Work on your own copy
 
 [Setup](03-prerequisites/README.md#make-your-copy-this-repo) covers cloning and opening your learner workspace. BookCatalog is the continuing project.

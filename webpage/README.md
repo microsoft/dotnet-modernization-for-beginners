@@ -93,6 +93,13 @@ The data-transfer lab, application checks, author-filter challenge, learner reco
 The previous BookCatalog sample run supplies example reports and screenshots for the continuing course app.
 Instructor preparation isn't a required step.
 
+Setup also links to `03-prerequisites/copilot-app.md`, an optional desktop-app route.
+It uses the reference router and doesn't change chapter identifiers or the seven-step completion count.
+Its `navAfter` entry places the optional link after Setup in the main menu without making it a required chapter.
+Its recorded screenshots are individually allowlisted, not the source video or arbitrary recording files.
+Published chat crops omit account details and personal filesystem paths without changing the retained message text.
+Run history and screenshot provenance belong in `examples/assessments/copilot-app/README.md`, separate from the learner procedure.
+
 The download contains sample source, helper source, both application test projects, and their supporting scripts.
 The build combines tracked files with explicitly allowed new public files. It does not require staging or a commit.
 New helper `.cs` and `.csproj` files and declared reference documents are allowed before a commit.
@@ -113,6 +120,7 @@ The full interface changes with each chapter. Light/dark mode remains a separate
 | Start | 1960s | Resort-poster illustration and geometric sunbursts |
 | Meet the app and tools | 1970s | Broad curved stripes and warm layered panels |
 | Setup | Soundcheck interlude | Cream concert poster, plum lettering, orange and teal ribbons, starbursts, and tickets |
+| Copilot app upgrade | Autopilot flight deck | Blue instrument panels, warm navigation markers, an orbital book, and a continuous workflow |
 | Assess the app | 1980s | Large angular shapes and bright geometric frames |
 | Choose the plan | 1990s | Beveled controls and desktop-style panels |
 | Upgrade and check | 2000s / 2010s | Glossy details and layered web-app surfaces |
@@ -120,6 +128,8 @@ The full interface changes with each chapter. Light/dark mode remains a separate
 
 `scripts/chapters.js` selects the era. The active season supplies its palettes, typography, and art.
 This table describes the classic season. Other seasons restyle the same eras.
+The Copilot app route uses a clockwork-observatory scene in Halloween, with a matching palette and original header art.
+Setup's route comparison and the Autopilot workflow each have generated light/dark SVGs in both seasons.
 
 The reader sets `data-era` before it loads chapter content. `data-theme` retains the selected color mode.
 `data-season` names the active season. Seasons with named scenes also set `data-scene`.

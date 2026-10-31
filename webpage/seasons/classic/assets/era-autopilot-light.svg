@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="640" viewBox="0 0 720 640" role="img" aria-labelledby="autopilot-title" data-theme="light">
+    <title id="autopilot-title">Autopilot flight deck</title>
+    <defs><clipPath id="window"><rect x="50" y="45" width="620" height="550" rx="94"/></clipPath></defs>
+    <rect x="28" y="23" width="664" height="594" rx="108" fill="#dfe8ff" stroke="#8b9bc0" stroke-width="2"/>
+    <g clip-path="url(#window)">
+      <path d="M50 45h620v550H50Z" fill="#ffffff"/>
+      <circle cx="532" cy="155" r="95" fill="#f4be72" opacity=".28"/>
+      <path d="M93 338Q362 58 636 334M91 376Q362 120 636 373M90 416Q362 190 635 414" fill="none" stroke="#5288be" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.7"/>
+      <path d="M111 264Q382 271 602 122" fill="none" stroke="#2752b3" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="1" stroke-dasharray="6 10"/>
+      <circle cx="602" cy="122" r="12" fill="#cf704d" stroke="#ffffff" stroke-width="5"/>
+      <g transform="translate(359 257) rotate(-8)">
+        <path d="M-92-64Q-46-84 0-58q46-26 92-6V72Q46 51 0 76-46 51-92 72Z" fill="#dfe8ff" stroke="#2752b3" stroke-width="4"/>
+        <path d="M0-58V76M-67-40l43 5m-43 24 43 5M24-35l43-5M24-6l43-5" fill="none" stroke="#2752b3" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="1"/>
+        <rect x="-52" y="4" width="104" height="47" rx="9" fill="#2752b3"/>
+        <text x="0" y="35" fill="#ffffff" font-size="23" font-weight="700" text-anchor="middle" font-family="Trebuchet MS, Verdana, sans-serif" letter-spacing="0"><tspan x="0" dy="0">.NET 10</tspan></text>
+      </g>
+      <path d="M50 432q310-83 620 0v163H50Z" fill="#eaf0ff" stroke="#8b9bc0" stroke-width="2"/>
+      <rect x="183" y="429" width="354" height="111" rx="24" fill="#ffffff" stroke="#2752b3" stroke-width="2"/>
+      <text x="360" y="468" fill="#172747" font-size="27" font-weight="700" text-anchor="middle" font-family="Trebuchet MS, Verdana, sans-serif" letter-spacing="3"><tspan x="360" dy="0">AUTOPILOT</tspan></text>
+      <path d="M224 500H496" fill="none" stroke="#8b9bc0" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="1"/>
+      <circle cx="224" cy="500" r="8" fill="#2752b3" stroke="#ffffff" stroke-width="3"/><circle cx="292" cy="500" r="8" fill="#2752b3" stroke="#ffffff" stroke-width="3"/><circle cx="360" cy="500" r="8" fill="#2752b3" stroke="#ffffff" stroke-width="3"/><circle cx="428" cy="500" r="8" fill="#f4be72" stroke="#ffffff" stroke-width="3"/><circle cx="496" cy="500" r="8" fill="#f4be72" stroke="#ffffff" stroke-width="3"/>
+      <circle cx="116" cy="492" r="38" fill="#dfe8ff" stroke="#8b9bc0" stroke-width="2"/>
+        <path d="M92 494a24 24 0 0 1 48 0" fill="none" stroke="#5288be" stroke-width="5"/>
+        <path d="M116 494l17-18" fill="none" stroke="#2752b3" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="1"/><circle cx="603" cy="492" r="38" fill="#dfe8ff" stroke="#8b9bc0" stroke-width="2"/>
+        <path d="M579 494a24 24 0 0 1 48 0" fill="none" stroke="#5288be" stroke-width="5"/>
+        <path d="M603 494l17-18" fill="none" stroke="#2752b3" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="1"/>
+      <path d="M125 563H594" fill="none" stroke="#8b9bc0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="1"/>
+      <text x="360" y="586" fill="#4f5d77" font-size="18" font-weight="400" text-anchor="middle" font-family="Trebuchet MS, Verdana, sans-serif" letter-spacing="1"><tspan x="360" dy="0">ONE GOAL. A NEW FOUNDATION.</tspan></text>
+    </g>
+    <path d="M63 331h22m550 0h22M360 57v18" fill="none" stroke="#2752b3" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="1"/>
+  </svg>

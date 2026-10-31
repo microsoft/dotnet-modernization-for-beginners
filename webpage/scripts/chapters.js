@@ -18,6 +18,8 @@ export const references = [
   { path: "examples/assessments/bookcatalog/planning-excerpts.md", title: "Recorded BookCatalog plan" },
   { path: "examples/assessments/bookcatalog/execution-excerpts.md", title: "BookCatalog upgrade in progress" },
   { path: "02-introduction/code/README.md", title: "Optional console sample" },
+  { path: "03-prerequisites/copilot-app.md", title: "Copilot app upgrade", era: "autopilot", navAfter: "prerequisites" },
+  { path: "examples/assessments/copilot-app/README.md", title: "Copilot app upgrade example" },
   { path: "docs/learner-record.md", title: "Optional learner record" },
   { path: "docs/data-transfer.md", title: "Optional data-transfer lab" },
   { path: "docs/advanced-checks.md", title: "Optional application checks" },

@@ -196,6 +196,18 @@ html[data-scene="raven-lookout"] .chapter-number { border-radius: 4px 0; }
 html[data-scene="ghost-scrapbook"] .era-intro { padding: 1.5rem; border: 1px solid var(--line); background: var(--soft); }
 html[data-scene="enchanted-garden"] .era-intro { padding: 1.5rem; border-block: 3px double var(--line); }
 html[data-scene="enchanted-garden"] .chapter-number { border-radius: 50% 0; }
+html[data-scene="clockwork-observatory"] .autopilot-intro { padding: 1.5rem; border: 3px double var(--line); border-radius: 28px 28px 10px 10px; background: var(--soft); }
+html[data-scene="clockwork-observatory"] .autopilot-copy { min-width: 0; }
+html[data-scene="clockwork-observatory"] .autopilot-kicker { margin: 0 0 1.2rem; color: var(--link); font: 700 .73rem/1.6 Consolas, monospace; letter-spacing: .09em; text-transform: uppercase; }
+html[data-scene="clockwork-observatory"] .autopilot-intro h1 { margin: 0 0 1.2rem; line-height: 1.1; text-wrap: balance; overflow-wrap: anywhere; }
+html[data-scene="clockwork-observatory"] .autopilot-caption { margin: 0; color: var(--muted); font-size: .96rem; }
+html[data-scene="clockwork-observatory"] .autopilot-tags { display: flex; flex-wrap: wrap; gap: .4rem; padding: 0; margin: 1.2rem 0 0; list-style: none; }
+html[data-scene="clockwork-observatory"] .autopilot-tags li { margin: 0; padding: .3rem .6rem; border: 1px solid var(--line); border-radius: 18px; background: var(--surface); color: var(--ink); font-size: .7rem; }
+html[data-scene="clockwork-observatory"] .chapter-number { border: 2px double var(--line); border-radius: 50%; }
+html[data-scene="clockwork-observatory"] .article h2 { border-top: 3px double var(--line); }
+html[data-scene="clockwork-observatory"] .article pre { background: var(--surface); color: var(--ink); border-left: 4px solid var(--teal); }
+html[data-scene="clockwork-observatory"] .progress-card { border: 3px double var(--line); }
+html[data-scene="clockwork-observatory"] .outline-decoration { border-radius: 50%; border: 3px double var(--line); }
 @media (prefers-reduced-motion: no-preference) {
   .hero-scene { animation: lantern-arrival 650ms cubic-bezier(.16,1,.3,1) both; }
   @keyframes lantern-arrival { from { transform: translateY(10px); opacity: .7; } to { transform: translateY(0); opacity: 1; } }
@@ -224,15 +236,16 @@ html[data-scene="enchanted-garden"] .chapter-number { border-radius: 50% 0; }
   .drawer-open { overflow: hidden; }
 }
 @media (max-width: 650px) {
-  .flight-intro, .future-intro { grid-template-columns: minmax(0,1fr); }
-  .flight-intro .era-art, .future-intro .era-art { height: 200px; }
+  .flight-intro, .future-intro, .autopilot-intro { grid-template-columns: minmax(0,1fr); }
+  .flight-intro .era-art, .future-intro .era-art, .autopilot-intro .era-art { height: 200px; }
   .flight-intro .era-art { grid-column: 1; grid-row: 2; }
   .flight-tabs { grid-row: 3; }
 }
 @media (max-width: 550px) {
   html[data-scene] .era-intro { grid-template-columns: minmax(0,1fr); gap: 1rem; padding: 1.1rem 0; }
   html[data-scene="trick-or-treat"] .era-intro, html[data-scene="spellbook"] .era-intro,
-  html[data-scene="monster-lab"] .era-intro, html[data-scene="ghost-scrapbook"] .era-intro { padding: 1.1rem; }
+  html[data-scene="monster-lab"] .era-intro, html[data-scene="ghost-scrapbook"] .era-intro,
+  html[data-scene="clockwork-observatory"] .era-intro { padding: 1.1rem; }
   .era-intro .era-art { height: 210px; min-height: 180px; }
   .era-intro h1 { font-size: 2rem; }
   .site-header { gap: .7rem; }

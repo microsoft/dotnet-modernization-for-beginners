@@ -18,6 +18,18 @@ export const illustrations = [
     description: "Three soundcheck tickets show the setup sequence: check your installed tools and Copilot access, open the BookCatalog solution in your learner copy, then run the app and try adding and editing a sample book. If your tools are ready, go straight to running BookCatalog."
   },
   {
+    id: "route-choices", document: "03-prerequisites/README.md", era: "soundcheck",
+    title: "One app, two upgrade routes",
+    caption: "Start with the same BookCatalog app. Choose stage-by-stage direction or a continuous Autopilot workflow.",
+    description: "BookCatalog on .NET Framework 4.8 is the starting point for both routes. In Visual Studio, direct assessment, planning, and execution through Guided flow and use the course's in-place EF Core approach. In the Copilot app, attach the folder, give one goal, and let Autopilot carry the work forward while you follow Canvas and steer as needed. This route keeps EF6 during a temporary side-by-side migration. Both routes end with a .NET 10 app that you run and check after saving an edit and restarting."
+  },
+  {
+    id: "autopilot-flow", document: "03-prerequisites/copilot-app.md", era: "autopilot",
+    title: "One goal, continuous progress",
+    caption: "Copilot carries the upgrade through its stages. You follow Canvas, steer when needed, and try the result.",
+    description: "Attach the BookCatalog folder and give the goal of upgrading to .NET 10. Autopilot handles assessment, planning, code changes, and validation without a new prompt at each stage. Follow the work in Canvas and steer the plan when needed without restarting the workflow. Then run BookCatalog yourself and check that a saved book edit remains after restarting the application."
+  },
+  {
     id: "investigation", document: "04-assessment/README.md", era: "1980s",
     title: "Make the report useful",
     caption: "Read the agent's report. Add a requirement only if needed.",

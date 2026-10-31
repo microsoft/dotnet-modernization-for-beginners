@@ -515,6 +515,42 @@ html[data-era="2050s"] .site-footer { border-top: 1px solid var(--line); }
   html[data-era="2050s"] .future-intro .era-art { height: 200px; min-height: 0; }
   html[data-era="2050s"] .future-intro h1 { font-size: clamp(1.9rem, 7vw, 3.2rem); }
 }
+html[data-era="autopilot"] .site-header { border-bottom: 3px solid var(--teal); }
+html[data-era="autopilot"] .brand-mark { border-radius: 50%; background: var(--selected); color: var(--selected-text); }
+html[data-era="autopilot"] .sun-strip { height: 6px; background: repeating-linear-gradient(90deg, var(--teal) 0 42px, var(--gold) 42px 50px, var(--paper) 50px 58px); }
+html[data-era="autopilot"] .course-nav::before {
+  height: 62px; border: 1px solid var(--line); border-radius: 14px;
+  background: repeating-radial-gradient(ellipse at 50% 140%, transparent 0 10px, var(--turquoise) 11px 12px, transparent 13px 22px);
+}
+html[data-era="autopilot"] .chapter-label { border-radius: 20px; letter-spacing: .08em; }
+html[data-era="autopilot"] .autopilot-intro {
+  grid-template-columns: minmax(0, 1.25fr) minmax(160px, .9fr);
+  gap: .75rem; padding: clamp(1.2rem, 3vw, 2rem); margin: 1.4rem 0 2.5rem;
+  border: 1px solid var(--line); border-radius: 24px;
+  background: radial-gradient(ellipse at 100% 0, var(--surface), transparent 70%), var(--soft);
+  box-shadow: 0 14px 0 -8px var(--gold);
+}
+.autopilot-copy { min-width: 0; }
+html[data-era="autopilot"] .autopilot-kicker { margin: 0 0 1.2rem; color: var(--link); font: 700 .73rem/1.6 Consolas, monospace; letter-spacing: .12em; text-transform: uppercase; }
+html[data-era="autopilot"] .autopilot-intro h1 { margin: 0 0 1.2rem; font-size: clamp(2rem, 3.2vw, 3.7rem); line-height: 1.08; letter-spacing: -.04em; text-wrap: balance; overflow-wrap: anywhere; }
+html[data-era="autopilot"] .autopilot-caption { margin: 0; color: var(--muted); font-size: .96rem; }
+html[data-era="autopilot"] .autopilot-tags { display: flex; flex-wrap: wrap; gap: .4rem; margin: 1.2rem 0 0; padding: 0; list-style: none; }
+html[data-era="autopilot"] .autopilot-tags li { margin: 0; padding: .3rem .6rem; border: 1px solid var(--line); border-radius: 16px; background: var(--surface); color: var(--ink); font-size: .7rem; }
+html[data-era="autopilot"] .autopilot-intro .era-art { height: auto; max-height: 340px; min-width: 0; }
+html[data-era="autopilot"] .article h2 { border-top: 1px solid var(--line); padding-top: 1.2rem; margin-top: 2.8rem; }
+html[data-era="autopilot"] .article pre { background: var(--surface); color: var(--ink); border-left: 4px solid var(--teal); }
+html[data-era="autopilot"] .code-toolbar { border-radius: 12px 12px 0 0; font-family: Consolas, monospace; }
+html[data-era="autopilot"] .progress-card { border-top: 4px solid var(--teal); box-shadow: none; }
+html[data-era="autopilot"] .outline-decoration {
+  width: 88px; height: 88px; border: 2px solid var(--turquoise); border-radius: 50%; transform: none;
+  background: radial-gradient(circle, var(--gold) 0 10px, transparent 11px 25px, var(--turquoise) 26px 28px, transparent 29px);
+}
+html[data-era="autopilot"] .site-footer { border-top: 1px solid var(--line); }
+@media (max-width: 650px) {
+  html[data-era="autopilot"] .autopilot-intro { grid-template-columns: minmax(0, 1fr); }
+  html[data-era="autopilot"] .autopilot-intro .era-art { height: 210px; }
+  html[data-era="autopilot"] .autopilot-intro h1 { font-size: clamp(1.9rem, 7vw, 3rem); }
+}
 @media (max-width: 1250px) {
   .course-shell { grid-template-columns: 15rem minmax(0,1fr); }
   .page-outline { display: none; }

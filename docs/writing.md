@@ -4,6 +4,18 @@ Write short, direct English without changing technical meaning. Teach the next d
 
 The subject is GitHub Copilot's .NET modernization tooling in Visual Studio. This isn't a general modernization-methodology workshop.
 
+The optional [Copilot app route](../03-prerequisites/copilot-app.md) follows a recorded desktop-app workflow after Setup.
+Keep it separate from the seven required chapters and their in-place rewrite.
+Its side-by-side approach keeps EF6, a shared lab schema, and temporary compatibility routing.
+The learner later revises the plan to retire the Framework host and finish with one .NET 10 app.
+Desktop-app requests activate the built-in upgrade workflow, not Visual Studio's `@Modernize` entry point.
+Start from the prompt box's Folder attachment, with Autopilot and Approve all tool permissions.
+Keep assessment, planning, execution, and validation automatic. Don't add a required prompt between each stage.
+Write the lesson for public learners, not for the person providing demonstration materials.
+Keep recording history, screenshot provenance, and run-specific evidence in the linked example, not in the learner procedure.
+Keep the upgrade request short. Use stage-specific steering prompts rather than repeating the migration specification.
+Distinguish agent-reported completion from independently executed checks, including missing dashboard build records.
+
 Use `asd-ste100` for clear actors, consistent terms, and precise conditions. Use `rewrite-matt-voice` for natural explanations, contractions, and functional headings.
 
 Let the technical detail carry the interest. Don't invent an anecdote or tool response to make the writing lively.
@@ -115,9 +127,9 @@ Do not claim that a rewrite proves technical accuracy or official ASD-STE100 com
 
 Do not use seed, copy, and schema migration as synonyms.
 
-Use **modernization agent** for the actor and **Copilot Chat** for the interface. Both journeys start through Visual Studio's Modernize experience.
+Use **modernization agent** for the actor and **Copilot Chat** for the interface. Both required journeys start through Visual Studio's Modernize experience.
 
-Begin every pasted upgrade request with `@Modernize`. Name the open solution, selected UI action, and scope before the prompt.
+Begin every pasted Visual Studio upgrade request with `@Modernize`. Name the open solution, selected UI action, and scope before the prompt.
 
 Use a short request for the current stage, not a repeated specification of the entire upgrade.
 The agent can inspect the project and choose implementation details within the reviewed requirements.
@@ -180,6 +192,8 @@ Start here also starts incomplete for existing readers. Don't award completion f
 If a required action genuinely changes, revise only the affected completion criterion. Preserve the learner's theme and valid resume destination.
 
 Keep the existing era styles and Setup's concert-poster interlude. Artwork and optional routes don't change the seven-step completion count.
+The Copilot app route has its own Autopilot flight-deck theme and seasonal scene.
+Keep its SVG workflow and Setup's route-comparison diagram aligned with the actual control flow and final application checks.
 
 ## Language checks
 
