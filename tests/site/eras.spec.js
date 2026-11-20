@@ -4,6 +4,9 @@ import { eraPalette } from "../../webpage/scripts/eras.js";
 import { illustrations, illustrationPath } from "../../webpage/scripts/illustrations.js";
 import classic from "../../webpage/seasons/classic/season.js";
 import halloween from "../../webpage/seasons/halloween/season.js";
+import thanksgiving from "../../webpage/seasons/thanksgiving/season.js";
+import christmas from "../../webpage/seasons/christmas/season.js";
+import newYear from "../../webpage/seasons/new-year/season.js";
 
 async function ready(page, chapter, mode = "light", season = null) {
   await page.goto(`?${season ? `season=${season}&` : ""}clawpilotTheme=${mode}#/${chapter.slug}`);
@@ -12,7 +15,7 @@ async function ready(page, chapter, mode = "light", season = null) {
   await expect(page.getByRole("alert")).toHaveCount(0);
 }
 
-for (const season of [classic, halloween]) for (const chapter of chapters) {
+for (const season of [classic, halloween, thanksgiving, christmas, newYear]) for (const chapter of chapters) {
   for (const mode of ["light", "dark"]) {
     test(`${season.id} ${chapter.era} ${mode}: direct route, accents, contrast, and narrow layout`, async ({ page }) => {
       await page.setViewportSize({ width: 1440, height: 1000 });

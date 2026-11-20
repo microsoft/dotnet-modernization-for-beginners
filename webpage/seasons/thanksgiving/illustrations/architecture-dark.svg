@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="860" viewBox="0 0 1100 860" role="img" aria-labelledby="illustration-architecture-dark-title illustration-architecture-dark-desc" data-illustration="architecture" data-era="2000s-2010s" data-theme="dark">
+  <title id="illustration-architecture-dark-title">Follow one request</title>
+  <desc id="illustration-architecture-dark-desc">The browser sends a request to BooksController. The controller uses its injected ApplicationDbContext for data access to BookCatalogModernizedLab, and data returns to the context. The controller selects a Razor view. The view renders HTML back to the browser; the view does not query the database directly. Solid arrows show requests or data access, and dashed arrows show the response or returned data.</desc>
+  <defs>
+    <marker id="illustration-architecture-dark-arrow" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="18" markerHeight="18" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M1 1L11 6 1 11Z" fill="#ffb56f"/></marker>
+    <marker id="illustration-architecture-dark-return" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="16" markerHeight="16" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M1 1L11 6 1 11" fill="none" stroke="#dfc5a6" stroke-width="2"/></marker>
+    <marker id="illustration-architecture-dark-trail" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="18" markerHeight="18" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L11 6 1 11Z" fill="#382a21"/></marker>
+    <linearGradient id="illustration-architecture-dark-glass" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#382a21"/><stop offset=".48" stop-color="#493527"/><stop offset="1" stop-color="#2b211c"/></linearGradient>
+      <linearGradient id="illustration-architecture-dark-metal" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#c27b50"/><stop offset=".35" stop-color="#382a21"/><stop offset="1" stop-color="#ed975b"/></linearGradient>
+  </defs>
+  <rect width="1100" height="860" fill="#2b211c"/>
+  <text x="60" y="89" fill="#fff2d6" font-size="53" font-weight="700" text-anchor="start" font-family="Trebuchet MS, Verdana, sans-serif" letter-spacing="0"><tspan x="60" dy="0">Follow one request</tspan></text><text x="63" y="132" fill="#dfc5a6" font-size="23" font-weight="400" text-anchor="start" font-family="Trebuchet MS, Verdana, sans-serif" letter-spacing="0"><tspan x="63" dy="0">The controller coordinates the page and its data.</tspan></text>
+      <ellipse cx="572" cy="731" rx="229" ry="22" fill="#fff2d6" opacity=".08"/>
+      <ellipse cx="952" cy="629" rx="117" ry="17" fill="#fff2d6" opacity=".09"/>
+      <rect x="376" y="235" width="423" height="481" rx="36" fill="url(#illustration-architecture-dark-glass)" stroke="#977557" stroke-width="3"/>
+      <path d="M394 266Q395 250 416 250H759" fill="none" stroke="#382a21" stroke-width="8" stroke-linecap="round"/>
+      <path d="M789 281v383" stroke="#ed975b" stroke-width="8" stroke-linecap="round" opacity=".4"/>
+      <text x="588" y="209" fill="#fff2d6" font-size="28" font-weight="700" text-anchor="middle" font-family="Trebuchet MS, Verdana, sans-serif" letter-spacing="0"><tspan x="588" dy="0">Application</tspan></text>
+      <g transform="translate(46 305)">
+        <rect width="247" height="231" rx="14" fill="url(#illustration-architecture-dark-glass)" stroke="#ffb56f" stroke-width="3"/>
+        <path d="M0 47H247" stroke="#977557" stroke-width="2"/>
+        <path d="M16 12h80l14 25H16Z" fill="#382a21" stroke="#977557" stroke-width="2"/>
+        <circle cx="202" cy="24" r="5" fill="#c27b50"/><circle cx="219" cy="24" r="5" fill="#ed975b"/>
+        <rect x="16" y="63" width="214" height="27" rx="4" fill="#ffb56f"/>
+        <rect x="19" y="107" width="208" height="98" rx="5" fill="#382a21" stroke="#977557" stroke-width="2"/>
+        <path d="M29 123h30v64H29Z" fill="#c27b50"/><path d="M65 134h27v53H65Z" fill="#ed975b"/>
+        <path d="M100 118l28-4 10 73h-27Z" fill="#f4cd7b"/>
+        <path d="M24 190H146M159 124h50M159 144h42M159 165h49" stroke="#977557" stroke-width="4"/>
+      </g>
+      <text x="170" y="278" fill="#fff2d6" font-size="28" font-weight="700" text-anchor="middle" font-family="Trebuchet MS, Verdana, sans-serif" letter-spacing="0"><tspan x="170" dy="0">Browser</tspan></text>
+      <path d="M294 352H413" fill="none" stroke="#ffb56f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" opacity="1" marker-end="url(#illustration-architecture-dark-arrow)"/>
+      <text x="337" y="331" fill="#dfc5a6" font-size="19" font-weight="400" text-anchor="middle" font-family="Trebuchet MS, Verdana, sans-serif" letter-spacing="0"><tspan x="337" dy="0">Request</tspan></text>
+      <g>
+        <rect x="417" y="300" width="345" height="95" rx="17" fill="#ffb56f"/>
+        <path d="M430 310H749" stroke="#362017" stroke-opacity=".35" stroke-width="5" stroke-linecap="round"/>
+        <text x="589" y="357" fill="#362017" font-size="29" font-weight="700" text-anchor="middle" font-family="Trebuchet MS, Verdana, sans-serif" letter-spacing="0"><tspan x="589" dy="0">BooksController</tspan></text>
+        <path d="M447 286v-14m28 14v-14m229 14v-14m28 14v-14" stroke="#977557" stroke-width="5" stroke-linecap="round"/>
+      </g>
+      <path d="M591 397V446" fill="none" stroke="#ffb56f" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="1" marker-end="url(#illustration-architecture-dark-arrow)"/>
+      <text x="620" y="430" fill="#dfc5a6" font-size="19" font-weight="400" text-anchor="start" font-family="Trebuchet MS, Verdana, sans-serif" letter-spacing="0"><tspan x="620" dy="0">uses</tspan></text>
+      <rect x="429" y="452" width="333" height="95" rx="12" fill="#382a21" stroke="#ffb56f" stroke-width="3"/>
+      <text x="595" y="481" fill="#dfc5a6" font-size="19" font-weight="400" text-anchor="middle" font-family="Trebuchet MS, Verdana, sans-serif" letter-spacing="0"><tspan x="595" dy="0">injected</tspan></text>
+      <text x="595" y="520" fill="#fff2d6" font-size="26" font-weight="700" text-anchor="middle" font-family="Trebuchet MS, Verdana, sans-serif" letter-spacing="0"><tspan x="595" dy="0">ApplicationDbContext</tspan></text>
+      <path d="M764 485H862" fill="none" stroke="#ffb56f" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="1" marker-end="url(#illustration-architecture-dark-arrow)"/>
+      <text x="829" y="466" fill="#dfc5a6" font-size="19" font-weight="400" text-anchor="middle" font-family="Trebuchet MS, Verdana, sans-serif" letter-spacing="0"><tspan x="829" dy="0">query</tspan></text>
+      <path d="M862 531H765" fill="none" stroke="#dfc5a6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="1" stroke-dasharray="7 7" marker-end="url(#illustration-architecture-dark-return)"/>
+      <text x="829" y="560" fill="#dfc5a6" font-size="19" font-weight="400" text-anchor="middle" font-family="Trebuchet MS, Verdana, sans-serif" letter-spacing="0"><tspan x="829" dy="0">data</tspan></text>
+      <g transform="translate(865 405)">
+        <path d="M0 34V166C0 210 182 210 182 166V34" fill="url(#illustration-architecture-dark-metal)" stroke="#ffb56f" stroke-width="3"/>
+        <ellipse cx="91" cy="34" rx="91" ry="30" fill="#493527" stroke="#ffb56f" stroke-width="3"/>
+        <ellipse cx="91" cy="31" rx="72" ry="20" fill="#382a21" opacity=".75"/>
+        <path d="M0 94c0 43 182 43 182 0M0 148c0 43 182 43 182 0" fill="none" stroke="#ffb56f" stroke-width="3"/>
+        <path d="M18 75v15m0 39v16m0 35v9" stroke="#382a21" stroke-width="6" stroke-linecap="round"/>
+      </g>
+      <text x="956" y="379" fill="#fff2d6" font-size="26" font-weight="700" text-anchor="middle" font-family="Trebuchet MS, Verdana, sans-serif" letter-spacing="0"><tspan x="956" dy="0">Data store</tspan></text>
+      <g aria-label="BookCatalogModernizedLab">
+        <text x="956" y="672" fill="#fff2d6" font-size="25" font-weight="700" text-anchor="middle" font-family="Trebuchet MS, Verdana, sans-serif" letter-spacing="0"><tspan x="956" dy="0">BookCatalog</tspan><tspan x="956" dy="32">ModernizedLab</tspan></text>
+      </g>
+      <path d="M418 378H399V638H434" fill="none" stroke="#ffb56f" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="1" marker-end="url(#illustration-architecture-dark-arrow)"/>
+      <text x="443" y="584" fill="#dfc5a6" font-size="19" font-weight="400" text-anchor="start" font-family="Trebuchet MS, Verdana, sans-serif" letter-spacing="0"><tspan x="443" dy="0">selects</tspan></text>
+      <rect x="441" y="604" width="292" height="78" rx="10" fill="#382a21" stroke="#ffb56f" stroke-width="3"/>
+      <path d="M460 619h30l13 13v36h-43Z" fill="#493527" stroke="#977557" stroke-width="2"/>
+      <path d="M490 619v13h13M469 643h25m-25 10h18" fill="none" stroke="#977557" stroke-width="2"/>
+      <text x="613" y="652" fill="#fff2d6" font-size="27" font-weight="700" text-anchor="middle" font-family="Trebuchet MS, Verdana, sans-serif" letter-spacing="0"><tspan x="613" dy="0">Razor view</tspan></text>
+      <path d="M439 657H172V538" fill="none" stroke="#dfc5a6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="1" stroke-dasharray="8 8" marker-end="url(#illustration-architecture-dark-return)"/>
+      <text x="258" y="625" fill="#dfc5a6" font-size="20" font-weight="400" text-anchor="middle" font-family="Trebuchet MS, Verdana, sans-serif" letter-spacing="0"><tspan x="258" dy="0">Rendered HTML</tspan></text>
+      <path d="M88 796h65" fill="none" stroke="#ffb56f" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="1" marker-end="url(#illustration-architecture-dark-arrow)"/>
+      <text x="172" y="803" fill="#fff2d6" font-size="21" font-weight="400" text-anchor="start" font-family="Trebuchet MS, Verdana, sans-serif" letter-spacing="0"><tspan x="172" dy="0">Request / data access</tspan></text>
+      <path d="M563 796h65" fill="none" stroke="#dfc5a6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="1" stroke-dasharray="7 7" marker-end="url(#illustration-architecture-dark-return)"/>
+      <text x="647" y="803" fill="#fff2d6" font-size="21" font-weight="400" text-anchor="start" font-family="Trebuchet MS, Verdana, sans-serif" letter-spacing="0"><tspan x="647" dy="0">Response / returned data</tspan></text>
+  <g aria-hidden="true"><g transform="translate(0)">
+    <path d="M0 3q50 14 100 0" fill="none" stroke="#dfc5a6" stroke-width="2"/>
+    <path d="m18 7 15 2-10 14Z" fill="#ed975b"/><path d="M62 9l15-2-5 16Z" fill="#f4cd7b"/></g><g transform="translate(100)">
+    <path d="M0 3q50 14 100 0" fill="none" stroke="#dfc5a6" stroke-width="2"/>
+    <path d="m18 7 15 2-10 14Z" fill="#ed975b"/><path d="M62 9l15-2-5 16Z" fill="#c27b50"/></g><g transform="translate(200)">
+    <path d="M0 3q50 14 100 0" fill="none" stroke="#dfc5a6" stroke-width="2"/>
+    <path d="m18 7 15 2-10 14Z" fill="#ed975b"/><path d="M62 9l15-2-5 16Z" fill="#f4cd7b"/></g><g transform="translate(300)">
+    <path d="M0 3q50 14 100 0" fill="none" stroke="#dfc5a6" stroke-width="2"/>
+    <path d="m18 7 15 2-10 14Z" fill="#ed975b"/><path d="M62 9l15-2-5 16Z" fill="#c27b50"/></g><g transform="translate(400)">
+    <path d="M0 3q50 14 100 0" fill="none" stroke="#dfc5a6" stroke-width="2"/>
+    <path d="m18 7 15 2-10 14Z" fill="#ed975b"/><path d="M62 9l15-2-5 16Z" fill="#f4cd7b"/></g><g transform="translate(500)">
+    <path d="M0 3q50 14 100 0" fill="none" stroke="#dfc5a6" stroke-width="2"/>
+    <path d="m18 7 15 2-10 14Z" fill="#ed975b"/><path d="M62 9l15-2-5 16Z" fill="#c27b50"/></g><g transform="translate(600)">
+    <path d="M0 3q50 14 100 0" fill="none" stroke="#dfc5a6" stroke-width="2"/>
+    <path d="m18 7 15 2-10 14Z" fill="#ed975b"/><path d="M62 9l15-2-5 16Z" fill="#f4cd7b"/></g><g transform="translate(700)">
+    <path d="M0 3q50 14 100 0" fill="none" stroke="#dfc5a6" stroke-width="2"/>
+    <path d="m18 7 15 2-10 14Z" fill="#ed975b"/><path d="M62 9l15-2-5 16Z" fill="#c27b50"/></g><g transform="translate(800)">
+    <path d="M0 3q50 14 100 0" fill="none" stroke="#dfc5a6" stroke-width="2"/>
+    <path d="m18 7 15 2-10 14Z" fill="#ed975b"/><path d="M62 9l15-2-5 16Z" fill="#f4cd7b"/></g><g transform="translate(900)">
+    <path d="M0 3q50 14 100 0" fill="none" stroke="#dfc5a6" stroke-width="2"/>
+    <path d="m18 7 15 2-10 14Z" fill="#ed975b"/><path d="M62 9l15-2-5 16Z" fill="#c27b50"/></g><g transform="translate(1000)">
+    <path d="M0 3q50 14 100 0" fill="none" stroke="#dfc5a6" stroke-width="2"/>
+    <path d="m18 7 15 2-10 14Z" fill="#ed975b"/><path d="M62 9l15-2-5 16Z" fill="#f4cd7b"/></g><g transform="translate(970 88)" stroke-linecap="round" stroke-linejoin="round"><path d="M-33 10q-8-16 7-25 9-6 10-19 0-19 16-16t14 21q-2 7 11 13 19 10 14 26Z" fill="#f0bd5a" stroke="#93682e" stroke-width="3"/>
+    <path d="m-3-49 4-9 7 1-4 9Z" fill="#637340"/><g fill="#493e32"><circle cx="-9" cy="-8" r="3"/><circle cx="9" cy="-8" r="3"/></g>
+    <path d="M-6-1q6 8 13 0" fill="none" stroke="#75472d" stroke-width="3"/><path d="M-46 9h94l-12 17h-68Z" fill="#bec3af" stroke="#586862" stroke-width="3"/></g></g>
+</svg>

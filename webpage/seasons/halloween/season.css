@@ -150,8 +150,6 @@ html[data-theme="dark"] .era-art-light, html[data-theme="light"] .era-art-dark {
 .hero-copy p > strong > a:hover, .hero-copy p > a:has(> strong):hover { text-decoration: underline; text-underline-offset: .2em; }
 .hero-scene { grid-column: 2; grid-row: 1 / 4; align-self: center; min-width: 0; margin-bottom: 2rem; }
 .hero-art { display: block; width: 100%; }
-.scene-caption { margin: .45rem auto; color: var(--muted); font: italic .95rem/1.5 var(--heading-font); text-align: center; }
-.scene-name { margin: 1.4rem 0 0; color: var(--link); font: italic 1rem/1.5 var(--heading-font); }
 .era-intro { display: grid; grid-template-columns: minmax(0,1fr) minmax(150px,.9fr); align-items: center; gap: 1.2rem; padding: .5rem 0 1.8rem; margin: .8rem 0 2rem; border-bottom: 1px solid var(--line); }
 .era-intro h1 { margin: 0; font-size: clamp(2rem,3vw,3rem); }
 .era-intro .era-art { display: block; width: 100%; height: auto; min-height: 230px; max-height: 330px; border-radius: 0; object-fit: contain; }
