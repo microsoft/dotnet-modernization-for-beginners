@@ -124,3 +124,33 @@ test("Halloween lesson illustrations cover every lesson illustration in both mod
     }
   }
 });
+
+test("winter holiday diagrams are generated in their season palettes", async () => {
+  for (const id of ["thanksgiving", "christmas", "new-year"]) {
+    const { default: season } = await import(`../../webpage/seasons/${id}/season.js`);
+    const { renderIllustration } = await import(`../../webpage/seasons/${id}/illustration-art.mjs`);
+    for (const illustration of illustrations) {
+      for (const mode of ["light", "dark"]) {
+        const svg = renderIllustration(illustration.id, mode);
+        assert.ok(svg.includes(season.eras[illustration.era][mode].ink), `${id}: ${illustration.id} ${mode} palette`);
+        assert.doesNotMatch(svg, /<(?:script|foreignObject|image)\b|\son\w+=/i);
+      }
+    }
+  }
+});
+
+test("winter holiday decorations leave lesson labels, descriptions, and directional arrows intact", async () => {
+  const content = svg => ({
+    words: [...svg.matchAll(/<(title|desc|tspan)\b[^>]*>([^<]*)<\/\1>/g)].map(match => match[2]),
+    arrows: [...svg.matchAll(/<path d="([^"]+)"[^>]* marker-end="([^"]+)"/g)].map(match => match.slice(1, 3))
+  });
+  for (const pack of ["thanksgiving", "christmas", "new-year"]) {
+    const { renderIllustration: holidayArt } = await import(`../../webpage/seasons/${pack}/illustration-art.mjs`);
+    for (const { id } of illustrations) for (const mode of ["light", "dark"]) {
+      const decorated = holidayArt(id, mode);
+      assert.match(decorated, /<g aria-hidden="true">/);
+      assert.deepEqual(content(decorated), content(renderIllustration(id, mode)), `${pack}: ${id} ${mode}`);
+      assert.doesNotMatch(decorated, /<animate|<image|(?:href|src)=["']https?:/i);
+    }
+  }
+});

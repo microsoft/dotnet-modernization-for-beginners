@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="850" viewBox="0 0 1100 850" role="img" aria-labelledby="illustration-soundcheck-dark-title illustration-soundcheck-dark-desc" data-illustration="soundcheck" data-era="soundcheck" data-theme="dark">
+  <title id="illustration-soundcheck-dark-title">Soundcheck: get ready</title>
+  <desc id="illustration-soundcheck-dark-desc">A concert poster with three numbered tickets: 1 Check tools and Copilot access; 2 Open the BookCatalog solution in a learner copy; 3 Run the app, add a sample book, and edit it. Already set up? Go straight to running BookCatalog. Flowing ribbons connect the tickets, but the body instructions remain plain and readable.</desc>
+  <defs>
+    <marker id="illustration-soundcheck-dark-arrow" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="18" markerHeight="18" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M1 1L11 6 1 11Z" fill="#f4cb7a"/></marker>
+    <marker id="illustration-soundcheck-dark-return" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="16" markerHeight="16" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M1 1L11 6 1 11" fill="none" stroke="#d3cbbe" stroke-width="2"/></marker>
+    <marker id="illustration-soundcheck-dark-trail" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="18" markerHeight="18" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L11 6 1 11Z" fill="#242740"/></marker>
+
+  </defs>
+  <rect width="1100" height="850" fill="#191c35"/>
+  <rect x="24" y="24" width="1052" height="802" rx="38" fill="none" stroke="#f4cb7a" stroke-width="3"/>
+      <g transform="translate(0 48)">
+      <path d="M-30 312C118 163 218 417 409 310S706 89 868 258 1027 321 1140 259" fill="none" stroke="#9184bd" stroke-width="27" stroke-linecap="round" stroke-linejoin="round" opacity="1"/>
+      <path d="M-30 345C118 196 218 450 409 343S706 122 868 291 1027 354 1140 292" fill="none" stroke="#d79a4c" stroke-width="21" stroke-linecap="round" stroke-linejoin="round" opacity="1"/>
+      <path d="M-30 371C118 222 218 476 409 369S706 148 868 317 1027 380 1140 318" fill="none" stroke="#f2d284" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" opacity="1"/>
+      </g>
+      <text x="69" y="71" fill="#d3cbbe" font-size="23" font-weight="700" text-anchor="start" font-family="Trebuchet MS, Verdana, sans-serif" letter-spacing="3"><tspan x="69" dy="0">BEFORE THE FIRST REPORT</tspan></text>
+      <g transform="rotate(-4 455 174)">
+        <text x="61" y="214" fill="#f4cb7a" font-size="105" font-weight="700" text-anchor="start" font-family="Georgia, Times New Roman, serif" letter-spacing="-5"><tspan x="61" dy="0">Soundcheck</tspan></text>
+      </g>
+      <polygon points="948.00,71.00 958.24,101.53 979.38,77.24 977.16,109.36 1005.98,95.02 991.64,123.84 1023.76,121.62 999.47,142.76 1030.00,153.00 999.47,163.24 1023.76,184.38 991.64,182.16 1005.98,210.98 977.16,196.64 979.38,228.76 958.24,204.47 948.00,235.00 937.76,204.47 916.62,228.76 918.84,196.64 890.02,210.98 904.36,182.16 872.24,184.38 896.53,163.24 866.00,153.00 896.53,142.76 872.24,121.62 904.36,123.84 890.02,95.02 918.84,109.36 916.62,77.24 937.76,101.53" fill="#d79a4c"/>
+      <polygon points="948.00,111.00 953.24,126.64 964.07,114.20 962.93,130.65 977.70,123.30 970.35,138.07 986.80,136.93 974.36,147.76 990.00,153.00 974.36,158.24 986.80,169.07 970.35,167.93 977.70,182.70 962.93,175.35 964.07,191.80 953.24,179.36 948.00,195.00 942.76,179.36 931.93,191.80 933.07,175.35 918.30,182.70 925.65,167.93 909.20,169.07 921.64,158.24 906.00,153.00 921.64,147.76 909.20,136.93 925.65,138.07 918.30,123.30 933.07,130.65 931.93,114.20 942.76,126.64" fill="#f2d284"/>
+
+    <path d="M60 346h300v76a20 20 0 0 0 0 40v163H60V462a20 20 0 0 0 0-40Z" fill="#242740" stroke="#f4cb7a" stroke-width="3"/>
+    <path d="M81 445h258" fill="none" stroke="#878196" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="1" stroke-dasharray="5 8"/>
+    <text x="210" y="402" fill="#f4cb7a" font-size="24" font-weight="700" text-anchor="middle" font-family="Trebuchet MS, Verdana, sans-serif" letter-spacing="3"><tspan x="210" dy="0">01</tspan></text>
+    <text x="210" y="499" fill="#fff3d4" font-size="31" font-weight="700" text-anchor="middle" font-family="Georgia, Times New Roman, serif" letter-spacing="0"><tspan x="210" dy="0">Check tools</tspan></text>
+    <text x="210" y="550" fill="#d3cbbe" font-size="23" font-weight="400" text-anchor="middle" font-family="Trebuchet MS, Verdana, sans-serif" letter-spacing="0"><tspan x="210" dy="0">Installed tools</tspan><tspan x="210" dy="29.44">+ Copilot access</tspan></text>
+
+    <path d="M400 346h300v76a20 20 0 0 0 0 40v163H400V462a20 20 0 0 0 0-40Z" fill="#242740" stroke="#f4cb7a" stroke-width="3"/>
+    <path d="M421 445h258" fill="none" stroke="#878196" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="1" stroke-dasharray="5 8"/>
+    <text x="550" y="402" fill="#f4cb7a" font-size="24" font-weight="700" text-anchor="middle" font-family="Trebuchet MS, Verdana, sans-serif" letter-spacing="3"><tspan x="550" dy="0">02</tspan></text>
+    <text x="550" y="499" fill="#fff3d4" font-size="31" font-weight="700" text-anchor="middle" font-family="Georgia, Times New Roman, serif" letter-spacing="0"><tspan x="550" dy="0">Open the app</tspan></text>
+    <text x="550" y="550" fill="#d3cbbe" font-size="23" font-weight="400" text-anchor="middle" font-family="Trebuchet MS, Verdana, sans-serif" letter-spacing="0"><tspan x="550" dy="0">BookCatalog solution</tspan><tspan x="550" dy="29.44">in your learner copy</tspan></text>
+
+    <path d="M740 346h300v76a20 20 0 0 0 0 40v163H740V462a20 20 0 0 0 0-40Z" fill="#242740" stroke="#f4cb7a" stroke-width="3"/>
+    <path d="M761 445h258" fill="none" stroke="#878196" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="1" stroke-dasharray="5 8"/>
+    <text x="890" y="402" fill="#f4cb7a" font-size="24" font-weight="700" text-anchor="middle" font-family="Trebuchet MS, Verdana, sans-serif" letter-spacing="3"><tspan x="890" dy="0">03</tspan></text>
+    <text x="890" y="499" fill="#fff3d4" font-size="31" font-weight="700" text-anchor="middle" font-family="Georgia, Times New Roman, serif" letter-spacing="0"><tspan x="890" dy="0">Try the app</tspan></text>
+    <text x="890" y="550" fill="#d3cbbe" font-size="23" font-weight="400" text-anchor="middle" font-family="Trebuchet MS, Verdana, sans-serif" letter-spacing="0"><tspan x="890" dy="0">Run, add a book,</tspan><tspan x="890" dy="29.44">then edit it</tspan></text>
+      <text x="550" y="706" fill="#fff3d4" font-size="32" font-weight="700" text-anchor="middle" font-family="Georgia, Times New Roman, serif" letter-spacing="0"><tspan x="550" dy="0">Already set up?</tspan></text>
+      <text x="550" y="751" fill="#fff3d4" font-size="26" font-weight="400" text-anchor="middle" font-family="Trebuchet MS, Verdana, sans-serif" letter-spacing="0"><tspan x="550" dy="0">Go straight to running BookCatalog.</tspan></text>
+      <path d="M289 788Q550 818 811 788" fill="none" stroke="#9184bd" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" opacity="1"/>
+      <polygon points="116.00,700.00 121.62,716.75 133.22,703.43 132.00,721.05 147.82,713.18 139.95,729.00 157.57,727.78 144.25,739.38 161.00,745.00 144.25,750.62 157.57,762.22 139.95,761.00 147.82,776.82 132.00,768.95 133.22,786.57 121.62,773.25 116.00,790.00 110.38,773.25 98.78,786.57 100.00,768.95 84.18,776.82 92.05,761.00 74.43,762.22 87.75,750.62 71.00,745.00 87.75,739.38 74.43,727.78 92.05,729.00 84.18,713.18 100.00,721.05 98.78,703.43 110.38,716.75" fill="#f2d284"/><polygon points="984.00,700.00 989.62,716.75 1001.22,703.43 1000.00,721.05 1015.82,713.18 1007.95,729.00 1025.57,727.78 1012.25,739.38 1029.00,745.00 1012.25,750.62 1025.57,762.22 1007.95,761.00 1015.82,776.82 1000.00,768.95 1001.22,786.57 989.62,773.25 984.00,790.00 978.38,773.25 966.78,786.57 968.00,768.95 952.18,776.82 960.05,761.00 942.43,762.22 955.75,750.62 939.00,745.00 955.75,739.38 942.43,727.78 960.05,729.00 952.18,713.18 968.00,721.05 966.78,703.43 978.38,716.75" fill="#9184bd"/>
+  <g aria-hidden="true"><g transform="translate(0)">
+    <path d="M10-2q18 5 5 12t5 13" fill="none" stroke="#9184bd" stroke-width="4"/>
+    <path d="m36 8 7-4 3 4-8 5Zm42-4 7 4-3 5-7-4Z" fill="#d79a4c"/>
+    <circle cx="59" cy="15" r="3" fill="#f2d284"/></g><g transform="translate(110)">
+    <path d="M10-2q18 5 5 12t5 13" fill="none" stroke="#d79a4c" stroke-width="4"/>
+    <path d="m36 8 7-4 3 4-8 5Zm42-4 7 4-3 5-7-4Z" fill="#d79a4c"/>
+    <circle cx="59" cy="15" r="3" fill="#f2d284"/></g><g transform="translate(220)">
+    <path d="M10-2q18 5 5 12t5 13" fill="none" stroke="#9184bd" stroke-width="4"/>
+    <path d="m36 8 7-4 3 4-8 5Zm42-4 7 4-3 5-7-4Z" fill="#d79a4c"/>
+    <circle cx="59" cy="15" r="3" fill="#f2d284"/></g><g transform="translate(330)">
+    <path d="M10-2q18 5 5 12t5 13" fill="none" stroke="#d79a4c" stroke-width="4"/>
+    <path d="m36 8 7-4 3 4-8 5Zm42-4 7 4-3 5-7-4Z" fill="#d79a4c"/>
+    <circle cx="59" cy="15" r="3" fill="#f2d284"/></g><g transform="translate(440)">
+    <path d="M10-2q18 5 5 12t5 13" fill="none" stroke="#9184bd" stroke-width="4"/>
+    <path d="m36 8 7-4 3 4-8 5Zm42-4 7 4-3 5-7-4Z" fill="#d79a4c"/>
+    <circle cx="59" cy="15" r="3" fill="#f2d284"/></g><g transform="translate(550)">
+    <path d="M10-2q18 5 5 12t5 13" fill="none" stroke="#d79a4c" stroke-width="4"/>
+    <path d="m36 8 7-4 3 4-8 5Zm42-4 7 4-3 5-7-4Z" fill="#d79a4c"/>
+    <circle cx="59" cy="15" r="3" fill="#f2d284"/></g><g transform="translate(660)">
+    <path d="M10-2q18 5 5 12t5 13" fill="none" stroke="#9184bd" stroke-width="4"/>
+    <path d="m36 8 7-4 3 4-8 5Zm42-4 7 4-3 5-7-4Z" fill="#d79a4c"/>
+    <circle cx="59" cy="15" r="3" fill="#f2d284"/></g><g transform="translate(770)">
+    <path d="M10-2q18 5 5 12t5 13" fill="none" stroke="#d79a4c" stroke-width="4"/>
+    <path d="m36 8 7-4 3 4-8 5Zm42-4 7 4-3 5-7-4Z" fill="#d79a4c"/>
+    <circle cx="59" cy="15" r="3" fill="#f2d284"/></g><g transform="translate(880)">
+    <path d="M10-2q18 5 5 12t5 13" fill="none" stroke="#9184bd" stroke-width="4"/>
+    <path d="m36 8 7-4 3 4-8 5Zm42-4 7 4-3 5-7-4Z" fill="#d79a4c"/>
+    <circle cx="59" cy="15" r="3" fill="#f2d284"/></g><g transform="translate(990)">
+    <path d="M10-2q18 5 5 12t5 13" fill="none" stroke="#d79a4c" stroke-width="4"/>
+    <path d="m36 8 7-4 3 4-8 5Zm42-4 7 4-3 5-7-4Z" fill="#d79a4c"/>
+    <circle cx="59" cy="15" r="3" fill="#f2d284"/></g><g transform="translate(717 133)" stroke-linecap="round" stroke-linejoin="round"><path d="M0-48v17" stroke="#6b748c" stroke-width="4"/>
+    <circle r="32" fill="#aacbd4" stroke="#566f87" stroke-width="3"/>
+    <g fill="none" stroke="#6588a2" stroke-width="2"><ellipse rx="17" ry="31"/><path d="M0-31v62M-31-4q32 9 62 0M-26-18q26 8 52 0M-26 16q27 10 51 0"/></g>
+    <path d="m-16-29 3 8 8 3-8 4-3 8-4-8-8-4 8-3Zm60 11 2 6 6 2-6 3-2 7-3-7-6-3 6-2Z" fill="#fff1d2"/></g></g>
+</svg>

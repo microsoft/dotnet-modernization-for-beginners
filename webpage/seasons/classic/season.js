@@ -95,7 +95,6 @@ export default {
   eras,
   hero: { art: "retro-workshop.svg" },
   copy: {
-    tagline: "A self-paced course",
     navDescription: "One app. A new foundation.",
     footer: "Built for a new chapter.",
     sampleKicker: "Sample notes / Test-flight log",

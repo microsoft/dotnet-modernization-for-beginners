@@ -143,8 +143,9 @@ No page needs a visible decade badge.
 
 ## Seasonal looks
 
-The classic eras are the default look. Season packs, such as Halloween, restyle every stop for a holiday or event.
-Read the [seasonal looks guide](seasons/README.md) to turn a season on or off, change a pack, or add a new one.
+The classic eras are the default look. Optional season packs restyle every stop for a holiday or event, without changing lessons or saved progress. They turn on automatically in each visitor's local date window and return to classic afterward. Use `?season=<id>` to preview a pack.
+
+The [seasonal looks guide](seasons/README.md) documents the schedule, previews, and pack contents. Follow the Thanksgiving floats in Pie Parade or tour the Christmas lights on Tinsel Lane. For New Year, Midnight Mixtape takes you to a party from a different decade in each chapter.
 
 ## Course illustrations
 

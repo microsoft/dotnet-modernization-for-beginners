@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="840" viewBox="0 0 1100 840" role="img" aria-labelledby="illustration-journey-light-title illustration-journey-light-desc" data-illustration="journey" data-era="1960s" data-theme="light">
+  <title id="illustration-journey-light-title">A route to modernization</title>
+  <desc id="illustration-journey-light-desc">A travel-poster road follows seven course chapters in order: 01 Start here, 02 Meet the app, 03 Get ready, 04 Assess, 05 Plan, 06 Upgrade and run, and 07 Azure plan.</desc>
+  <defs>
+    <marker id="illustration-journey-light-arrow" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="18" markerHeight="18" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M1 1L11 6 1 11Z" fill="#34396d"/></marker>
+    <marker id="illustration-journey-light-return" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="16" markerHeight="16" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M1 1L11 6 1 11" fill="none" stroke="#575a69" stroke-width="2"/></marker>
+    <marker id="illustration-journey-light-trail" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="18" markerHeight="18" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L11 6 1 11Z" fill="#fffdf4"/></marker>
+    <clipPath id="illustration-journey-light-landscape"><rect x="35" y="171" width="1030" height="492" rx="8"/></clipPath>
+  </defs>
+  <rect width="1100" height="840" fill="#f4e7c9"/>
+  <rect x="24" y="24" width="1052" height="792" rx="8" fill="none" stroke="#aaa193" stroke-width="2"/>
+      <text x="60" y="89" fill="#202944" font-size="51" font-weight="700" text-anchor="start" font-family="Georgia, Times New Roman, serif" letter-spacing="0"><tspan x="60" dy="0">A route to modernization</tspan></text><text x="63" y="132" fill="#575a69" font-size="23" font-weight="400" text-anchor="start" font-family="Trebuchet MS, Verdana, sans-serif" letter-spacing="0"><tspan x="63" dy="0">Keep the working application in view.</tspan></text>
+      <path d="M990 185L1010 185" fill="none" stroke="#efcb77" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" opacity="1"/><path d="M983.3012701892219 210L1000.6217782649107 220" fill="none" stroke="#efcb77" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" opacity="1"/><path d="M965 228.30127018922192L975 245.6217782649107" fill="none" stroke="#efcb77" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" opacity="1"/><path d="M940 235L940 255" fill="none" stroke="#efcb77" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" opacity="1"/><path d="M915 228.30127018922195L905 245.62177826491072" fill="none" stroke="#efcb77" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" opacity="1"/><path d="M896.6987298107781 210L879.3782217350893 220" fill="none" stroke="#efcb77" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" opacity="1"/><path d="M890 185L870 185" fill="none" stroke="#efcb77" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" opacity="1"/><path d="M896.6987298107781 160L879.3782217350893 150.00000000000003" fill="none" stroke="#efcb77" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" opacity="1"/><path d="M915 141.69872981077808L905 124.37822173508931" fill="none" stroke="#efcb77" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" opacity="1"/><path d="M940 135L940 115" fill="none" stroke="#efcb77" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" opacity="1"/><path d="M965 141.69872981077808L975 124.3782217350893" fill="none" stroke="#efcb77" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" opacity="1"/><path d="M983.3012701892219 159.99999999999997L1000.6217782649107 149.99999999999997" fill="none" stroke="#efcb77" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" opacity="1"/><circle cx="940" cy="185" r="37" fill="#efcb77"/>
+      <g clip-path="url(#illustration-journey-light-landscape)">
+        <path d="M35 519Q187 305 349 422T628 382T1065 442V663H35Z" fill="#f7edd6"/>
+        <path d="M35 594Q211 463 414 570T785 523T1065 556V663H35Z" fill="#584985" opacity=".22"/>
+        <path d="M35 636Q257 601 429 634T788 612T1065 635V663H35Z" fill="#584985" opacity=".35"/>
+        <path d="M140 645C158 560 243 566 245 490S335 330 465 365 629 552 700 490 790 329 935 320" fill="none" stroke="#fffdf4" stroke-width="70" stroke-linecap="round" stroke-linejoin="round" opacity="1"/>
+        <path d="M140 645C158 560 243 566 245 490S335 330 465 365 629 552 700 490 790 329 935 320" fill="none" stroke="#34396d" stroke-width="56" stroke-linecap="round" stroke-linejoin="round" opacity="1"/>
+        <path d="M140 645C158 560 243 566 245 490S335 330 465 365 629 552 700 490 790 329 935 320" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="1" stroke-dasharray="11 17"/>
+        <path d="M191 574l10-14-17 3M355 353l18 1-12 12M578 428l13 15-18-3M803 371l17-9-6 17" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="1"/>
+      </g>
+      <text x="64" y="201" fill="#575a69" font-size="18" font-weight="700" text-anchor="start" font-family="Trebuchet MS, Verdana, sans-serif" letter-spacing="2"><tspan x="64" dy="0">THE REQUIRED ROUTE</tspan></text>
+      <circle cx="193" cy="570" r="29" fill="#fffdf4" stroke="#34396d" stroke-width="4"/>
+      <path d="M181 558q12-13 24 0v19h-6v-18q-6-7-12 0v18h-6Z" fill="#ba8135"/>
+      <path d="M226 570h24" fill="none" stroke="#34396d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="1"/>
+      <text x="268" y="580" fill="#202944" font-size="29" font-weight="700" text-anchor="start" font-family="Georgia, serif" letter-spacing="0"><tspan x="268" dy="0">Setup</tspan></text>
+      <circle cx="140" cy="645" r="27" fill="#efcb77" stroke="#fffdf4" stroke-width="4"/><text x="140" y="653" fill="#102e2a" font-size="24" font-weight="700" text-anchor="middle" font-family="Trebuchet MS, Verdana, sans-serif" letter-spacing="0"><tspan x="140" dy="0">00</tspan></text>
+      <text x="140" y="711" fill="#202944" font-size="29" font-weight="700" text-anchor="middle" font-family="Georgia, serif" letter-spacing="0"><tspan x="140" dy="0">Meet the app</tspan></text>
+      <text x="140" y="744" fill="#575a69" font-size="20" font-weight="400" text-anchor="middle" font-family="Trebuchet MS, Verdana, sans-serif" letter-spacing="0"><tspan x="140" dy="0">Start here</tspan></text>
+      <g transform="translate(130 355)">
+        <circle r="43" fill="#fffdf4" stroke="#34396d" stroke-width="4"/>
+        <circle r="33" fill="none" stroke="#aaa193" stroke-width="2"/>
+        <path d="M0-32L12 10 0 24-12-10Z" fill="#ba8135"/>
+        <path d="M0-32V24L-12-10Z" fill="#584985"/>
+        <circle r="5" fill="#202944"/>
+      </g>
+      <text x="130" y="438" fill="#202944" font-size="29" font-weight="700" text-anchor="middle" font-family="Georgia, serif" letter-spacing="0"><tspan x="130" dy="0">Assess</tspan></text>
+      <circle cx="245" cy="490" r="27" fill="#efcb77" stroke="#fffdf4" stroke-width="4"/><text x="245" y="498" fill="#102e2a" font-size="24" font-weight="700" text-anchor="middle" font-family="Trebuchet MS, Verdana, sans-serif" letter-spacing="0"><tspan x="245" dy="0">01</tspan></text>
+      <text x="465" y="306" fill="#202944" font-size="30" font-weight="700" text-anchor="middle" font-family="Georgia, serif" letter-spacing="0"><tspan x="465" dy="0">Plan</tspan></text>
+      <circle cx="465" cy="365" r="27" fill="#efcb77" stroke="#fffdf4" stroke-width="4"/><text x="465" y="373" fill="#102e2a" font-size="24" font-weight="700" text-anchor="middle" font-family="Trebuchet MS, Verdana, sans-serif" letter-spacing="0"><tspan x="465" dy="0">02</tspan></text>
+      <g transform="translate(414 446) rotate(-7 52 37)">
+        <path d="M0 6L36-3 71 9 106 0v76L71 85 36 72 0 81Z" fill="#fffdf4" stroke="#34396d" stroke-width="3"/>
+        <path d="M36-3v75M71 9v76" stroke="#aaa193" stroke-width="2"/>
+        <path d="M12 61L28 39 50 49 76 25 92 30" fill="none" stroke="#ba8135" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" opacity="1" stroke-dasharray="3 7"/>
+        <circle cx="92" cy="30" r="6" fill="#34396d"/>
+      </g>
+      <g transform="translate(667 349) rotate(15 25 30)">
+        <path d="M14 4C-4 9-3 33 13 41v47a12 12 0 0 0 24 0V41C54 29 51 10 37 4v20H14Z" fill="#ba8135" stroke="#fffdf4" stroke-width="4"/>
+        <circle cx="25" cy="87" r="4" fill="#fffdf4"/>
+      </g>
+      <circle cx="700" cy="490" r="27" fill="#efcb77" stroke="#fffdf4" stroke-width="4"/><text x="700" y="498" fill="#102e2a" font-size="24" font-weight="700" text-anchor="middle" font-family="Trebuchet MS, Verdana, sans-serif" letter-spacing="0"><tspan x="700" dy="0">03</tspan></text>
+      <text x="670" y="586" fill="#202944" font-size="29" font-weight="700" text-anchor="middle" font-family="Georgia, serif" letter-spacing="0"><tspan x="670" dy="0">Upgrade &amp; run</tspan></text>
+      <text x="670" y="621" fill="#575a69" font-size="20" font-weight="400" text-anchor="middle" font-family="Trebuchet MS, Verdana, sans-serif" letter-spacing="0"><tspan x="670" dy="0">Review the changes</tspan></text>
+      <text x="924" y="281" fill="#202944" font-size="29" font-weight="700" text-anchor="middle" font-family="Georgia, serif" letter-spacing="0"><tspan x="924" dy="0">Azure plan</tspan></text>
+      <circle cx="935" cy="320" r="27" fill="#efcb77" stroke="#fffdf4" stroke-width="4"/><text x="935" y="328" fill="#102e2a" font-size="24" font-weight="700" text-anchor="middle" font-family="Trebuchet MS, Verdana, sans-serif" letter-spacing="0"><tspan x="935" dy="0">04</tspan></text>
+      <text x="911" y="714" fill="#202944" font-size="25" font-weight="700" text-anchor="middle" font-family="Georgia, serif" letter-spacing="0"><tspan x="911" dy="0">Azure plan</tspan></text>
+      <text x="911" y="746" fill="#575a69" font-size="19" font-weight="400" text-anchor="middle" font-family="Trebuchet MS, Verdana, sans-serif" letter-spacing="0"><tspan x="911" dy="0">Review the migration plan</tspan></text>
+      <path d="M319 756h210M319 768h161M319 780h188" fill="none" stroke="#aaa193" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.4"/>
+      <circle cx="581" cy="766" r="18" fill="none" stroke="#aaa193" stroke-width="2" opacity=".4"/>
+  <g aria-hidden="true"><g transform="translate(0)">
+    <path d="M10-2q18 5 5 12t5 13" fill="none" stroke="#584985" stroke-width="4"/>
+    <path d="m36 8 7-4 3 4-8 5Zm42-4 7 4-3 5-7-4Z" fill="#ba8135"/>
+    <circle cx="59" cy="15" r="3" fill="#efcb77"/></g><g transform="translate(110)">
+    <path d="M10-2q18 5 5 12t5 13" fill="none" stroke="#ba8135" stroke-width="4"/>
+    <path d="m36 8 7-4 3 4-8 5Zm42-4 7 4-3 5-7-4Z" fill="#ba8135"/>
+    <circle cx="59" cy="15" r="3" fill="#efcb77"/></g><g transform="translate(220)">
+    <path d="M10-2q18 5 5 12t5 13" fill="none" stroke="#584985" stroke-width="4"/>
+    <path d="m36 8 7-4 3 4-8 5Zm42-4 7 4-3 5-7-4Z" fill="#ba8135"/>
+    <circle cx="59" cy="15" r="3" fill="#efcb77"/></g><g transform="translate(330)">
+    <path d="M10-2q18 5 5 12t5 13" fill="none" stroke="#ba8135" stroke-width="4"/>
+    <path d="m36 8 7-4 3 4-8 5Zm42-4 7 4-3 5-7-4Z" fill="#ba8135"/>
+    <circle cx="59" cy="15" r="3" fill="#efcb77"/></g><g transform="translate(440)">
+    <path d="M10-2q18 5 5 12t5 13" fill="none" stroke="#584985" stroke-width="4"/>
+    <path d="m36 8 7-4 3 4-8 5Zm42-4 7 4-3 5-7-4Z" fill="#ba8135"/>
+    <circle cx="59" cy="15" r="3" fill="#efcb77"/></g><g transform="translate(550)">
+    <path d="M10-2q18 5 5 12t5 13" fill="none" stroke="#ba8135" stroke-width="4"/>
+    <path d="m36 8 7-4 3 4-8 5Zm42-4 7 4-3 5-7-4Z" fill="#ba8135"/>
+    <circle cx="59" cy="15" r="3" fill="#efcb77"/></g><g transform="translate(660)">
+    <path d="M10-2q18 5 5 12t5 13" fill="none" stroke="#584985" stroke-width="4"/>
+    <path d="m36 8 7-4 3 4-8 5Zm42-4 7 4-3 5-7-4Z" fill="#ba8135"/>
+    <circle cx="59" cy="15" r="3" fill="#efcb77"/></g><g transform="translate(770)">
+    <path d="M10-2q18 5 5 12t5 13" fill="none" stroke="#ba8135" stroke-width="4"/>
+    <path d="m36 8 7-4 3 4-8 5Zm42-4 7 4-3 5-7-4Z" fill="#ba8135"/>
+    <circle cx="59" cy="15" r="3" fill="#efcb77"/></g><g transform="translate(880)">
+    <path d="M10-2q18 5 5 12t5 13" fill="none" stroke="#584985" stroke-width="4"/>
+    <path d="m36 8 7-4 3 4-8 5Zm42-4 7 4-3 5-7-4Z" fill="#ba8135"/>
+    <circle cx="59" cy="15" r="3" fill="#efcb77"/></g><g transform="translate(990)">
+    <path d="M10-2q18 5 5 12t5 13" fill="none" stroke="#ba8135" stroke-width="4"/>
+    <path d="m36 8 7-4 3 4-8 5Zm42-4 7 4-3 5-7-4Z" fill="#ba8135"/>
+    <circle cx="59" cy="15" r="3" fill="#efcb77"/></g><g transform="translate(815 85)" stroke-linecap="round" stroke-linejoin="round"><g stroke="#594955" stroke-width="2.5">
+    <path d="M-39-5q2 28 30 32v5h-10v5h39v-5H9v-5Q36 21 41-5Z" fill="#9ad7cf"/>
+    <ellipse cy="-5" rx="40" ry="9" fill="#d55c72"/><path d="m-25-3 6 13 6-12m5 1L0 19 9 0m3 1 5 10 5-13" fill="none" stroke="#f4d5d3"/>
+    <circle cx="19" cy="-7" r="7" fill="#ffc65d"/><path d="m-16-9-13-25h-12" fill="none" stroke="#47878c" stroke-width="5"/></g></g></g>
+</svg>
