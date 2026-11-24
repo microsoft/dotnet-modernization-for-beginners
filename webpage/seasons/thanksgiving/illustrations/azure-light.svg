@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="900" viewBox="0 0 1100 900" role="img" aria-labelledby="illustration-azure-light-title illustration-azure-light-desc" data-illustration="azure" data-era="2020s" data-theme="light">
+  <title id="illustration-azure-light-title">A proposed home in Azure</title>
+  <desc id="illustration-azure-light-desc">Proposed target, not an existing deployment. Demo data only. A public sample user sends HTTPS requests to App Service running BookCatalog. The application accesses Key Vault for its connection setting and Azure SQL for Books. Its runtime managed identity authorizes access to both Key Vault and SQL. Separately, an approved administrator creates the schema from the EF Core model and adds demo seed data. Solid arrows are runtime requests or access; the dashed arrow is administrator setup, not runtime identity.</desc>
+  <defs>
+    <marker id="illustration-azure-light-arrow" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="18" markerHeight="18" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M1 1L11 6 1 11Z" fill="#85283e"/></marker>
+    <marker id="illustration-azure-light-return" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="16" markerHeight="16" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M1 1L11 6 1 11" fill="none" stroke="#506246" stroke-width="2"/></marker>
+    <marker id="illustration-azure-light-trail" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="18" markerHeight="18" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L11 6 1 11Z" fill="#fffdf2"/></marker>
+    <linearGradient id="illustration-azure-light-sculpture" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fffdf2"/><stop offset="1" stop-color="#eef2df"/></linearGradient>
+  </defs>
+  <rect width="1100" height="900" fill="#e5ebd8"/>
+  <text x="60" y="89" fill="#293a26" font-size="49" font-weight="700" text-anchor="start" font-family="Trebuchet MS, Verdana, sans-serif" letter-spacing="0"><tspan x="60" dy="0">A proposed home in Azure</tspan></text><text x="63" y="132" fill="#506246" font-size="23" font-weight="400" text-anchor="start" font-family="Trebuchet MS, Verdana, sans-serif" letter-spacing="0"><tspan x="63" dy="0">Disposable sample data only</tspan></text>
+      <text x="63" y="185" fill="#506246" font-size="18" font-weight="700" text-anchor="start" font-family="Trebuchet MS, Verdana, sans-serif" letter-spacing="2"><tspan x="63" dy="0">PROPOSED TARGET</tspan></text>
+      <path d="M361 285Q514 178 670 285L694 496Q533 578 354 510Z" fill="#eef2df"/>
+      <ellipse cx="523" cy="595" rx="184" ry="28" fill="#293a26" opacity=".065"/>
+      <ellipse cx="927" cy="356" rx="96" ry="18" fill="#293a26" opacity=".075"/>
+      <ellipse cx="932" cy="656" rx="104" ry="17" fill="#293a26" opacity=".075"/>
+      <g transform="translate(123 352) scale(1)">
+    <ellipse cx="0" cy="87" rx="61" ry="16" fill="#293a26" opacity=".09"/>
+    <path d="M-47 76V49a47 47 0 0 1 94 0v27Q0 103-47 76Z" fill="#547347"/>
+    <path d="M-47 76V49a47 47 0 0 1 29-43v76Z" fill="#b34353"/>
+    <circle cy="-29" r="32" fill="#eef2df" stroke="#85283e" stroke-width="3"/>
+    <path d="M-20-46Q0-64 20-46" fill="none" stroke="#85283e" stroke-width="4" stroke-linecap="round"/>
+  </g>
+      <text x="123" y="482" fill="#293a26" font-size="24" font-weight="400" text-anchor="middle" font-family="Trebuchet MS, Verdana, sans-serif" letter-spacing="0"><tspan x="123" dy="0">Public sample</tspan><tspan x="123" dy="30.72">user</tspan></text>
+      <path d="M195 365H371" fill="none" stroke="#85283e" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="1" marker-end="url(#illustration-azure-light-arrow)"/>
+      <text x="284" y="343" fill="#506246" font-size="21" font-weight="400" text-anchor="middle" font-family="Trebuchet MS, Verdana, sans-serif" letter-spacing="0"><tspan x="284" dy="0">HTTPS</tspan></text>
+      <text x="522" y="246" fill="#293a26" font-size="28" font-weight="700" text-anchor="middle" font-family="Trebuchet MS, Verdana, sans-serif" letter-spacing="0"><tspan x="522" dy="0">App Service</tspan></text>
+      <g>
+        <path d="M379 312L419 281H676L645 312Z" fill="#547347"/>
+        <path d="M645 312L676 281V477L645 510Z" fill="#b34353"/>
+        <rect x="379" y="312" width="266" height="198" rx="9" fill="url(#illustration-azure-light-sculpture)" stroke="#98a68a" stroke-width="2"/>
+        <path d="M401 333H620" stroke="#fffdf2" stroke-width="5" stroke-linecap="round"/>
+        <g transform="translate(510 374)">
+          <path d="M-52-22Q-25-32 0-17V47Q-25 32-52 42Z" fill="#547347" stroke="#85283e" stroke-width="2"/>
+          <path d="M0-17Q25-32 52-22V42Q25 32 0 47Z" fill="#eac074" stroke="#85283e" stroke-width="2"/>
+          <path d="M0-17V47" stroke="#85283e" stroke-width="3"/>
+          <path d="M-41-10l26 3m-26 14l26 3M15-7l26-3M15 10l26-3" stroke="#85283e" stroke-width="2" opacity=".6"/>
+        </g>
+        <text x="512" y="472" fill="#293a26" font-size="29" font-weight="700" text-anchor="middle" font-family="Trebuchet MS, Verdana, sans-serif" letter-spacing="0"><tspan x="512" dy="0">BookCatalog</tspan></text>
+        <circle cx="606" cy="491" r="4" fill="#85283e"/>
+        <rect x="378" y="536" width="299" height="53" rx="26" fill="#fffdf2" stroke="#98a68a" stroke-width="2"/>
+        <g transform="translate(405 562) scale(0.8)" fill="none" stroke="#85283e" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><circle cx="0" cy="0" r="9"/><path d="M9 0h25m-7 0v8m-8-8v6"/></g>
+        <text x="547" y="569" fill="#293a26" font-size="23" font-weight="400" text-anchor="middle" font-family="Trebuchet MS, Verdana, sans-serif" letter-spacing="0"><tspan x="547" dy="0">Managed identity</tspan></text>
+      </g>
+      <path d="M678 338H756V283H844" fill="none" stroke="#85283e" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="1" marker-end="url(#illustration-azure-light-arrow)"/>
+      <text x="765" y="257" fill="#506246" font-size="19" font-weight="400" text-anchor="middle" font-family="Trebuchet MS, Verdana, sans-serif" letter-spacing="0"><tspan x="765" dy="0">Read setting</tspan></text>
+      <g transform="translate(928 272)">
+        <path d="M-65-58L-41-75H65L44-58Z" fill="#eac074"/>
+        <path d="M44-58L65-75V69L44 87Z" fill="#547347"/>
+        <rect x="-65" y="-58" width="109" height="145" rx="27" fill="url(#illustration-azure-light-sculpture)" stroke="#98a68a" stroke-width="2"/>
+        <path d="M-49-24Q-50-43-31-43H12" stroke="#fffdf2" stroke-width="5" fill="none" stroke-linecap="round"/>
+        <circle cx="-10" cy="3" r="18" fill="#85283e"/>
+        <path d="M-17 15h14l5 28h-24Z" fill="#85283e"/>
+      </g>
+      <text x="924" y="403" fill="#293a26" font-size="27" font-weight="700" text-anchor="middle" font-family="Trebuchet MS, Verdana, sans-serif" letter-spacing="0"><tspan x="924" dy="0">Key Vault</tspan></text>
+      <text x="924" y="433" fill="#506246" font-size="20" font-weight="400" text-anchor="middle" font-family="Trebuchet MS, Verdana, sans-serif" letter-spacing="0"><tspan x="924" dy="0">connection setting</tspan></text>
+      <path d="M679 472H735V580H841" fill="none" stroke="#85283e" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="1" marker-end="url(#illustration-azure-light-arrow)"/>
+      <text x="797" y="555" fill="#506246" font-size="19" font-weight="400" text-anchor="middle" font-family="Trebuchet MS, Verdana, sans-serif" letter-spacing="0"><tspan x="797" dy="0">Query data</tspan></text>
+      <g transform="translate(812 475) scale(0.7)" fill="none" stroke="#85283e" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><circle cx="0" cy="0" r="9"/><path d="M9 0h25m-7 0v8m-8-8v6"/></g>
+      <text x="951" y="482" fill="#293a26" font-size="20" font-weight="400" text-anchor="middle" font-family="Trebuchet MS, Verdana, sans-serif" letter-spacing="0"><tspan x="951" dy="0">Managed identity</tspan></text>
+      <text x="951" y="509" fill="#506246" font-size="19" font-weight="400" text-anchor="middle" font-family="Trebuchet MS, Verdana, sans-serif" letter-spacing="0"><tspan x="951" dy="0">authorizes both</tspan></text>
+      <g transform="translate(852 526)">
+        <path d="M0 25V102C0 141 168 141 168 102V25" fill="url(#illustration-azure-light-sculpture)" stroke="#98a68a" stroke-width="2"/>
+        <path d="M137 39V119Q166 114 168 102V25Z" fill="#547347" opacity=".5"/>
+        <ellipse cx="84" cy="25" rx="84" ry="26" fill="#eac074" stroke="#98a68a" stroke-width="2"/>
+        <ellipse cx="84" cy="22" rx="63" ry="14" fill="#fffdf2" opacity=".6"/>
+        <path d="M0 72c0 37 168 37 168 0" fill="none" stroke="#98a68a" stroke-width="2"/>
+        <path d="M17 48v21m0 29v9" stroke="#fffdf2" stroke-width="6" stroke-linecap="round"/>
+      </g>
+      <text x="936" y="693" fill="#293a26" font-size="27" font-weight="700" text-anchor="middle" font-family="Trebuchet MS, Verdana, sans-serif" letter-spacing="0"><tspan x="936" dy="0">Azure SQL</tspan></text>
+      <text x="936" y="724" fill="#506246" font-size="22" font-weight="400" text-anchor="middle" font-family="Trebuchet MS, Verdana, sans-serif" letter-spacing="0"><tspan x="936" dy="0">Books</tspan></text>
+      <path d="M62 646H666" stroke="#98a68a" stroke-width="2" opacity=".5"/>
+      <g transform="translate(343 731) scale(0.69)">
+    <ellipse cx="0" cy="87" rx="61" ry="16" fill="#293a26" opacity=".09"/>
+    <path d="M-47 76V49a47 47 0 0 1 94 0v27Q0 103-47 76Z" fill="#547347"/>
+    <path d="M-47 76V49a47 47 0 0 1 29-43v76Z" fill="#b34353"/>
+    <circle cy="-29" r="32" fill="#eef2df" stroke="#85283e" stroke-width="3"/>
+    <path d="M-20-46Q0-64 20-46" fill="none" stroke="#85283e" stroke-width="4" stroke-linecap="round"/>
+  </g>
+      <text x="76" y="745" fill="#293a26" font-size="24" font-weight="400" text-anchor="start" font-family="Trebuchet MS, Verdana, sans-serif" letter-spacing="0"><tspan x="76" dy="0">Approved</tspan><tspan x="76" dy="30.72">administrator</tspan></text>
+      <text x="467" y="696" fill="#506246" font-size="18" font-weight="700" text-anchor="start" font-family="Trebuchet MS, Verdana, sans-serif" letter-spacing="1"><tspan x="467" dy="0">ONE-TIME SETUP</tspan></text>
+      <path d="M391 759H1061V628H1024" fill="none" stroke="#506246" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="1" stroke-dasharray="8 9" marker-end="url(#illustration-azure-light-return)"/>
+      <text x="692" y="795" fill="#506246" font-size="22" font-weight="400" text-anchor="middle" font-family="Trebuchet MS, Verdana, sans-serif" letter-spacing="0"><tspan x="692" dy="0">Schema and demo seed data</tspan></text>
+      <path d="M65 857h53" fill="none" stroke="#85283e" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="1" marker-end="url(#illustration-azure-light-arrow)"/>
+      <text x="134" y="864" fill="#293a26" font-size="21" font-weight="400" text-anchor="start" font-family="Trebuchet MS, Verdana, sans-serif" letter-spacing="0"><tspan x="134" dy="0">Runtime requests / access</tspan></text>
+      <path d="M628 857h53" fill="none" stroke="#506246" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="1" stroke-dasharray="8 8" marker-end="url(#illustration-azure-light-return)"/>
+      <text x="698" y="864" fill="#293a26" font-size="21" font-weight="400" text-anchor="start" font-family="Trebuchet MS, Verdana, sans-serif" letter-spacing="0"><tspan x="698" dy="0">Administrator setup</tspan></text>
+  <g aria-hidden="true"><g transform="translate(0)">
+    <path d="M0 3q50 14 100 0" fill="none" stroke="#506246" stroke-width="2"/>
+    <path d="m18 7 15 2-10 14Z" fill="#b34353"/><path d="M62 9l15-2-5 16Z" fill="#eac074"/></g><g transform="translate(100)">
+    <path d="M0 3q50 14 100 0" fill="none" stroke="#506246" stroke-width="2"/>
+    <path d="m18 7 15 2-10 14Z" fill="#b34353"/><path d="M62 9l15-2-5 16Z" fill="#547347"/></g><g transform="translate(200)">
+    <path d="M0 3q50 14 100 0" fill="none" stroke="#506246" stroke-width="2"/>
+    <path d="m18 7 15 2-10 14Z" fill="#b34353"/><path d="M62 9l15-2-5 16Z" fill="#eac074"/></g><g transform="translate(300)">
+    <path d="M0 3q50 14 100 0" fill="none" stroke="#506246" stroke-width="2"/>
+    <path d="m18 7 15 2-10 14Z" fill="#b34353"/><path d="M62 9l15-2-5 16Z" fill="#547347"/></g><g transform="translate(400)">
+    <path d="M0 3q50 14 100 0" fill="none" stroke="#506246" stroke-width="2"/>
+    <path d="m18 7 15 2-10 14Z" fill="#b34353"/><path d="M62 9l15-2-5 16Z" fill="#eac074"/></g><g transform="translate(500)">
+    <path d="M0 3q50 14 100 0" fill="none" stroke="#506246" stroke-width="2"/>
+    <path d="m18 7 15 2-10 14Z" fill="#b34353"/><path d="M62 9l15-2-5 16Z" fill="#547347"/></g><g transform="translate(600)">
+    <path d="M0 3q50 14 100 0" fill="none" stroke="#506246" stroke-width="2"/>
+    <path d="m18 7 15 2-10 14Z" fill="#b34353"/><path d="M62 9l15-2-5 16Z" fill="#eac074"/></g><g transform="translate(700)">
+    <path d="M0 3q50 14 100 0" fill="none" stroke="#506246" stroke-width="2"/>
+    <path d="m18 7 15 2-10 14Z" fill="#b34353"/><path d="M62 9l15-2-5 16Z" fill="#547347"/></g><g transform="translate(800)">
+    <path d="M0 3q50 14 100 0" fill="none" stroke="#506246" stroke-width="2"/>
+    <path d="m18 7 15 2-10 14Z" fill="#b34353"/><path d="M62 9l15-2-5 16Z" fill="#eac074"/></g><g transform="translate(900)">
+    <path d="M0 3q50 14 100 0" fill="none" stroke="#506246" stroke-width="2"/>
+    <path d="m18 7 15 2-10 14Z" fill="#b34353"/><path d="M62 9l15-2-5 16Z" fill="#547347"/></g><g transform="translate(1000)">
+    <path d="M0 3q50 14 100 0" fill="none" stroke="#506246" stroke-width="2"/>
+    <path d="m18 7 15 2-10 14Z" fill="#b34353"/><path d="M62 9l15-2-5 16Z" fill="#eac074"/></g><g transform="translate(966 93)" stroke-linecap="round" stroke-linejoin="round"><g stroke="#50303a" stroke-width="2.5">
+    <path d="M-48-20 1-38l15 48-57 2Z" fill="#ea9845"/><path d="m-48-20 9 32h7l-6-35Z" fill="#d7a35c"/>
+    <path d="M-30-29q-8-7 4-13-3-7 7-10 7-3 7-7 14 9 5 15 13 3 6 11Z" fill="#fff2cd"/>
+    <ellipse cx="0" cy="-17" rx="4" ry="6" fill="#fff3dc"/><circle cx="2" cy="-17" r="1.7" fill="#50303a"/>
+    <path d="M-12-5Q0 1 8-6 2 9-8 1Z" fill="#612f3b"/>
+    <path d="M18 10q-2-9 4-14 3-2 2-8l13 1q-3 6-1 13l9 5" fill="#b86a43"/>
+    <path d="M21-13q0-17 11-15 9 1 9 12l-12-1-2 6Z" fill="#55a6a0"/>
+    <path d="m35-13 9 4-9 2" fill="#efb44b"/><path d="m-53 10 69 1q12 4 25-2 12-5 19 5l-4 9H-49Z" fill="#4a9d92"/>
+    </g><circle cx="-32" cy="30" r="9" fill="#573e32"/><circle cx="-32" cy="30" r="4" fill="#f3c27b"/><circle cx="37" cy="30" r="9" fill="#573e32"/><circle cx="37" cy="30" r="4" fill="#f3c27b"/>
+    <path d="m-3 13-4 5h4l-1 4 7-7h-5l2-2Z" fill="#fff0a0"/></g></g>
+</svg>

@@ -89,17 +89,11 @@ function addHero() {
     copy.append(node);
   }
 
-  const { art: lightArt, artDark, caption: sceneCaption } = activeSeason().hero;
+  const { art: lightArt, artDark } = activeSeason().hero;
   if (artDark) {
     const artwork = document.createElement("div");
     artwork.className = "hero-scene";
     for (const [mode, file] of [["light", lightArt], ["dark", artDark]]) artwork.append(heroImage(file, `hero-art era-art-${mode}`));
-    if (sceneCaption) {
-      const caption = document.createElement("p");
-      caption.className = "scene-caption";
-      caption.textContent = sceneCaption;
-      artwork.append(caption);
-    }
     hero.append(copy, artwork);
   } else {
     hero.append(copy, heroImage(lightArt, "hero-art"));
@@ -126,12 +120,6 @@ function addChapterHeader(chapter) {
   const era = getEra(chapter.era);
   heading.before(panel);
   panel.append(heading);
-  if (activeSeason().sceneLabels) {
-    const setting = document.createElement("div");
-    setting.className = "scene-name";
-    setting.textContent = era.label;
-    panel.before(setting);
-  }
   if (chapter.era === "1950s") {
     panel.classList.add("flight-intro");
     const copy = document.createElement("div");

@@ -9,11 +9,10 @@ async function open(page, route, query = "") {
   await expect(page.getByRole("alert")).toHaveCount(0);
 }
 
-test("the calendar picks Halloween in October and classic otherwise", async ({ page }) => {
+test("the calendar selects the holiday packs and classic between their windows", async ({ page }) => {
   await open(page, "overview");
   await expect(page.locator("html")).toHaveAttribute("data-season", "classic");
   await expect(page.locator("#season-stylesheet")).toHaveAttribute("href", "seasons/classic/season.css");
-  await expect(page.locator(".brand-copy > span")).toHaveText("A self-paced course");
 
   await page.clock.setFixedTime(new Date("2026-10-20T12:00:00"));
   await page.reload();
@@ -21,23 +20,57 @@ test("the calendar picks Halloween in October and classic otherwise", async ({ p
   await expect(page.locator("html")).toHaveAttribute("data-season", "halloween");
   await expect(page.locator("#season-stylesheet")).toHaveAttribute("href", "seasons/halloween/season.css");
   await expect(page.locator('link[rel="icon"]')).toHaveAttribute("href", "seasons/halloween/assets/favicon.svg");
-  await expect(page.locator(".brand-copy > span")).toHaveText(halloween.copy.tagline);
   await expect(page.locator(".site-footer > span")).toHaveText(halloween.copy.footer);
-  await expect(page.locator(".scene-caption")).toHaveText(halloween.hero.caption);
+
+  for (const [date, id] of [
+    ["2026-11-12T12:00:00", "thanksgiving"],
+    ["2026-12-11T12:00:00", "christmas"],
+    ["2026-12-26T12:00:00", "new-year"]
+  ]) {
+    await page.clock.setFixedTime(new Date(date));
+    await page.reload();
+    await expect(page.locator("#article")).not.toHaveAttribute("aria-busy", "true");
+    await expect(page.locator("html")).toHaveAttribute("data-season", id);
+    await expect(page.locator("#season-stylesheet")).toHaveAttribute("href", `seasons/${id}/season.css`);
+  }
 
   await open(page, "overview", "season=classic");
   await expect(page.locator("html")).toHaveAttribute("data-season", "classic");
   await open(page, "overview", "season=unknown");
-  await expect(page.locator("html")).toHaveAttribute("data-season", "halloween");
+  await expect(page.locator("html")).toHaveAttribute("data-season", "new-year");
 });
 
-test("Halloween gives every stop its own scene, label, and art", async ({ page }) => {
+for (const [season, scenes] of [
+  ["thanksgiving", ["pie-cutout", "pie-wagon", "pumpkin-train", "turkey-balloon", "cranberry-scoop", "squash-float", "electric-pie"]],
+  ["new-year", ["sock-hop", "record-hop", "disco", "cassette-karaoke", "inflatable-alien", "cd-curtain", "photo-booth"]]
+]) {
+  test(`${season} advances one decade on each core chapter, including setup`, async ({ page }) => {
+    for (const [index, chapter] of chapters.entries()) {
+      await open(page, chapter.slug, `season=${season}`);
+      await expect(page.locator("html")).toHaveAttribute("data-scene", scenes[index]);
+    }
+  });
+}
+
+test("the header stays fixed and decorative art is captionless in every theme", async ({ page }) => {
+  for (const season of ["classic", "halloween", "thanksgiving", "christmas", "new-year"]) {
+    for (const [route, art] of [["overview", ".hero-art"], ["01-assessment", ".era-art"]]) {
+      await open(page, route, `season=${season}`);
+      await expect(page.locator("html")).toHaveAttribute("data-season", season);
+      await expect(page.locator(".brand-copy > span")).toHaveText("A self-paced course");
+      await expect(page.locator(`${art}:visible`)).toBeVisible();
+      await expect(page.locator(".scene-caption, .scene-name")).toHaveCount(0);
+      await expect(page.locator(".course-illustration figcaption")).not.toBeEmpty();
+    }
+  }
+});
+
+test("Halloween gives every stop its own scene and art", async ({ page }) => {
   for (const chapter of chapters) {
     await open(page, chapter.slug, "season=halloween");
     const era = getEra(chapter.era, halloween);
     await expect(page.locator("html")).toHaveAttribute("data-scene", era.scene);
     if (chapter.slug === "overview") continue;
-    await expect(page.locator(".scene-name")).toHaveText(era.label);
     const art = page.locator(".era-art:visible");
     await expect(art).toHaveAttribute("src", new RegExp(`/seasons/halloween/assets/${era.art}$`));
     await expect.poll(() => art.evaluate(image => image.complete && image.naturalWidth > 0)).toBeTruthy();
@@ -54,7 +87,6 @@ test("Halloween swaps lesson illustrations and setup text, and classic does not"
 
   await open(page, setup.slug, "season=classic");
   await expect(page.locator(".illustration-light")).toHaveAttribute("href", /\/content\/docs\/illustrations\/soundcheck-light\.svg$/);
-  await expect(page.locator(".scene-name")).toHaveCount(0);
   await expect(page.locator("html")).not.toHaveAttribute("data-scene", /.+/);
 });
 

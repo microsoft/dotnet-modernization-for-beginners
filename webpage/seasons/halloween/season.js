@@ -82,8 +82,7 @@ export default {
   id: "halloween",
   name: "Halloween",
   eras,
-  hero: { art: "halloween-pumpkin-patch-light.svg", artDark: "halloween-pumpkin-patch-dark.svg", caption: "A little spooky. A new foundation." },
-  sceneLabels: true,
+  hero: { art: "halloween-pumpkin-patch-light.svg", artDark: "halloween-pumpkin-patch-dark.svg" },
   illustrations: true,
   illustrationText: {
     soundcheck: {
@@ -92,7 +91,6 @@ export default {
     }
   },
   copy: {
-    tagline: "The Halloween field guide",
     navDescription: "Seven stops. No scary surprises.",
     footer: "Friendly ghosts. Fresh starts.",
     sampleKicker: "Sample notes",

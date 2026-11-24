@@ -44,11 +44,11 @@ function primitives(p, prefix) {
  * Render a self-contained, theme-matched illustration without external assets.
  * The identifiers are stable so the build can give each chapter its own artwork.
  */
-export function renderIllustration(id, mode) {
+export function renderIllustration(id, mode, season = classic, decorate) {
   if (!Object.hasOwn(illustrations, id)) throw new Error(`Unknown illustration: ${id}`);
   if (mode !== "light" && mode !== "dark") throw new Error(`Unknown illustration theme: ${mode}`);
   const { era, height, draw } = illustrations[id];
-  const p = getEra(era)[mode];
+  const p = eraFor(era, season)[mode];
   const prefix = `illustration-${id}-${mode}`;
   const { title, description, art, defs = "" } = draw(p, primitives(p, prefix), prefix);
   return `<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="${height}" viewBox="0 0 1100 ${height}" role="img" aria-labelledby="${prefix}-title ${prefix}-desc" data-illustration="${id}" data-era="${era}" data-theme="${mode}">
@@ -61,7 +61,7 @@ export function renderIllustration(id, mode) {
     ${defs}
   </defs>
   <rect width="1100" height="${height}" fill="${p.paper}"/>
-  ${art}
+  ${art}${decorate ? `\n  <g aria-hidden="true">${decorate(id, p)}</g>` : ""}
 </svg>`;
 }
 
